@@ -5,9 +5,9 @@ function Recipes({ recipes }) {
     <ul>
       {recipes.map((recipe) => (
         <li key={recipe.id}>
-          <Link href={`/recipes/${encodeURIComponent(recipe.slug)}`}>
+          {/* <Link href={`/recipes/${encodeURIComponent(recipe.slug)}`}> */}
             <a>{recipe.title}</a>
-          </Link>
+          {/* </Link> */}
         </li>
       ))}
     </ul>
