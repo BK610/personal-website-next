@@ -7,34 +7,37 @@ export default class Home extends Component {
   render() {
     let { title, sections } = attributes;
     return (
-      <>
+      <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-zinc-200 dark:bg-zinc-900 dark:text-gray-100 items-center">
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
-        <div class="flex flex-col">
-          <div class="flex-auto max-w-md space-y-4 place-self-center">
-            <div class="flex-auto pt-8 text-xl">
-              <h2>{title}</h2>
-            </div>
-            <div class="flex-auto text-lg">
-              <HomeContent />
-            </div>
-            {sections.map((section, k) => (
-              <div
-                class="flex-auto p-2 border-solid border-2 rounded-lg even:rotate-1 odd:-rotate-1 border-violet-400 bg-slate-100 shadow-md hover:border-violet-500 hover:shadow-lg active:border-violet-600"
-                key={k}
-              >
-                <Link href={"/" + section.name.toLowerCase()}>
-                  <a>
-                    <h2>{section.name}</h2>
-                    <p class="text-sm text-slate-700">{section.description}</p>
-                  </a>
-                </Link>
-              </div>
-            ))}
+        <div className="w-full max-w-md p-2 space-y-4">
+          <div className="pt-8 text-xl">
+            <h2>{title}</h2>
           </div>
+          <div className="text-lg">
+            <HomeContent />
+          </div>
+          {sections.map((section, k) => (
+            <div
+              className="p-2 border-solid border-2 rounded-lg even:rotate-1 odd:-rotate-1 border-violet-400 bg-zinc-100 dark:bg-violet-600 shadow-md transition hover:shadow-lg hover:scale-105 active:border-violet-700 active:bg-zinc-200 dark:active:bg-violet-700"
+              key={k}
+            >
+              <Link href={"/" + section.name.toLowerCase()}>
+                <a>
+                  <h2 className="font-medium dark:text-violet-100">
+                    {section.name}
+                  </h2>
+                  <p className="font-light text-sm text-zinc-700 dark:text-zinc-200">
+                    {section.description}
+                  </p>
+                </a>
+              </Link>
+            </div>
+          ))}
+          <div className="justify-self-end">my div</div>
         </div>
-      </>
+      </div>
     );
   }
 }
