@@ -11,26 +11,26 @@ export default class Home extends Component {
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
-        <div class="flex flex-col content-center">
+        <div class="flex flex-col">
           <div class="flex-auto max-w-md space-y-4 place-self-center">
-            <div class="flex-auto">
-              <h2 class="text-xl">{title}</h2>
+            <div class="flex-auto pt-8 text-xl">
+              <h2>{title}</h2>
             </div>
             <div class="flex-auto text-lg">
               <HomeContent />
             </div>
             {sections.map((section, k) => (
-              <Link href={"/" + section.name.toLowerCase()}>
-                <div
-                  class="flex-auto border-solid border-2 rounded border-violet-400 cursor-pointer"
-                  key={k}
-                >
-                  <a >
+              <div
+                class="flex-auto border-solid border-2 rounded-lg border-violet-400 bg-slate-100 shadow-md hover:border-violet-500 hover:shadow-lg active:border-violet-600"
+                key={k}
+              >
+                <Link href={"/" + section.name.toLowerCase()}>
+                  <a>
                     <h2>{section.name}</h2>
-                    <p>{section.description}</p>
+                    <p class="text-sm text-slate-700">{section.description}</p>
                   </a>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
