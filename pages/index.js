@@ -11,7 +11,7 @@ export default class Home extends Component {
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
-        <div className="w-full max-w-md p-2 space-y-4">
+        <div className="w-full max-w-md p-2 pb-4 space-y-4">
           <div className="pt-8 text-xl">
             <h2>{title}</h2>
           </div>
@@ -35,7 +35,6 @@ export default class Home extends Component {
               </Link>
             </div>
           ))}
-          <div className="justify-self-end">my div</div>
         </div>
       </div>
     );
