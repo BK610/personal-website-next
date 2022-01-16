@@ -5,27 +5,35 @@ import { attributes, react as HomeContent } from "../content/home.md";
 
 export default class Home extends Component {
   render() {
-    let { title, cats } = attributes;
+    let { title, sections } = attributes;
     return (
       <>
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
-        <article>
-          <h1>{title}</h1>
-          <HomeContent />
-          <ul>
-            {cats.map((cat, k) => (
-              <li key={k}>
-                <h2>{cat.name}</h2>
-                <p>{cat.description}</p>
-              </li>
+        <div class="flex flex-col content-center">
+          <div class="flex-auto max-w-md space-y-4 place-self-center">
+            <div class="flex-auto">
+              <h2 class="text-xl">{title}</h2>
+            </div>
+            <div class="flex-auto text-lg">
+              <HomeContent />
+            </div>
+            {sections.map((section, k) => (
+              <Link href={"/" + section.name.toLowerCase()}>
+                <div
+                  class="flex-auto border-solid border-2 rounded border-violet-400 cursor-pointer"
+                  key={k}
+                >
+                  <a >
+                    <h2>{section.name}</h2>
+                    <p>{section.description}</p>
+                  </a>
+                </div>
+              </Link>
             ))}
-          </ul>
-        </article>
-        <Link href={"/recipes"}>
-          <a>Recipes</a>
-        </Link>
+          </div>
+        </div>
       </>
     );
   }
