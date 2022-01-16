@@ -27,8 +27,8 @@ export default class Recipes extends Component {
     return (
       <>
         <ul>
-          {recipesList.map((recipe) => (
-            <li>
+          {recipesList.map((recipe, k) => (
+            <li key={k}>
               <div>
                 <Link href={`recipes/recipe/${recipe.slug}`}>
                   <div>
