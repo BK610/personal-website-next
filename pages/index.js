@@ -21,7 +21,7 @@ export default class Home extends Component {
             </div>
             {sections.map((section, k) => (
               <div
-                class="flex-auto border-solid border-2 rounded-lg border-violet-400 bg-slate-100 shadow-md hover:border-violet-500 hover:shadow-lg active:border-violet-600"
+                class="flex-auto p-2 border-solid border-2 rounded-lg even:rotate-1 odd:-rotate-1 border-violet-400 bg-slate-100 shadow-md hover:border-violet-500 hover:shadow-lg active:border-violet-600"
                 key={k}
               >
                 <Link href={"/" + section.name.toLowerCase()}>
