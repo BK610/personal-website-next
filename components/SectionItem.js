@@ -13,7 +13,7 @@ export default class SectionItem extends Component {
                    shadow-md hover:shadow-lg shadow-violet-300 hover:shadow-violet-300 dark:shadow-violet-800 hover:dark:shadow-violet-700
                    transition hover:scale-105"
       >
-        <Link href={"/" + this.props.name.toLowerCase()}>
+        <Link href={this.props.link}>
           <a className="grid grid-cols-2">
             <div>
               <h2 className="font-medium dark:text-violet-100">
