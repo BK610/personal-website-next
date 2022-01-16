@@ -7,7 +7,7 @@ export default class Home extends Component {
   render() {
     let { title, sections } = attributes;
     return (
-      <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-zinc-200 dark:bg-zinc-900 dark:text-gray-100 items-center">
+      <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100 items-center">
         <Head>
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
@@ -19,8 +19,8 @@ export default class Home extends Component {
             <HomeContent />
           </div>
           {sections.map((section, k) => (
-            <div
-              className="p-2 border-solid border-2 rounded-lg even:rotate-1 odd:-rotate-1 border-violet-400 bg-zinc-100 dark:bg-violet-600 shadow-md transition hover:shadow-lg hover:scale-105 active:border-violet-700 active:bg-zinc-200 dark:active:bg-violet-700"
+            <div // Should make this into a separate component... Can be reused everywhere. And, less of a pain to see all the CSS
+              className="p-2 border-solid border-2 rounded-lg even:rotate-1 odd:-rotate-1 border-violet-200 bg-gradient-to-r from-violet-100 to-orange-100 dark:from-violet-600 dark:to-orange-400 shadow-md shadow-violet-300 dark:shadow-violet-800 transition hover:from-violet-200 hover:to-orange-200 hover:shadow-lg hover:shadow-violet-300 hover:dark:from-violet-700 hover:dark:to-orange-500 hover:dark:shadow-violet-700 hover:scale-105 active:border-violet-700 active:bg-violet-200 dark:active:bg-violet-700"
               key={k}
             >
               <Link href={"/" + section.name.toLowerCase()}>
