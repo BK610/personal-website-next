@@ -31,6 +31,7 @@ export default class Home extends Component {
                   <p className="font-light text-sm text-zinc-700 dark:text-zinc-200">
                     {section.description}
                   </p>
+                  <img className="dark:invert h-8" src={section.icon}></img>
                 </a>
               </Link>
             </div>
