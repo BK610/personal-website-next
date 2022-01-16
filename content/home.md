@@ -10,5 +10,3 @@ sections:
     name: About
 ---
 Hello hello, this is Bailey speaking.
-
-This page is built haphazardly, and with low skill.
