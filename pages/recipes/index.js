@@ -1,19 +1,6 @@
 import Link from "next/link";
 import React, { Component } from "react";
 
-const importRecipes = async () => { // From https://github.com/masives/netlifycms-nextjs/blob/master/pages/blog/index.js
-  const markdownFiles = require
-    .context("../../content/recipes", false, /\.md$/)
-    .keys()
-    .map((relativePath) => relativePath.substring(2));
-  return Promise.all(
-    markdownFiles.map(async (path) => {
-      const markdown = await import(`../../content/recipes/${path}`);
-      return { ...markdown, slug: path.substring(0, path.length - 3) };
-    })
-  );
-};
-
 export default class Recipes extends Component {
   static async getInitialProps() {
     const recipesList = await importRecipes();
@@ -46,3 +33,16 @@ export default class Recipes extends Component {
     );
   }
 }
+
+const importRecipes = async () => { // From https://github.com/masives/netlifycms-nextjs/blob/master/pages/blog/index.js
+  const markdownFiles = require
+    .context("../../content/recipes", false, /\.md$/)
+    .keys()
+    .map((relativePath) => relativePath.substring(2));
+  return Promise.all(
+    markdownFiles.map(async (path) => {
+      const markdown = await import(`../../content/recipes/${path}`);
+      return { ...markdown, slug: path.substring(0, path.length - 3) };
+    })
+  );
+};
