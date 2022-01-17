@@ -1,6 +1,7 @@
 ---
 title: My new recipe!
 date: 2021-12-31T08:15:51.663Z
+description: Descripppption
 thumbnail: img/pxl_20211225_043400207.jpeg
 ---
 Can you believe it?
