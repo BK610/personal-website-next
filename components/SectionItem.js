@@ -3,7 +3,6 @@ import { Component } from "react";
 
 export default class SectionItem extends Component {
   render() {
-    console.log(this.props.className);
     return (
       <Link href={this.props.link}>
         <div
