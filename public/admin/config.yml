@@ -21,8 +21,8 @@ collections:
             - { label: "Name", name: "name", widget: "string"}
             - { label: "Description", name: "description", widget: "text"}
             - { label: "Icon", name: "icon", widget: "image"}
-    - label: "Recipes"
-      name: "recipes"
+    - label: "Recipes Page"
+      name: "recipes-page"
       file: "content/recipes.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
