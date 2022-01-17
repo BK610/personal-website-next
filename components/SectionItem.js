@@ -3,16 +3,17 @@ import { Component } from "react";
 
 export default class SectionItem extends Component {
   render() {
+    console.log(this.props.className);
     return (
       <Link href={this.props.link}>
         <div
-          className="group p-2 border-solid border-2 rounded-lg cursor-pointer
+          className={`${this.props.className} group p-2 border-solid border-2 rounded-lg cursor-pointer
                    even:rotate-1 odd:-rotate-1
                    bg-gradient-to-r from-violet-100 to-orange-100 dark:from-violet-600 dark:to-orange-400
                    hover:from-violet-200 hover:to-orange-200 hover:dark:from-violet-700 hover:dark:to-orange-500
                    border-violet-200 active:border-violet-300 dark:active:border-violet-400
                    shadow-md hover:shadow-lg shadow-violet-300 hover:shadow-violet-300 dark:shadow-violet-800 hover:dark:shadow-violet-700
-                   transition hover:scale-105"
+                   transition hover:scale-105`}
         >
           <a className="grid grid-cols-2">
             <div>
