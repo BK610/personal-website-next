@@ -17,9 +17,10 @@ export default class Recipes extends Component {
             <SectionItem
               link={"/recipes/recipe/" + recipe.slug.toLowerCase()}
               name={recipe.attributes.title}
-              description=""
+              description={recipe.attributes.description}
               icon={recipe.attributes.thumbnail}
               key={k}
+              className={""}
             />
           ))}
         </div>
