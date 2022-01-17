@@ -1,40 +1,35 @@
 import Link from "next/link";
 import React, { Component } from "react";
+import SectionItem from "../../components/SectionItem";
 
 export default class Recipes extends Component {
   static async getInitialProps() {
     const recipesList = await importRecipes();
-    console.log(recipesList);
     return { recipesList };
   }
 
   render() {
     const { recipesList } = this.props;
-    console.log("Rendering list of recipes...");
     return (
-      <>
-        <ul>
+      <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100 items-center">
+        <div className="w-full max-w-md p-2 pb-4 space-y-4 select-none">
           {recipesList.map((recipe, k) => (
-            <li key={k}>
-              <div>
-                <Link href={`recipes/recipe/${recipe.slug}`}>
-                  <div>
-                    <h2>{recipe.attributes.title}</h2>
-                    <p>{recipe.attributes.date}</p>
-                    <img src={recipe.attributes.thumbnail} height="100px"/>
-                    <a>Click Here!</a>
-                  </div>
-                </Link>
-              </div>
-            </li>
+            <SectionItem
+              link={"/recipes/recipe/" + recipe.slug.toLowerCase()}
+              name={recipe.attributes.title}
+              description=""
+              icon={recipe.attributes.thumbnail}
+              key={k}
+            />
           ))}
-        </ul>
-      </>
+        </div>
+      </div>
     );
   }
 }
 
-const importRecipes = async () => { // From https://github.com/masives/netlifycms-nextjs/blob/master/pages/blog/index.js
+const importRecipes = async () => {
+  // From https://github.com/masives/netlifycms-nextjs/blob/master/pages/blog/index.js
   const markdownFiles = require
     .context("../../content/recipes", false, /\.md$/)
     .keys()
