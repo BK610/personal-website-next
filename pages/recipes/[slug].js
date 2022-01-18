@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Post extends Component {
     static async getInitialProps({ query }) {
       const { slug } = query;
-      const recipe = await import(`../../../content/recipes/${slug}.md`).catch(error => null);
+      const recipe = await import(`../../content/recipes/${slug}.md`).catch(error => null);
   
       return { recipe };
     }

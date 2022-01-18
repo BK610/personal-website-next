@@ -15,7 +15,7 @@ export default class Recipes extends Component {
         <div className="w-full max-w-md p-2 pb-4 space-y-4 select-none">
           {recipesList.map((recipe, k) => (
             <SectionItem
-              link={"/recipes/recipe/" + recipe.slug.toLowerCase()}
+              link={"/recipes/" + recipe.slug.toLowerCase()}
               name={recipe.attributes.title}
               description={recipe.attributes.description}
               icon={recipe.attributes.thumbnail}
