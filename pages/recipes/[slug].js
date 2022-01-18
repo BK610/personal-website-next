@@ -14,13 +14,31 @@ export default class Post extends Component {
   render() {
     if (!this.props.recipe) return <MissingContent />;
 
-    console.log(this.props.recipe);
+    const {
+      title,
+      date,
+      thumbnail,
+      description,
+      author,
+      prepTime,
+      totalTime,
+      ingredients
+    } = this.props.recipe.attributes;
+
     return (
       <div>
-        Hello?
-        <h1>{this.props.recipe.attributes.title}</h1>
-        <img src={`../${this.props.recipe.attributes.thumbnail}`} /> 
-        <div>{this.props.recipe.attributes.body}</div>
+        <h1>{title}</h1>
+        <div>{date}</div>
+        <div>{description}</div>
+        <div>{author}</div>
+        <div>{prepTime}</div>
+        <div>{totalTime}</div>
+        {/* <ul>
+          {ingredients.map((ingredient, k) => (
+            <li key={k}>{ingredient}</li>
+          ))}
+        </ul> */}
+        <img src={`../${thumbnail}`} className="h-64" />
       </div>
     );
   }
