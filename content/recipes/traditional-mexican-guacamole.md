@@ -5,8 +5,8 @@ thumbnail: img/guac.png
 description: This guacamole is great! Whether or not you want it spicy, this
   guacamole is a dip to die for!
 author: Kaersten
-prep-time: 10
-total-time: 10
+prepTime: 10
+totalTime: 10
 ingredients: |-
   * 2 avocados, peeled and pitted
   * 1 cup chopped tomatoes
