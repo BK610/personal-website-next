@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MissingContent from "../../components/MissingContent";
+import { micromark } from "micromark";
 
 export default class Post extends Component {
   static async getInitialProps({ query }) {
@@ -22,8 +23,10 @@ export default class Post extends Component {
       author,
       prepTime,
       totalTime,
-      ingredients
+      ingredients,
     } = this.props.recipe.attributes;
+
+    console.log(ingredients);
 
     return (
       <div>
@@ -33,11 +36,7 @@ export default class Post extends Component {
         <div>{author}</div>
         <div>{prepTime}</div>
         <div>{totalTime}</div>
-        {/* <ul>
-          {ingredients.map((ingredient, k) => (
-            <li key={k}>{ingredient}</li>
-          ))}
-        </ul> */}
+        <div dangerouslySetInnerHTML={{__html: micromark(ingredients)}}/>
         <img src={`../${thumbnail}`} className="h-64" />
       </div>
     );
