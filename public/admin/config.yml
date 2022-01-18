@@ -22,7 +22,7 @@ collections:
             - { label: "Description", name: "description", widget: "text"}
             - { label: "Icon", name: "icon", widget: "image"}
     - label: "Recipes Page"
-      name: "recipes-page"
+      name: "recipesPage"
       file: "content/recipes.md"
       fields:
         - { label: "Title", name: "title", widget: "string"}
@@ -38,7 +38,7 @@ collections:
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Author", name: "author", widget: "string"}
-      - {label: "Prep Time", name: "prep-time", widget: "number", value_type: "int"}
-      - {label: "Total Time", name: "total-time", widget: "number", value_type: "int"}
+      - {label: "Prep Time", name: "prepTime", widget: "number", value_type: "int"}
+      - {label: "Total Time", name: "totalTime", widget: "number", value_type: "int"}
       - {label: "Ingredients", name: "ingredients", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
