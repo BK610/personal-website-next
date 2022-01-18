@@ -34,8 +34,11 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "description", widget: "text"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Prep Time", name: "prep-time", widget: "number", value_type: "int"}
+      - {label: "Total Time", name: "total-time", widget: "number", value_type: "int"}
       - {label: "Ingredients", name: "ingredients", widget: "markdown"}
       - {label: "Body", name: "body", widget: "markdown"}
