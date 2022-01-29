@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavBar from "../../components/NavBar";
 import SectionItem from "../../components/SectionItem";
 
 export default class Recipes extends Component {
@@ -12,6 +13,7 @@ export default class Recipes extends Component {
     return (
       <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100 items-center">
         <div className="w-full max-w-md p-2 pb-4 space-y-4 select-none">
+        <NavBar/>
           {recipesList.map((recipe, k) => (
             <SectionItem
               link={"/recipes/" + recipe.slug.toLowerCase()}
