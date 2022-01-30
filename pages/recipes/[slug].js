@@ -24,20 +24,27 @@ export default class Post extends Component {
       prepTime,
       totalTime,
       ingredients,
+      body,
     } = this.props.recipe.attributes;
 
     console.log(ingredients);
 
     return (
       <div>
-        <h1>{title}</h1>
-        <div>{date}</div>
-        <div>{description}</div>
-        <div>{author}</div>
-        <div>{prepTime}</div>
-        <div>{totalTime}</div>
-        <div dangerouslySetInnerHTML={{__html: micromark(ingredients)}}/>
-        <img src={`../${thumbnail}`} className="h-64" />
+        <div className="prose mt-4">
+          <h2>{title}</h2>
+          <div>{date}</div>
+          <div>{description}</div>
+          <div>{author}</div>
+          <div>{prepTime}</div>
+          <div>{totalTime}</div>
+          <div
+            dangerouslySetInnerHTML={{ __html: micromark(ingredients) }}
+            // className="prose"
+          />
+          <img src={`../${thumbnail}`} className="h-64" />
+          <div>{body}</div>
+        </div>
       </div>
     );
   }
