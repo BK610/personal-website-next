@@ -3,7 +3,7 @@ import MissingContent from "../../components/MissingContent";
 import { micromark } from "micromark";
 import NavBar from "../../components/NavBar";
 
-export default class Post extends Component {
+export default class Recipe extends Component {
   static async getInitialProps({ query }) {
     const { slug } = query;
     const recipe = await import(`../../content/recipes/${slug}.md`).catch(
@@ -31,11 +31,11 @@ export default class Post extends Component {
     var dateObj = new Date(date);
 
     return (
-      <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100 items-center">
-        <div className="p-2 pb-4 space-y-4">
+      <div className="flex flex-col h-full min-h-screen bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100 items-center">
+        <div className="max-w-2xl w-full p-2 pb-4 space-y-4">
           <NavBar />
           <div className="prose dark:prose-invert mt-4">
-            <h2>{title}</h2>
+            <h1>{title}</h1>
             <div className="border-b border-b-zinc-500">
               <span className="no-underline">{description}</span>
             </div>
@@ -69,14 +69,14 @@ export default class Post extends Component {
               </div>
             </div>
             <div>
-              <p className="inline underline decoration-1">Ingredients</p>{" "}
+              <h2>Ingredients</h2>
               <div
                 className="select-all"
                 dangerouslySetInnerHTML={{ __html: micromark(ingredients) }}
               />
             </div>
             <div>
-              <p className="inline underline decoration-1">Recipe</p>{" "}
+              <h2>Recipe</h2>
               <div dangerouslySetInnerHTML={{ __html: micromark(content) }} />
             </div>
           </div>
