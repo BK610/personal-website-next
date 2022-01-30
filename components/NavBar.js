@@ -19,22 +19,22 @@ import { useRouter } from "next/router";
 // }
 
 function NavBar() {
+  const router = useRouter();
+
   // Shorthand for going up one URL level: "."
   return (
     <div className="py-2 font-light text-sm text-zinc-700 dark:text-zinc-300 border-b border-zinc-500 dark:border-zinc-500">
       <Link href="/">
         <div className="w-fit mr-1 inline-block group transition hover:scale-105">
-          <div>
-            <a
-              className="p-1 cursor-pointer
+          <a
+            className="p-1 cursor-pointer
           border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
-            >
-              <span className="inline-block group-hover:animate-slowgrow">
-                <img className="h-8 dark:invert" src="../public/img/home-navigation.svg"></img>
-              </span>{" "}
-              Home
-            </a>
-          </div>
+          >
+            <span className="inline-block group-hover:animate-slowgrow">
+              🏠
+            </span>{" "}
+            Home
+          </a>
         </div>
       </Link>
       <span className="px-1 mr-1 inline-block">•</span>
@@ -55,9 +55,9 @@ function NavBar() {
       </Link>
       <span className="px-1 mr-1 inline-block">•</span>
       <div className="w-fit mr-1 inline-block group transition hover:scale-105">
-        <button onClick={() => history.back()}>
+        <button className="font-light text-sm text-zinc-700 dark:text-zinc-300" onClick={router.back}>
           <a
-            className="p-1  cursor-pointer
+            className="p-1 cursor-pointer
           border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
           >
             <span className="inline-block group-hover:animate-bounceleft">
