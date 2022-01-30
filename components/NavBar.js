@@ -18,12 +18,12 @@ import { useRouter } from "next/router";
 //   return upURL;
 // }
 
-function NavBar() {
+function NavBar(props) {
   const router = useRouter();
 
   // Shorthand for going up one URL level: "."
   return (
-    <div className="py-2 select-none font-light text-sm text-zinc-800 dark:text-zinc-300 border-b border-zinc-500 dark:border-zinc-500">
+    <div className={`${props.className} py-2 select-none font-light text-sm text-zinc-800 dark:text-zinc-300 border-b border-zinc-500 dark:border-zinc-500`}>
       <Link href="/">
         <div className="w-fit mr-1 inline-block group transition hover:scale-105">
           <a
