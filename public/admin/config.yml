@@ -41,4 +41,4 @@ collections:
       - {label: "Prep Time", name: "prepTime", widget: "number", value_type: "int"}
       - {label: "Total Time", name: "totalTime", widget: "number", value_type: "int"}
       - {label: "Ingredients", name: "ingredients", widget: "markdown"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Content", name: "content", widget: "markdown"}

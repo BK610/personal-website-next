@@ -15,6 +15,7 @@ ingredients: |-
   * 2 tablespoons lemon juice
   * 1 jalapeño, seeded and minced (Optional)
   * Salt and ground black pepper, to taste
+content: |-
+  1. Mash avocados in a bowl until creamy.
+  2. Mix tomatoes, onion, cilantro, lemon juice, and jalapeño pepper into mashed avocado until well combined; season with salt and black pepper.
 ---
-1. Mash avocados in a bowl until creamy.
-2. Mix tomatoes, onion, cilantro, lemon juice, and jalapeño pepper into mashed avocado until well combined; season with salt and black pepper.

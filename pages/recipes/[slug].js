@@ -25,7 +25,7 @@ export default class Post extends Component {
       prepTime,
       totalTime,
       ingredients,
-      body,
+      content,
     } = this.props.recipe.attributes;
 
     console.log(ingredients);
@@ -42,10 +42,11 @@ export default class Post extends Component {
           <div>{totalTime}</div>
           <div
             dangerouslySetInnerHTML={{ __html: micromark(ingredients) }}
-            // className="prose"
           />
           <img src={`../${thumbnail}`} className="h-64" />
-          <div>{body}</div>
+          <div
+            dangerouslySetInnerHTML={{ __html: micromark(content) }}
+          />
         </div>
       </div>
     );
