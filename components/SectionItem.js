@@ -15,7 +15,7 @@ export default class SectionItem extends Component {
                    transition hover:scale-105`}
         >
           <a className="grid grid-cols-2">
-            <div>
+            <div className="self-center">
               <h2 className="font-medium dark:text-violet-100">
                 {this.props.name}
               </h2>
