@@ -1,7 +1,7 @@
 ---
 title: Creamy Garlic Shrimp Toast
 date: 2022-01-30T08:13:06.904Z
-thumbnail: https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F43%2F2022%2F01%2F18%2FCreamy-Garlic-Shrimp-Toast-2000.jpg&w=574&h=384&c=sc&poi=face&q=60
+thumbnail: img/garlictoast.png
 description: Sweet, butterflied shrimp in a garlicky cream sauce with a smoky
   paprika flavor are served over thick slices of buttery, pan-toasted French
   bread in this simple recipe for two! This sauce would be good over pasta,
