@@ -53,5 +53,8 @@ module.exports = {
       animation: ["hover", "group-hover"],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require('@tailwindcss/line-clamp')
+  ],
 };
