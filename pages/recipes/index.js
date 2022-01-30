@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
 import { attributes, react as RecipesContent } from "../../content/recipes.md";
-import SectionItem from "../../components/SectionItem";
+import RecipeSectionItem from "../../components/RecipeSectionItem";
 
 export default class Recipes extends Component {
   static async getInitialProps() {
@@ -24,7 +24,7 @@ export default class Recipes extends Component {
               </div>
               <div className="space-y-4">
                 {recipesList.map((recipe, k) => (
-                  <SectionItem
+                  <RecipeSectionItem
                     link={"/recipes/" + recipe.slug.toLowerCase()}
                     name={recipe.attributes.title}
                     description={recipe.attributes.description}
