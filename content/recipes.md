@@ -1,5 +1,5 @@
 ---
-title: Recipes page
+title: Recipes
 date: 2022-01-17T13:43:12.083Z
 ---
-Hello hello, this is Recipes speaking.
+Behold, my lovely recipes.

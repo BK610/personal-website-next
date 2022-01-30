@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../../components/NavBar";
+import { attributes, react as RecipesContent } from "../../content/recipes.md";
 import SectionItem from "../../components/SectionItem";
 
 export default class Recipes extends Component {
@@ -9,14 +10,18 @@ export default class Recipes extends Component {
   }
 
   render() {
+    let { title } = attributes;
     const { recipesList } = this.props;
     return (
       <div className="flex flex-col h-full min-h-screen w-full min-w-screen bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100 items-center select-none">
         <div className="max-w-2xl w-full p-2 pb-4 space-y-4">
           <NavBar />
           <div className="w-full flex flex-col items-center">
-            <div className="w-full max-w-md">
-              <h2 className="text-xl self-start mb-2">Recipes</h2>
+            <div className="w-full max-w-md space-y-4">
+              <h2 className="text-xl self-start mb-2">{title}</h2>
+              <div>
+                <RecipesContent />
+              </div>
               <div className="space-y-4">
                 {recipesList.map((recipe, k) => (
                   <SectionItem
