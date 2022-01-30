@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MissingContent from "../../components/MissingContent";
 import { micromark } from "micromark";
+import NavBar from "../../components/NavBar";
 
 export default class Post extends Component {
   static async getInitialProps({ query }) {
@@ -31,6 +32,7 @@ export default class Post extends Component {
 
     return (
       <div>
+        <NavBar/>
         <div className="prose mt-4">
           <h2>{title}</h2>
           <div>{date}</div>
