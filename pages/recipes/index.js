@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NavBar from "../../components/NavBar";
 import { attributes, react as RecipesContent } from "../../content/recipes.md";
 import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
