@@ -1,7 +1,7 @@
 import NavBar from "./NavBar";
 
 export default function BaseLayout({ children, navbarVisible }) {
-    const navbar = true; // Default navbar to visible
+    var navbar = true; // Default navbar to visible
     // console.log(navbarVisible);
     // console.log(navbar);
     if (typeof navbarVisible !== 'undefined') {
