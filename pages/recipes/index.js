@@ -13,7 +13,7 @@ export default class Recipes extends Component {
     let { title } = attributes;
     const { recipesList } = this.props;
     return (
-      <BaseLayout navbarVisible={true}>
+      <BaseLayout navbarVisible={true} titleText={"Recipes"}>
         <div className="w-full flex flex-col items-center">
           <div className="w-full max-w-md space-y-4">
             <h2 className="text-xl self-start mb-2">{title}</h2>

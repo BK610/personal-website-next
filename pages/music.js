@@ -5,7 +5,7 @@ import MissingContent from "../components/MissingContent";
 export default class Music extends Component {
   render() {
     return (
-      <BaseLayout>
+      <BaseLayout titleText={"Music"}>
         <MissingContent />
       </BaseLayout>
     );

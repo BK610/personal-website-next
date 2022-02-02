@@ -5,7 +5,7 @@ import MissingContent from "../components/MissingContent";
 export default class About extends Component {
   render() {
     return (
-      <BaseLayout>
+      <BaseLayout titleText={"About"}>
         <MissingContent />
       </BaseLayout>
     );
