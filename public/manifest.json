@@ -1,6 +1,7 @@
 {
   "name": "Bailey Kane PWA",
   "short_name": "BKPWA",
+  "description": "Bailey Kane's personal website, as a PWA.",
   "icons": [
     {
       "src": "android-chrome-192x192.png",
@@ -14,9 +15,10 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#FFFFFF",
-  "background_color": "#FFFFFF",
+  "theme_color": "#ddd7fe",
+  "background_color": "#ddd7fe",
   "start_url": "/",
-  "display": "standalone",
+  "id": "/",
+  "display": "minimal-ui",
   "orientation": "portrait"
 }
