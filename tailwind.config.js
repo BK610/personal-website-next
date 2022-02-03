@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "base": "url('/img/base.svg')",
+        'base-dark': "url('/img/base-dark.svg')",
+      },
       keyframes: {
         wiggle: {
           "25%": { transform: "rotate(-1deg)" },
@@ -12,11 +16,11 @@ module.exports = {
         },
         slowgrow: {
           "0%, 100%": {
-            transform: "scale(1)"
+            transform: "scale(1)",
           },
           "50%": {
-            transform: "scale(1.1)"
-          }
+            transform: "scale(1.1)",
+          },
         },
         bounceleft: {
           "0%, 100%": {
@@ -55,6 +59,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require('@tailwindcss/line-clamp')
+    require("@tailwindcss/line-clamp"),
   ],
 };
