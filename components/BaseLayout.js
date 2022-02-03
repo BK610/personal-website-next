@@ -22,9 +22,10 @@ export default function BaseLayout({ children, navbarVisible, titleText }) {
         <title>{title}</title>
       </Head>
       <div
-        className="flex flex-col items-center select-none
+        className="flex flex-col items-center
     h-full min-h-screen w-full min-w-screen
-    bg-gradient-to-b from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900 dark:text-gray-100"
+    bg-repeat bg-local bg-base dark:bg-base-dark
+    select-none dark:text-gray-100"
       >
         <div className="max-w-2xl w-full p-2 pb-4 space-y-4">
           <NavBar className={navbar} />
