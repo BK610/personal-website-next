@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import config from "../config.local.json";
 
 const BaseMap = () => {
 
   if(process.env.NODE_ENV === 'development') {
+    const config = require("../config.local.json")
     mapboxgl.accessToken = config.MAPBOX_ACCESS_TOKEN;
+    
   } else {
     mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
   }
