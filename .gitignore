@@ -7,3 +7,4 @@ public/sw.js
 public/sw.js.map
 public/workbox*
 public/fallback*
+config.local.json
