@@ -3,7 +3,12 @@ import mapboxgl from "mapbox-gl";
 import config from "../config.local.json";
 
 const BaseMap = () => {
-  mapboxgl.accessToken = config.MAPBOX_ACCESS_TOKEN;
+
+  if(process.env.NODE_ENV === 'development') {
+    mapboxgl.accessToken = config.MAPBOX_ACCESS_TOKEN;
+  } else {
+    mapboxgl.accessToken = process.env.MAPBOX_ACCESS_TOKEN;
+  }
 
   useEffect(() => {
     const map = new mapboxgl.Map({
