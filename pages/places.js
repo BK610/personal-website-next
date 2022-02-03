@@ -8,7 +8,7 @@ export default class Places extends Component {
     return (
       <>
         <Head>
-          <link
+          <link // Styles Mapbox and adds features. Removing this makes the map very simplistic
             href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
             rel="stylesheet"
           />
