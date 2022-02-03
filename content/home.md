@@ -11,5 +11,8 @@ sections:
   - name: About
     description: Hello there
     icon: img/hand-waving-fill-svgrepo-com.svg
+  - name: Places
+    description: Where I've been
+    icon: img/map-fill-svgreop-com.svg
 ---
 Hello hello, this is Bailey speaking.
