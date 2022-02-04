@@ -33,7 +33,7 @@ const BaseMap = () => {
     );
   }, []);
 
-  return <div id="mapContainer" className="w-full h-full"></div>;
+  return <div id="mapContainer" className="w-full h-full"/>;
 };
 
 export default BaseMap;
