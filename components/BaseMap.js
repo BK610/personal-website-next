@@ -12,17 +12,24 @@ const BaseMap = () => {
       zoom: 9,
     });
 
-    map.addControl( // Add Geolocate button to find users. https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol
+    map.addControl(
+      // Add Fullscreen element. https://docs.mapbox.com/mapbox-gl-js/api/markers/#fullscreencontrol
+      new mapboxgl.FullscreenControl()
+    );
+
+    map.addControl(
+      // Add Navigation elements. https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol
+      new mapboxgl.NavigationControl()
+    );
+
+    map.addControl(
+      // Add Geolocate button to find users. https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol
       new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true,
         },
         trackUserLocation: true,
       })
-    );
-
-    map.addControl( // Add Navigation elements. https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol
-      new mapboxgl.NavigationControl()
     );
   }, []);
 
