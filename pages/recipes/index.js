@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { attributes, react as RecipesContent } from "../../content/recipes.md";
 import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
+import SectionList from "../../components/SectionList";
 
 export default class Recipes extends Component {
   static async getInitialProps() {
@@ -20,7 +21,7 @@ export default class Recipes extends Component {
             <div className="text-lg">
               <RecipesContent />
             </div>
-            <div className="space-y-4">
+            <SectionList>
               {recipesList.map((recipe, k) => (
                 <RecipeSectionItem
                   link={"/recipes/" + recipe.slug.toLowerCase()}
@@ -31,7 +32,7 @@ export default class Recipes extends Component {
                   className={"max-w-md w-full"}
                 />
               ))}
-            </div>
+            </SectionList>
           </div>
         </div>
       </BaseLayout>
