@@ -23,10 +23,13 @@ function NavBar(props) {
 
   // Shorthand for going up one URL level: "."
   return (
-    <div className={`${props.className} py-2 select-none font-light text-sm text-zinc-800 dark:text-zinc-300 border-b border-zinc-500 dark:border-zinc-500`}>
+    <div
+      className={`${props.className} py-2 select-none font-light text-sm text-zinc-800 dark:text-zinc-300 border-b border-zinc-500 dark:border-zinc-500`}
+    >
       <Link href="/">
         <div className="w-fit mr-1 inline-block group transition hover:scale-105">
           <a
+            href="/"
             className="p-1 cursor-pointer
           border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
           >
@@ -42,6 +45,7 @@ function NavBar(props) {
         <div className="w-fit mr-1 inline-block group transition hover:scale-105">
           <div>
             <a
+              href="."
               className="p-1 cursor-pointer
           border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
             >
@@ -55,7 +59,10 @@ function NavBar(props) {
       </Link>
       <span className="px-1 mr-1 inline-block">•</span>
       <div className="w-fit mr-1 inline-block group transition hover:scale-105">
-        <button className="font-light text-sm text-zinc-700 dark:text-zinc-300" onClick={router.back}>
+        <button
+          className="font-light text-sm text-zinc-700 dark:text-zinc-300"
+          onClick={router.back}
+        >
           <a
             className="p-1 cursor-pointer
           border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
