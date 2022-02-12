@@ -18,54 +18,45 @@ import { useRouter } from "next/router";
 //   return upURL;
 // }
 
+const NavItem = ({ link, title, icon }) => {
+  return (
+    <Link href={link}>
+      <div className="w-fit mr-1 inline-block group transition hover:scale-105">
+        <a
+          href="/"
+          className="p-1 cursor-pointer
+    border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
+        >
+          <span className="inline-block group-hover:animate-slowgrow">
+            {icon}
+          </span>{" "}
+          {title}
+        </a>
+      </div>
+    </Link>
+  );
+};
+
 function NavBar(props) {
   const router = useRouter();
 
   // Shorthand for going up one URL level: "."
   return (
     <div
-      className={`${props.className} py-2 select-none font-light text-sm text-zinc-800 dark:text-zinc-300 border-b border-zinc-500 dark:border-zinc-500`}
+      className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-300`}
     >
-      <Link href="/">
-        <div className="w-fit mr-1 inline-block group transition hover:scale-105">
-          <a
-            href="/"
-            className="p-1 cursor-pointer
-          border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
-          >
-            <span className="inline-block group-hover:animate-slowgrow">
-              🏠
-            </span>{" "}
-            Home
-          </a>
-        </div>
-      </Link>
+      <NavItem link="/" title="Home" icon="🏠" />
       <span className="px-1 mr-1 inline-block">•</span>
-      <Link href=".">
-        <div className="w-fit mr-1 inline-block group transition hover:scale-105">
-          <div>
-            <a
-              href="."
-              className="p-1 cursor-pointer
-          border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
-            >
-              <span className="inline-block group-hover:animate-bounceup">
-                ↑
-              </span>{" "}
-              Up One Section
-            </a>
-          </div>
-        </div>
-      </Link>
+      <NavItem link="." title="Up One Section" icon="↑" />
       <span className="px-1 mr-1 inline-block">•</span>
       <div className="w-fit mr-1 inline-block group transition hover:scale-105">
         <button
-          className="font-light text-sm text-zinc-700 dark:text-zinc-300"
+          className="font-light text-sm text-stone-800 dark:text-stone-200"
           onClick={router.back}
         >
           <a
             className="p-1 cursor-pointer
-          border border-solid border-transparent rounded-lg hover:border-zinc-700 hover:dark:border-zinc-300"
+          border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
           >
             <span className="inline-block group-hover:animate-bounceleft">
               ←
