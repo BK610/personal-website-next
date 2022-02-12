@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Component } from "react";
 import { attributes, react as HomeContent } from "../content/home.md";
-import SectionItem from "../components/SectionItem";
+import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
 
 export default class Home extends Component {
@@ -10,7 +10,7 @@ export default class Home extends Component {
     return (
       <>
         <Head>
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+          <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Head>
         <BaseLayout navbarVisible={false}>
           <div className="w-full flex flex-col items-center">
@@ -22,7 +22,7 @@ export default class Home extends Component {
                 <HomeContent />
               </div>
               {sections.map((section, k) => (
-                <SectionItem
+                <HomeSectionItem
                   link={"/" + section.name.toLowerCase()}
                   name={section.name}
                   description={section.description}
