@@ -18,10 +18,11 @@ export default function BaseLayout({ children, navbarVisible=true, titleText }) 
       <div
         className="flex flex-col items-center
     h-full min-h-screen w-full min-w-screen
-    bg-repeat bg-local bg-base dark:bg-base-dark
-    select-none dark:text-gray-100"
+    bg-myorange-50
+    dark:bg-gradient-to-br dark:from-mygreen-900 dark:to-mygreen-800
+    select-none text-stone-900 dark:text-stone-100"
       >
-        <div className="max-w-2xl w-full p-2 pb-4 space-y-4">
+        <div className="max-w-2xl w-full p-2 space-y-4">
           <NavBar className={navbarVisible} />
           <main>{children}</main>
         </div>
