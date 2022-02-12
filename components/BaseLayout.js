@@ -3,7 +3,6 @@ import NavBar from "./NavBar";
 
 export default function BaseLayout({ children, navbarVisible=true, titleText }) {
   navbarVisible = navbarVisible ? "" : "invisible";
-  console.log(navbarVisible);
 
   var title = "Bailey Kane";
 
