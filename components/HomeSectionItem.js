@@ -7,8 +7,8 @@ export default class HomeSectionItem extends Component {
     console.log(this.props);
     console.log(this.props.link);
     return (
-      <Link className="-m-2" href={this.props.link} passHref>
-        <SectionItem>
+      <Link href={this.props.link} passHref>
+        <SectionItem className="group transition hover:scale-105 p-2 cursor-pointer">
           <a className="grid grid-cols-2">
             <div className="self-center">
               <h2 className="font-medium dark:text-violet-100">
