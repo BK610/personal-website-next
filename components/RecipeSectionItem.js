@@ -5,7 +5,7 @@ import SectionItem from "./SectionItem";
 export default class RecipeSectionItem extends Component {
   render() {
     return (
-      <Link href={this.props.link}>
+      <Link href={this.props.link} passHref>
         <SectionItem
           className="group cursor-pointer transition hover:scale-105
                    overflow-hidden
@@ -20,7 +20,7 @@ export default class RecipeSectionItem extends Component {
                 {this.props.name}
               </h2>
               <p
-                className="font-light text-sm text-zinc-700 dark:text-zinc-200
+                className="font-normal text-sm text-zinc-700 dark:text-zinc-200
               line-clamp-3"
               >
                 {this.props.description}
