@@ -31,6 +31,7 @@ export default class MusicItem extends Component {
       <SectionItem
         className="overflow-hidden
         flex flex-col
+        transition
         divide-y divide-zinc-400 dark:divide-zinc-300"
       >
           <div className="group hover:underline">
@@ -44,7 +45,7 @@ export default class MusicItem extends Component {
                   <h2 className="basis-11/12 font-medium dark:text-violet-100 line-clamp-1">
                     {this.props.info.title}
                   </h2>
-                  <div className="text-right basis-1/12 font-light text-sm dark:text-zinc-200">
+                  <div className="text-right basis-1/12 dark:text-zinc-200">
                     <img
                       src="img/external-link-outline-svgrepo-com.svg"
                       className="inline dark:invert"
@@ -71,7 +72,7 @@ export default class MusicItem extends Component {
                   ),
                 }}
                 className="prose prose-zinc dark:prose-invert
-              prose-sm font-light prose-a:font-light leading-normal dark:text-violet-100
+              prose-sm font-normal prose-a:font-normal leading-normal dark:text-violet-100
               "
               />
             </div>
