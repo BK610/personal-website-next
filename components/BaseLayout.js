@@ -1,14 +1,9 @@
 import Head from "next/head";
 import NavBar from "./NavBar";
 
-export default function BaseLayout({ children, navbarVisible, titleText }) {
-  var navbar = true; // Default navbar to visible
-  // console.log(navbarVisible);
-  // console.log(navbar);
-  if (typeof navbarVisible !== "undefined") {
-    navbar = navbarVisible ? "" : "invisible";
-  }
-  // console.log(navbar);
+export default function BaseLayout({ children, navbarVisible=true, titleText }) {
+  navbarVisible = navbarVisible ? "" : "invisible";
+  console.log(navbarVisible);
 
   var title = "Bailey Kane";
 
@@ -28,7 +23,7 @@ export default function BaseLayout({ children, navbarVisible, titleText }) {
     select-none dark:text-gray-100"
       >
         <div className="max-w-2xl w-full p-2 pb-4 space-y-4">
-          <NavBar className={navbar} />
+          <NavBar className={navbarVisible} />
           <main>{children}</main>
         </div>
       </div>
