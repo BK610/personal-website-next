@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .item-list:hover > div {
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .item-list:hover > *:hover {
+    opacity: 1;
+
+  }
+}
