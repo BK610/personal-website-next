@@ -12,7 +12,7 @@ export default class HomeSectionItem extends Component {
               <h2 className="font-medium dark:text-violet-100">
                 {this.props.name}
               </h2>
-              <p className="font-light text-sm text-zinc-700 dark:text-zinc-200">
+              <p className="font-normal text-sm text-zinc-700 dark:text-zinc-200">
                 {this.props.description}
               </p>
             </div>
