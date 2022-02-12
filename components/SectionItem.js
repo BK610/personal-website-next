@@ -14,7 +14,6 @@ to the children correctly, and the links don't work.
 */
 
 const SectionItem = React.forwardRef(({ onClick, href, ...props }, ref) => {
-  console.log(props);
   return (
     <div
       className={`${props.className} rounded-lg
