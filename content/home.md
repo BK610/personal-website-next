@@ -18,5 +18,5 @@ sections:
 content: |-
   I wanted a place to keep track of things that I've made, or are important to me, so I built this.
   
-  Hope you enjoy too.
+  Hope you enjoy.
 ---
