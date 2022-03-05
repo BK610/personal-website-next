@@ -18,7 +18,7 @@ import { useRouter } from "next/router";
 //   return upURL;
 // }
 
-const NavItem = ({ link, title, icon }) => {
+const NavItem = ({ link, title, icon, animation }) => {
   return (
     <Link href={link}>
       <div className="w-fit mr-1 inline-block group transition hover:scale-105">
@@ -27,7 +27,7 @@ const NavItem = ({ link, title, icon }) => {
           className="p-1 cursor-pointer
     border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
         >
-          <span className="inline-block group-hover:animate-slowgrow">
+          <span className={`inline-block group-hover:animate-${animation}`}>
             {icon}
           </span>{" "}
           {title}
@@ -45,9 +45,9 @@ function NavBar(props) {
     <div
       className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-300`}
     >
-      <NavItem link="/" title="Home" icon="🏠" />
+      <NavItem link="/" title="Home" icon="🏠" animation="slowgrow"/>
       <span className="px-1 mr-1 inline-block">•</span>
-      <NavItem link="." title="Up One Section" icon="↑" />
+      <NavItem link="." title="Up One Section" icon="↑" animation="bounceup"/>
       <span className="px-1 mr-1 inline-block">•</span>
       <div className="w-fit mr-1 inline-block group transition hover:scale-105">
         <button
