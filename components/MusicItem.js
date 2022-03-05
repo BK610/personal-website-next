@@ -9,7 +9,7 @@ export default class MusicItem extends Component {
     switch (type) {
       case "YouTube":
         content = (
-          <iframe src={embed_url} className="h-full w-full" allowFullScreen />
+          <iframe src={embed_url} className="aspect-video h-full w-full" allowFullScreen />
         );
         break;
       case "File":
@@ -77,7 +77,7 @@ export default class MusicItem extends Component {
               />
             </div>
             <div
-              className="sm:w-2/3 w-full h-full
+              className="sm:w-2/3 w-full h-full 
           bg-center bg-[url('/img/loading.svg')] dark:bg-[url('/img/loading-dark.svg')]"
             >
               {this.getContentBytype(
