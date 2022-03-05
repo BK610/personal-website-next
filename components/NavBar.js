@@ -49,7 +49,7 @@ function NavBar(props) {
       <span className="px-1 mr-1 inline-block">•</span>
       <NavItem link="." title="Up One Section" icon="↑" animation="bounceup"/>
       <span className="px-1 mr-1 inline-block">•</span>
-      <div className="w-fit mr-1 inline-block group transition hover:scale-105">
+      <div className="w-fit mr-1 inline-block group transition">
         <button
           className="font-light text-sm text-stone-800 dark:text-stone-200"
           onClick={router.back}
