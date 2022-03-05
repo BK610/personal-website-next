@@ -32,7 +32,7 @@ export default class Recipe extends Component {
 
     return (
       <BaseLayout>
-        <div className="prose dark:prose-invert mt-4">
+        <div className="prose prose-stone dark:prose-invert mt-4">
           <h1>{title}</h1>
           <div className="border-b border-b-stone-500">
             <span className="no-underline">{description}</span>
