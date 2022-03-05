@@ -14,5 +14,10 @@ sections:
   - name: Places
     description: Where I've been
     icon: img/map-fill-svgreop-com.svg
+content: |-
+  Hello hello, this is Bailey speaking.
+
+  I wanted a place to keep track of things that I've made, or are important to me, so I built this.
+  
+  Hope you enjoy too.
 ---
-Hello hello, this is Bailey speaking.

@@ -1,15 +1,16 @@
 import Head from "next/head";
 import { Component } from "react";
-import { attributes, react as HomeContent } from "../content/home.md";
+import { attributes } from "../content/home.md";
 import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
+import { micromark } from "micromark";
 import Image from "next/image";
 import BackgroundImage from "../public/img/BackgroundImage.jpg";
 
 export default class Home extends Component {
   render() {
-    const { title, sections } = attributes;
+    const { title, sections, content } = attributes;
     return (
       <>
         <Head>
@@ -25,8 +26,11 @@ export default class Home extends Component {
                 <div className="text-xl ">
                   <h2>{title}</h2>
                 </div>
-                <div className="text-lg">
-                  <HomeContent />
+                <div
+                  className="prose prose-stone"
+                  dangerouslySetInnerHTML={{ __html: micromark(content) }}
+                >
+                  {/* <HomeContent /> */}
                 </div>
                 <SectionList>
                   {sections.map((section, k) => (
