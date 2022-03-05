@@ -14,7 +14,7 @@ export default class About extends Component {
               className="rounded-lg border border-stone-800 dark:border-stone-200 object-cover h-72 w-72 sm:w-full"
               src={`/img/Headshot.jpg`}
             />
-            <p className="mt-1 text-center">☝️ Also a work in progress.</p>
+            <p className="mt-1 text-center">☝️ Me, also a work in progress.</p>
           </div>
         </div>
       </BaseLayout>
