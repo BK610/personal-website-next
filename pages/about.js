@@ -1,5 +1,6 @@
 import { Component } from "react";
 import BaseLayout from "../components/BaseLayout";
+import PageHeading from "../components/PageHeading";
 
 export default class About extends Component {
   render() {
@@ -7,7 +8,8 @@ export default class About extends Component {
       <BaseLayout titleText={"About"}>
         <div className="grid grid-cols-2 gap-y-4">
           <div className="col-span-2 sm:col-span-1">
-            Hello! Work in progress.
+            <PageHeading>About</PageHeading> &nbsp;
+            <p>Hello! Work in progress.</p>
           </div>
           <div className="col-span-2 sm:col-span-1 place-self-center sm:justify-self-auto">
             <img
