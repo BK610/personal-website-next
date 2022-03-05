@@ -35,7 +35,7 @@ export default class Recipe extends Component {
       <BaseLayout>
         <div className="prose dark:prose-invert mt-4">
           <h1>{title}</h1>
-          <div className="border-b border-b-zinc-500">
+          <div className="border-b border-b-stone-500">
             <span className="no-underline">{description}</span>
           </div>
           <div className="grid grid-cols-2">

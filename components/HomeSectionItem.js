@@ -9,10 +9,10 @@ export default class HomeSectionItem extends Component {
         <SectionItem className="group transition hover:scale-105 p-2 cursor-pointer">
           <a className="grid grid-cols-2" href={this.props.link}>
             <div className="self-center">
-              <h2 className="font-medium dark:text-violet-100">
+              <h2 className="font-medium dark:text-purple-100">
                 {this.props.name}
               </h2>
-              <p className="font-normal text-sm text-zinc-700 dark:text-zinc-200">
+              <p className="font-normal text-sm text-stone-700 dark:text-stone-200">
                 {this.props.description}
               </p>
             </div>

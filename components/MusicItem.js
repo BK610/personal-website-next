@@ -32,7 +32,7 @@ export default class MusicItem extends Component {
         className="overflow-hidden
         flex flex-col
         transition
-        divide-y divide-zinc-400 dark:divide-zinc-300"
+        divide-y divide-stone-400 dark:divide-stone-300"
       >
           <div className="group hover:underline">
             {this.props.info.link_url ? (
@@ -42,10 +42,10 @@ export default class MusicItem extends Component {
                 className="h-full w-full"
               >
                 <div className="p-2 flex flex-row hover:underline group-hover:animate-wiggle">
-                  <h2 className="basis-11/12 font-medium dark:text-violet-100 line-clamp-1">
+                  <h2 className="basis-11/12 font-medium dark:text-purple-100 line-clamp-1">
                     {this.props.info.title}
                   </h2>
-                  <div className="text-right basis-1/12 dark:text-zinc-200">
+                  <div className="text-right basis-1/12 dark:text-stone-200">
                     <img
                       src="img/external-link-outline-svgrepo-com.svg"
                       className="inline dark:invert"
@@ -55,13 +55,13 @@ export default class MusicItem extends Component {
               </a>
             ) : (
               <div className="p-2">
-                <h2 className="font-medium dark:text-violet-100 line-clamp-1">
+                <h2 className="font-medium dark:text-purple-100 line-clamp-1">
                   {this.props.info.title}
                 </h2>
               </div>
             )}
           </div>
-          <div className="flex flex-row flex-wrap sm:h-40 h-fit divide-x divide-zinc-400 dark:divide-zinc-300">
+          <div className="flex flex-row flex-wrap sm:h-40 h-fit divide-x divide-stone-400 dark:divide-stone-300">
             <div className="w-full sm:w-1/3 p-2 h-full break-words text-ellipsis overflow-auto">
               <div
                 dangerouslySetInnerHTML={{
@@ -71,8 +71,8 @@ export default class MusicItem extends Component {
                       : ""
                   ),
                 }}
-                className="prose prose-zinc dark:prose-invert
-              prose-sm font-normal prose-a:font-normal leading-normal dark:text-violet-100
+                className="prose prose-stone dark:prose-invert
+              prose-sm font-normal prose-a:font-normal leading-normal dark:text-purple-100
               "
               />
             </div>

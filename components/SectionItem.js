@@ -11,15 +11,15 @@ this includes props.children.
 Specifying each of these in the parent div **is required**, otherwise they don't pass
 to the children correctly, and the links don't work.
 
-hover:from-violet-200 hover:to-orange-200 hover:dark:from-violet-700 hover:dark:to-orange-500
+hover:from-purple-200 hover:to-orange-200 hover:dark:from-purple-700 hover:dark:to-orange-500
 */
 
 const SectionItem = React.forwardRef(({ onClick, href, ...props }, ref) => {
   return (
     <div
       className={`${props.className} rounded-lg
-               bg-gradient-to-r from-myorange-100 to-mypurple-200 dark:from-mygreen-600 dark:to-mygreen-400
-               border-2 border-myorange-300 active:border-mypurple-300 dark:border-myorange-100 active:dark:border-myorange-50
+               bg-gradient-to-r from-purple-200 to-orange-100 dark:from-purple-500 dark:to-orange-300
+               border-2 border-purple-200 active:border-purple-300 dark:border-purple-300 active:dark:border-purple-100
                shadow-md hover:shadow-lg
                `}
       ref={ref}

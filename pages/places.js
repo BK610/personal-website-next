@@ -20,7 +20,7 @@ export default class Places extends Component {
             <div
               className="w-full h-96 overflow-hidden
           rounded-lg
-          border border-zinc-500"
+          border border-stone-500"
             >
               <BaseMap />
             </div>

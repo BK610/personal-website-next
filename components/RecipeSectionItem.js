@@ -16,19 +16,19 @@ export default class RecipeSectionItem extends Component {
             href={this.props.link}
           >
             <div className="p-2 col-span-2 overflow-hidden">
-              <h2 className="font-medium dark:text-violet-100">
+              <h2 className="font-medium dark:text-purple-100">
                 {this.props.name}
               </h2>
               <p
-                className="font-normal text-sm text-zinc-700 dark:text-zinc-200
+                className="font-normal text-sm text-stone-700 dark:text-stone-200
               line-clamp-3"
               >
                 {this.props.description}
               </p>
             </div>
-            <div className="h-full w-full overflow-hidden border-l border-violet-200">
+            <div className="h-full w-full overflow-hidden">
               <img
-                className="self-center h-full w-full object-cover group-hover:animate-slowgrow"
+                className="self-center h-full w-full object-cover"
                 src={this.props.icon}
               ></img>
             </div>

@@ -41,7 +41,7 @@ export default class Home extends Component {
                 </SectionList>
               </div>
             </div>
-            <div className="h-[28rem] rounded-lg overflow-hidden">
+            {/* <div className="h-[28rem] rounded-lg overflow-hidden">
               <Image
                 src={BackgroundImage}
                 placeholder="blur"
@@ -50,7 +50,7 @@ export default class Home extends Component {
                 layout="fill"
                 objectFit="cover"
               />
-            </div>
+            </div> */}
           </div>
         </BaseLayout>
       </>
