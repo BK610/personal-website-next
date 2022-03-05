@@ -50,6 +50,10 @@ module.exports = {
           "25%": { transform: "rotate(-1deg)" },
           "75%": { transform: "rotate(1deg)" },
         },
+        wigglelg: {
+          "25%": { transform: "rotate(-5deg)" },
+          "75%": { transform: "rotate(5deg)" },
+        },
         slowgrow: {
           "0%, 100%": {
             transform: "scale(1)",
@@ -82,6 +86,7 @@ module.exports = {
       animation: {
         spinslow: "spin 2s linear infinite",
         wiggle: "wiggle 1s ease-in-out infinite",
+        wigglelg: "wigglelg 1s ease-in-out infinite",
         slowgrow: "slowgrow 1s ease-in-out infinite",
         bounceleft: "bounceleft 1s infinite",
         bounceup: "bounceup 1s infinite",
