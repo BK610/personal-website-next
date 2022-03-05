@@ -16,11 +16,11 @@ export default class RecipeSectionItem extends Component {
             href={this.props.link}
           >
             <div className="p-2 col-span-2 overflow-hidden">
-              <h2 className="font-medium dark:text-purple-100">
+              <h2 className="font-serif text-lg mb-1">
                 {this.props.name}
               </h2>
               <p
-                className="font-normal text-sm text-stone-700 dark:text-stone-200
+                className="text-stone-700 dark:text-stone-100
               line-clamp-3"
               >
                 {this.props.description}

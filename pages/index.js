@@ -5,10 +5,11 @@ import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
 import { micromark } from "micromark";
+import PageHeading from "../components/PageHeading";
 
 export default class Home extends Component {
   render() {
-    const { title, sections, content } = attributes;
+    const { subtitle, sections, content } = attributes;
     return (
       <>
         <Head>
@@ -21,9 +22,7 @@ export default class Home extends Component {
           <div className="w-full flex flex-col relative -mt-4">
             <div className="w-full flex flex-col items-center absolute z-10 mt-4">
               <div className="h-full w-full max-w-md space-y-4">
-                <div className="text-xl ">
-                  <h2>{title}</h2>
-                </div>
+                <PageHeading>{subtitle}</PageHeading>
                 <div
                   className="prose prose-stone dark:prose-invert"
                   dangerouslySetInnerHTML={{ __html: micromark(content) }}

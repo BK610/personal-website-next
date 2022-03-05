@@ -1,12 +1,23 @@
 import { Component } from "react";
 import BaseLayout from "../components/BaseLayout";
-import MissingContent from "../components/MissingContent";
 
 export default class About extends Component {
   render() {
     return (
       <BaseLayout titleText={"About"}>
-        <MissingContent />
+        <div className="grid grid-cols-2 gap-y-4">
+          <div className="col-span-2 sm:col-span-1">
+            <p>
+              Hello!
+            </p>
+          </div>
+          <div className="col-span-2 sm:col-span-1 place-self-center sm:justify-self-auto">
+            <img
+              className="rounded-lg border border-stone-800 dark:border-stone-200 object-cover h-72 w-72 sm:w-full"
+              src={`/img/Headshot.jpg`}
+            />
+          </div>
+        </div>
       </BaseLayout>
     );
   }

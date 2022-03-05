@@ -2,6 +2,7 @@ import { Component } from "react";
 import BaseLayout from "../components/BaseLayout";
 import Head from "next/head";
 import MusicItem from "../components/MusicItem";
+import PageHeading from "../components/PageHeading";
 
 export default class Music extends Component {
   static async getInitialProps() {
@@ -21,7 +22,7 @@ export default class Music extends Component {
         <BaseLayout titleText={"Music"}>
           <div className="w-full flex flex-col items-center">
             <div className="w-full max-w-md space-y-4">
-              <h2 className="text-xl self-start mb-2">Music</h2>
+              <PageHeading>Music</PageHeading>
               <div className="text-lg">Music I've been involved with</div>
               {musicList.map((music, k) => (
                 <MusicItem info={music.attributes} key={k} />

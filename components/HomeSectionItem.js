@@ -9,10 +9,10 @@ export default class HomeSectionItem extends Component {
         <SectionItem className="group transition hover:scale-105 p-2 cursor-pointer">
           <a className="grid grid-cols-2" href={this.props.link}>
             <div className="self-center">
-              <h2 className="font-medium dark:text-purple-100">
+              <h2 className="mb-1 text-lg font-serif">
                 {this.props.name}
               </h2>
-              <p className="font-normal text-sm text-stone-700 dark:text-stone-200">
+              <p className="text-stone-700 dark:text-stone-100">
                 {this.props.description}
               </p>
             </div>
@@ -20,7 +20,7 @@ export default class HomeSectionItem extends Component {
               <img
                 className="h-8 dark:invert group-hover:animate-spin"
                 src={this.props.icon}
-              ></img>
+              />
             </div>
           </a>
         </SectionItem>

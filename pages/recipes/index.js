@@ -3,6 +3,7 @@ import { attributes, react as RecipesContent } from "../../content/recipes.md";
 import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
+import PageHeading from "../../components/PageHeading";
 
 export default class Recipes extends Component {
   static async getInitialProps() {
@@ -17,7 +18,7 @@ export default class Recipes extends Component {
       <BaseLayout navbarVisible={true} titleText={"Recipes"}>
         <div className="w-full flex flex-col items-center">
           <div className="w-full max-w-md space-y-4">
-            <h2 className="text-xl self-start mb-2">{title}</h2>
+            <PageHeading>{title}</PageHeading>
             <div className="text-lg">
               <RecipesContent />
             </div>

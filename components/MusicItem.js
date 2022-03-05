@@ -34,7 +34,7 @@ export default class MusicItem extends Component {
         transition
         divide-y divide-stone-400 dark:divide-stone-300"
       >
-          <div className="group hover:underline">
+          <div className="group font-serif text-lg hover:underline">
             {this.props.info.link_url ? (
               <a
                 href={this.props.info.link_url}
@@ -42,10 +42,10 @@ export default class MusicItem extends Component {
                 className="h-full w-full"
               >
                 <div className="p-2 flex flex-row hover:underline group-hover:animate-wiggle">
-                  <h2 className="basis-11/12 font-medium dark:text-purple-100 line-clamp-1">
+                  <h2 className="basis-11/12 font-medium dark:text-stone-100 line-clamp-1">
                     {this.props.info.title}
                   </h2>
-                  <div className="text-right basis-1/12 dark:text-stone-200">
+                  <div className="text-right basis-1/12 dark:text-stone-100">
                     <img
                       src="img/external-link-outline-svgrepo-com.svg"
                       className="inline dark:invert"
@@ -55,7 +55,7 @@ export default class MusicItem extends Component {
               </a>
             ) : (
               <div className="p-2">
-                <h2 className="font-medium dark:text-purple-100 line-clamp-1">
+                <h2 className="font-medium dark:text-stone-100 line-clamp-1">
                   {this.props.info.title}
                 </h2>
               </div>
@@ -72,7 +72,7 @@ export default class MusicItem extends Component {
                   ),
                 }}
                 className="prose prose-stone dark:prose-invert
-              prose-sm font-normal prose-a:font-normal leading-normal dark:text-purple-100
+              prose-sm font-normal prose-a:font-normal leading-normal dark:text-stone-100
               "
               />
             </div>
