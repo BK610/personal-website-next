@@ -23,7 +23,7 @@ const NavItem = ({ link, title, icon, animation }) => {
     <Link href={link}>
       <div className="w-fit mr-1 inline-block group transition ">
         <a
-          href="/"
+          href={link}
           className="p-1 cursor-pointer
     border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
         >
