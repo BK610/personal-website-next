@@ -2,7 +2,9 @@
 title: Chipotle Sweet Potato Soup
 date: 2022-01-31T04:35:50.035Z
 thumbnail: img/spicy-sweet-potato-soup-1.jpeg
-description: Chipotle sweet potato soup from Madison. "This always goes over well"
+description: |-
+  "This always goes over well."
+  - Madison
 author: Madison
 prepTime: 0
 totalTime: 0

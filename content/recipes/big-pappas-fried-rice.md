@@ -2,7 +2,8 @@
 title: Big Pappa's Fried Rice
 date: 2022-02-09T13:23:27.260Z
 thumbnail: img/pork-belly-fried-rice.jpeg
-description: Big Pappa's Fried Rice
+description: |-
+  "Authentic" fried rice
 author: Dad
 prepTime: 0
 totalTime: 0
