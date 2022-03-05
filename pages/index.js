@@ -25,7 +25,7 @@ export default class Home extends Component {
                   <h2>{title}</h2>
                 </div>
                 <div
-                  className="prose prose-stone"
+                  className="prose prose-stone dark:prose-invert"
                   dangerouslySetInnerHTML={{ __html: micromark(content) }}
                 >
                   {/* <HomeContent /> */}
