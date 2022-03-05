@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MissingContent from "../../components/MissingContent";
 import { micromark } from "micromark";
-import NavBar from "../../components/NavBar";
 import BaseLayout from "../../components/BaseLayout";
 
 export default class Recipe extends Component {
