@@ -16,7 +16,7 @@ export default class Places extends Component {
         <BaseLayout titleText={"Places"}>
           <div className="space-y-4">
             <h2 className="text-xl">Places</h2>
-            <p className="text-lg">Where I have been...</p>
+            <p className="text-lg">Where I've been...</p>
             <div
               className="w-full h-96 overflow-hidden
           rounded-lg
