@@ -5,8 +5,6 @@ import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
 import { micromark } from "micromark";
-import Image from "next/image";
-import BackgroundImage from "../public/img/BackgroundImage.jpg";
 
 export default class Home extends Component {
   render() {
