@@ -43,7 +43,7 @@ function NavBar(props) {
   // Shorthand for going up one URL level: "."
   return (
     <div
-      className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-300`}
+      className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
     >
       <NavItem link="/" title="Home" icon="🏠" animation="wigglelg"/>
       <span className="px-1 mr-1 inline-block">•</span>
