@@ -4,7 +4,7 @@ date: 2022-10-26T13:46:18.192Z
 thumbnail: img/pxl_20220929_221711436.jpg
 description: First tasted at Detroit Eastern Market. For when you want Cider,
   Chai, and maybe rum too
-author: Intu at Detroit Eastern Market
+author: Intu Tea
 prepTime: 0
 totalTime: 10
 ingredients: |-
