@@ -5,7 +5,7 @@ thumbnail: img/pxl_20220929_221711436.jpg
 description: First tasted at Detroit Eastern Market. For when you want Cider,
   Chai, and maybe rum too.
 author: Intu at Detroit Eastern Market
-prepTime: -2
+prepTime: 0
 totalTime: 10
 ingredients: |-
   * 1﻿/2 gallon apple cider
@@ -31,4 +31,7 @@ content: >-
 
 
   (﻿Note: for an adult, add 5-8 oz. dark rum)
+
+
+  Originally provided by: <https://easternmarket.org/district/intu-tea>
 ---
