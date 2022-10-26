@@ -16,18 +16,18 @@ ingredients: |-
   * *O﻿ptional:* 1 orange slice
   * *O﻿ptional:* 2 lemon slices
 content: >-
-  * B﻿ring cider, water, ginger, and cinnamon to a boil. Cut heat after five
+  1. B﻿ring cider, water, ginger, and cinnamon to a boil. Cut heat after five
   minutes
 
-  * A﻿dd cinnamon chai tea
+  2. A﻿dd cinnamon chai tea
 
-  * B﻿rew 5-7 minutes
+  3. B﻿rew 5-7 minutes
 
-  * R﻿emove tea leaves
+  4. R﻿emove tea leaves
 
-  * S﻿erve hot or cold
+  5. S﻿erve hot or cold
 
-  * I﻿f using orange and lemon slices, add to boiling cider for extra zing. Add 1/2 tsp black pepper
+  6. I﻿f using orange and lemon slices, add to boiling cider for extra zing. Add 1/2 tsp black pepper
 
 
   (﻿Note: for an adult, add 5-8 oz. dark rum)
