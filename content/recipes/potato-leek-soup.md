@@ -1,7 +1,7 @@
 ---
 title: Potato Leek Soup
 date: 2022-10-26T13:56:42.303Z
-thumbnail: img/potato-leek-soup-4.jpg
+thumbnail: img/pxl_20221105_225534067.jpg
 description: Mama Meeker's famous, nostalgic, ever-comforting soup
 author: Mama Meeker
 prepTime: 15
