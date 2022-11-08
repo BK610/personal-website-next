@@ -1,7 +1,7 @@
 ---
 title: Artichoke Dip
 date: 2022-11-07T16:25:37.518Z
-thumbnail: img/artichoke.jpg
+thumbnail: img/artidip.jpg
 description: NOT spinach artichoke dip! Just artichoke. No spinach.
 author: Mom
 prepTime: 10
