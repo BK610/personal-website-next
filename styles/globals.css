@@ -13,4 +13,9 @@
   .item-list:hover > *:hover {
     opacity: 1;
   }
+
+  .mapboxgl-popup-content {
+    font-family: "Poppins";
+    color: #000;
+  }
 }
