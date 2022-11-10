@@ -31,9 +31,30 @@ const BaseMap = () => {
         trackUserLocation: true,
       })
     );
-  }, []);
 
-  return <div id="mapContainer" className="w-full h-full"/>;
+    map.on("click", (event) => {
+      // If the user clicked on one of your markers, get its information.
+      const features = map.queryRenderedFeatures(event.point, {
+        // layers: ["places-i-have-lived"],
+      });
+      if (!features.length) {
+        return;
+      }
+      const feature = features[0];
+
+      // console.log(feature);
+
+      // Code from the next step will go here.
+      const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+          `<p className="mapboxgl-popup-content">${feature.properties.safe_address}, ${feature.properties.move_date}</p>`
+        )
+        .addTo(map);
+    });
+  });
+
+  return <div id="mapContainer" className="w-full h-full" />;
 };
 
 export default BaseMap;
