@@ -35,7 +35,7 @@ const BaseMap = () => {
     map.on("click", (event) => {
       // If the user clicked on one of your markers, get its information.
       const features = map.queryRenderedFeatures(event.point, {
-        // layers: ["places-i-have-lived"],
+        layers: ["places-i-have-lived"],
       });
       if (!features.length) {
         return;
