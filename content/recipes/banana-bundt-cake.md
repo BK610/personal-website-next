@@ -2,10 +2,10 @@
 title: Banana Bundt Cake
 date: 2022-12-26T19:24:53.872Z
 thumbnail: img/banana-bundt-cake-12.jpg
-description: For 🟤🍌 - https://twitter.com/ksekoum/status/1027662676988710912
+description: For when your bananas have died
 author: Mom
 prepTime: 45
-totalTime: 93
+totalTime: 90
 ingredients: |-
   * 2﻿.5 cups all-purpose flour
   * 1﻿.5 cups sugar
@@ -17,7 +17,7 @@ ingredients: |-
   * 2﻿/3 cup buttermilk or sour milk
   * 2﻿ eggs
   * 1﻿ tsp vanilla
-  * C﻿reamy Butter Frosting
+  * [C﻿reamy Butter Frosting](https://www.baileykane.co/recipes/butter-frosting)
 content: >-
   ### S﻿teps
 
@@ -41,5 +41,5 @@ content: >-
 
   9. R﻿emove from pans; cool thoroughly
 
-  10. F﻿rost with Creamy Butter Frosting
+  10. F﻿rost with [Creamy Butter Frosting](https://www.baileykane.co/recipes/butter-frosting)
 ---
