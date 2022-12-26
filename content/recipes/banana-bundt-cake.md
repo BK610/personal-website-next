@@ -2,7 +2,7 @@
 title: Banana Bundt Cake
 date: 2022-12-26T19:24:53.872Z
 thumbnail: img/banana-bundt-cake-12.jpg
-description: For when your bananas have died
+description: The most ethical resting place for your deceased bananas
 author: Mom
 prepTime: 45
 totalTime: 90
