@@ -25,7 +25,7 @@ ingredients: |-
   * J﻿uice of 1 lime
   * 2﻿ tbsp diced mango, to garnish
 content: >-
-  ### R﻿ecipe
+  ### Steps
 
 
   #### C﻿akes
