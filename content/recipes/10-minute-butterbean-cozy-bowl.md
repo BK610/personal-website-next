@@ -1,5 +1,5 @@
 ---
-title: 10-Minute Butterbean Cozy Bowl
+title: Butterbean Cozy Bowl
 date: 2023-01-20T17:23:30.934Z
 thumbnail: img/pxl_20230115_235951010.jpg
 description: Jasmina's coziest creation
