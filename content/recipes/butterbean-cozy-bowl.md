@@ -9,7 +9,7 @@ totalTime: 10
 ingredients: |-
   * Olive oil
   * G﻿arlic
-  * O﻿ne can butterbeans
+  * O﻿ne can butterbeans (aka lima beans)
   * H﻿andfuls of spinach
   * O﻿ne package cherry tomatoes
   * Dollop of ﻿cream cheese
