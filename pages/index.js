@@ -30,6 +30,13 @@ export default class Home extends Component {
                   {/* <HomeContent /> */}
                 </div>
                 <SectionList>
+                {/* <HomeSectionItem
+                      link="https://example.com/" // {"/" + section.name.toLowerCase()}
+                      name="Books" // {section.name}
+                      description="Bookety books" // {section.description}
+                      icon="img/external-link-outline-svgrepo-com.svg" // {section.icon}
+                      key="1" //{k}
+                    /> */}
                   {sections.map((section, k) => (
                     <HomeSectionItem
                       link={"/" + section.name.toLowerCase()}
