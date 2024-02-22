@@ -12,16 +12,21 @@ sections:
   - name: Recipes
     description: Not my own
     icon: img/food-svgrepo-com.svg
+    link: https://www.baileykane.co/recipes
   - name: Music
     description: Noodling
     icon: img/music-svgrepo-com.svg
+    link: https://www.baileykane.co/music
   - name: About
     description: Hello there
     icon: img/hand-waving-fill-svgrepo-com.svg
+    link: https://www.baileykane.co/about
   - name: Places
     description: Where I've been
     icon: img/map-fill-svgreop-com.svg
+    link: https://www.baileykane.co/places
   - name: Books
     description: What I'm reading
     icon: img/external-link-outline-svgrepo-com.svg
+    link: https://www.goodreads.com/user/show/73069053-bailey-kane
 ---
