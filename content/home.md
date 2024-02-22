@@ -2,6 +2,12 @@
 title: Homepage
 subtitle: Hello hello, this is Bailey speaking.
 date: 2019-03-17T19:31:20.591Z
+content: >-
+  I wanted a place to keep track of things that I've made, or are important to
+  me, so I built this.
+
+
+  Hope you enjoy.
 sections:
   - name: Recipes
     description: Not my own
@@ -15,8 +21,7 @@ sections:
   - name: Places
     description: Where I've been
     icon: img/map-fill-svgreop-com.svg
-content: |-
-  I wanted a place to keep track of things that I've made, or are important to me, so I built this.
-  
-  Hope you enjoy.
+  - name: Books
+    description: What I'm reading
+    icon: img/external-link-outline-svgrepo-com.svg
 ---
