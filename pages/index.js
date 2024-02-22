@@ -39,7 +39,7 @@ export default class Home extends Component {
                     /> */}
                   {sections.map((section, k) => (
                     <HomeSectionItem
-                      link={"/" + section.name.toLowerCase()}
+                      link={section.link ? section.link : section.name.toLowerCase()}
                       name={section.name}
                       description={section.description}
                       icon={section.icon}
