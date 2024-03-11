@@ -26,7 +26,4 @@ content: >-
   6. Spoon desired amount on top of your carb of choice. Angelica Fructuoso served this to her children on toasted wheat bread. This is the children’s favorite way. Crackers also work. Rice also works. Chef’s choice.
 
   7. (Optional) Announce, loudly from the kitchen, “KUMAIN TAYO!!!” as loudly as you can. (“Let’s eat!” in Tagalog; pronounced kooh-MA-in tah-YO)
-
-
-  N﻿ote:
 ---
