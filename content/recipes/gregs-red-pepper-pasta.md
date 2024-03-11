@@ -31,9 +31,11 @@ ingredients: >-
 
   * fresh parsley or basil
 content: >-
-  1. Heat oven to 500 degrees F (260 C) and roast red peppers on a baking sheet
-  until charred - about 25-30 minutes. Cover in foil for 10 minutes to steam,
-  then remove (peel away) charred skin, seeds and stems. Set aside.
+  *[O﻿riginally created by Minimalist
+  Baker.](https://minimalistbaker.com/vegan-roasted-red-pepper-pasta-gf/#wprm-recipe-container-35863)*
+
+
+  1. Heat oven to 500 degrees F (260 C) and roast red peppers on a baking sheet until charred - about 25-30 minutes. Cover in foil for 10 minutes to steam, then remove (peel away) charred skin, seeds and stems. Set aside.
 
   2. Cook pasta according to package instructions; drain, toss in a touch of olive oil, cover with a towel and set aside.
 
