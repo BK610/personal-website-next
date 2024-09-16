@@ -29,4 +29,8 @@ sections:
     description: What I'm reading
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://www.goodreads.com/user/show/73069053-bailey-kane
+  - name: Terrariums
+    description: All about terrariums
+    icon: img/external-link-outline-svgrepo-com.svg
+    link: https://terrarium-resources.webflow.io/
 ---
