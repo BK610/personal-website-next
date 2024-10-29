@@ -13,7 +13,7 @@ sections:
     icon: img/hand-waving-fill-svgrepo-com.svg
     link:
   - name: Recipes
-    description: Not my own
+    description: Near and dear to my heart
     icon: img/food-svgrepo-com.svg
     link:
   - name: Music
@@ -29,7 +29,7 @@ sections:
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://www.goodreads.com/user/show/73069053-bailey-kane
   - name: Terrariums
-    description: All about terrariums
+    description: Resources and inspiration
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://terrarium-resources.webflow.io/
 ---
