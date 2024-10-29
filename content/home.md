@@ -21,10 +21,10 @@ sections:
     description: Noodling
     icon: img/music-svgrepo-com.svg
     link: 
-  - name: Places
-    description: Where I've been
-    icon: img/map-fill-svgreop-com.svg
-    link: 
+  # - name: Places
+  #   description: Where I've been
+  #   icon: img/map-fill-svgreop-com.svg
+  #   link: 
   - name: Books
     description: What I'm reading
     icon: img/external-link-outline-svgrepo-com.svg
