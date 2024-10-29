@@ -9,6 +9,10 @@ content: >-
 
   Hope you enjoy.
 sections:
+  - name: About
+    description: Hello there
+    icon: img/hand-waving-fill-svgrepo-com.svg
+    link:
   - name: Recipes
     description: Not my own
     icon: img/food-svgrepo-com.svg
@@ -16,10 +20,6 @@ sections:
   - name: Music
     description: Noodling
     icon: img/music-svgrepo-com.svg
-    link: 
-  - name: About
-    description: Hello there
-    icon: img/hand-waving-fill-svgrepo-com.svg
     link: 
   - name: Places
     description: Where I've been
