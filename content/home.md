@@ -24,6 +24,14 @@ sections:
   #   description: Where I've been
   #   icon: img/map-fill-svgreop-com.svg
   #   link:
+  # - name: Projects
+  #   description: What I'm up to
+  #   icon: idk?
+  #   link: 
+  # - name: Guitar Lessons
+  #   description: Let's play!
+  #   icon: a little guitar
+  #   link:
   - name: Books
     description: What I'm reading
     icon: img/external-link-outline-svgrepo-com.svg
