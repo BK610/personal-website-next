@@ -39,7 +39,7 @@ sections:
   - name: Singing Lessons NYC
     description: All NYC singing teachers
     icon: img/external-link-outline-svgrepo-com.svg
-    link: https://www.nycsinginglessons.com/
+    link: https://www.nycsinginglessons.com/?ref=baileykane.co
   - name: Terrariums
     description: Resources and inspiration
     icon: img/external-link-outline-svgrepo-com.svg
