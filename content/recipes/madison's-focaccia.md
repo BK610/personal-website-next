@@ -42,4 +42,8 @@ content: >-
   12. bake for 22-25 minutes (maybe longer depending on your oven) until it’s golden brown and crispy
 
   13. remove from pan and place on a cooling rack- do not cut into the bread until completely cool or the dough can get gummy
+
+  it's also better to accidentally go over w ater than under bc foccacia is a high hydration bread
+  
+  it's a very wiggly dough
 ---
