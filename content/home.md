@@ -36,7 +36,7 @@ sections:
     description: What I'm reading
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://app.thestorygraph.com/profile/bk610
-  - name: Singing Lessons NYC
+  - name: NYC Singing Lessons
     description: Singing teachers in NYC
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://www.nycsinginglessons.com/?ref=baileykane.co
