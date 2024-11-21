@@ -37,9 +37,13 @@ sections:
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://app.thestorygraph.com/profile/bk610
   - name: Singing Lessons NYC
-    description: All NYC singing teachers
+    description: Singing teachers in NYC
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://www.nycsinginglessons.com/?ref=baileykane.co
+  - name: All of .nyc
+    description: Analysis of .nyc usage
+    icon: img/external-link-outline-svgrepo-com.svg
+    link: https://all-of-nyc.vercel.app/
   - name: Terrariums
     description: Resources and inspiration
     icon: img/external-link-outline-svgrepo-com.svg
