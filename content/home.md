@@ -35,7 +35,7 @@ sections:
   - name: Books
     description: What I'm reading
     icon: img/external-link-outline-svgrepo-com.svg
-    link: https://www.goodreads.com/user/show/73069053-bailey-kane
+    link: https://app.thestorygraph.com/profile/bk610
   - name: Singing Lessons NYC
     description: All NYC singing teachers
     icon: img/external-link-outline-svgrepo-com.svg
