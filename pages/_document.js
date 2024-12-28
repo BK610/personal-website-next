@@ -10,14 +10,14 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="application-name" content="Bailey Kane PWA" />
+          <meta name="application-name" content="BaileyKane.co" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
             content="default"
           />
-          <meta name="apple-mobile-web-app-title" content="Bailey Kane PWA" />
-          <meta name="description" content="Bailey Kane PWA" />
+          <meta name="apple-mobile-web-app-title" content="BaileyKane.co" />
+          <meta name="description" content="BaileyKane.co" />
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
@@ -52,10 +52,7 @@ class MyDocument extends Document {
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:url" content="https://baileykane.co" />
           <meta name="twitter:title" content="Bailey Kane" />
-          <meta
-            name="twitter:description"
-            content="Bailey Kane PWA"
-          />
+          <meta name="twitter:description" content="Bailey Kane PWA" />
           <meta
             name="twitter:image"
             content="https://baileykane.co/android-chrome-192x192.png"
