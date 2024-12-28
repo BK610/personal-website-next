@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Poppins', ...defaultTheme.fontFamily.sans],
-        'serif': ['Aleo', ...defaultTheme.fontFamily.serif]
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+        serif: ["Aleo", ...defaultTheme.fontFamily.serif],
       },
       /*
       Generated on https://palettte.app. Exported JSON at the end of the file.
@@ -104,10 +104,7 @@ module.exports = {
       animation: ["hover", "group-hover"],
     },
   },
-  plugins: [
-    require("@tailwindcss/typography"),
-    require("@tailwindcss/line-clamp"),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
 
 /*
