@@ -27,7 +27,7 @@ sections:
   # - name: Projects
   #   description: What I'm up to
   #   icon: idk?
-  #   link: 
+  #   link:
   # - name: Guitar Lessons
   #   description: Let's play!
   #   icon: a little guitar
@@ -44,8 +44,8 @@ sections:
     description: Analysis of .nyc usage
     icon: img/external-link-outline-svgrepo-com.svg
     link: https://all-of-nyc.vercel.app/
-  - name: Terrariums
-    description: Resources and inspiration
+  - name: Feed
+    description: My AT Protocol feed
     icon: img/external-link-outline-svgrepo-com.svg
-    link: https://terrarium-resources.webflow.io/
+    link:
 ---
