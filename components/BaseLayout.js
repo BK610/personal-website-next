@@ -1,7 +1,11 @@
 import Head from "next/head";
 import NavBar from "./NavBar";
 
-export default function BaseLayout({ children, navbarVisible=true, titleText }) {
+export default function BaseLayout({
+  children,
+  navbarVisible = true,
+  titleText,
+}) {
   navbarVisible = navbarVisible ? "" : "invisible";
 
   var title = "Bailey Kane";
