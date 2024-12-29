@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { Component } from "react";
 import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
