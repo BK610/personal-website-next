@@ -12,6 +12,9 @@ export default class Recipe extends Component {
       process.env.NEXT_PUBLIC_RECIPES_DATA_URL
     );
     const recipesJson = parseCSV(recipesCsv);
+
+    // TODO: Pulling all recipe data just to search for the one that matches the slug is inefficient.
+    //   Consider pulling these once, elsewhere, and passing the correct recipe to this component.
     const recipe = recipesJson.data.find((recipe) => recipe.slug === slug);
 
     return { recipe };
