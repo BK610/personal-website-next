@@ -77,8 +77,6 @@ export default function Recipe({ recipe }) {
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
 export async function getStaticProps(context) {
-  console.log(context);
-
   const { slug } = context.params;
 
   const recipesList = await importCSVDataAsJson(
