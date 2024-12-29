@@ -1,22 +1,26 @@
-import { Component } from "react";
 import BaseLayout from "../components/BaseLayout";
 import PageHeading from "../components/PageHeading";
-import Link from "next/link";
 
 import { AtpAgent } from "@atproto/api";
-import { OathClient } from "@atproto/oauth-client";
+// import { OAuthClient } from "@atproto/oauth-client";
 
-const agent = new AtpAgent({ service: "https://baileykane.co" });
+function Feed() {
+  //   const agent = new AtpAgent({ service: "https://baileykane.co/feed" });
+  // const oauthClient = new OAuthClient({});
 
-export default class Feed extends Component {
-  render() {
-    return (
-      <BaseLayout titleText={"Feed"}>
-        <div>
-          <PageHeading>Feed</PageHeading>
-          <div className="col-span-2 sm:col-span-1 prose dark:prose-invert"></div>
-        </div>
-      </BaseLayout>
-    );
-  }
+  //   await agent.login({
+  //     identifier: "baileykane.co",
+  //     password: "kbw8fef2hfc3uyu-WVA",
+  //   });
+
+  return (
+    <BaseLayout titleText={"Feed"}>
+      <div>
+        <PageHeading>Feed</PageHeading>
+        <div className="col-span-2 sm:col-span-1 prose dark:prose-invert"></div>
+      </div>
+    </BaseLayout>
+  );
 }
+
+export default Feed;
