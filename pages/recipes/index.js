@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { attributes, react as RecipesContent } from "../../content/recipes.md";
 import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
@@ -14,16 +13,13 @@ export default class Recipes extends Component {
   }
 
   render() {
-    let { title } = attributes;
     const { recipesList } = this.props;
     return (
       <BaseLayout navbarVisible={true} titleText={"Recipes"}>
         <div className="w-full flex flex-col items-center">
           <div className="w-full max-w-md space-y-4">
-            <PageHeading>{title}</PageHeading>
-            <div className="text-lg">
-              <RecipesContent />
-            </div>
+            <PageHeading>Recipes</PageHeading>
+            <div className="text-lg">Behold, my lovely recipes.</div>
             <SectionList>
               {recipesList.data.map((recipe, k) => (
                 <RecipeSectionItem
