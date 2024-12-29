@@ -4,7 +4,6 @@ import BaseLayout from "../components/BaseLayout";
 
 export default class OfflineFallback extends Component {
   render() {
-    let { title, sections } = attributes;
     return (
       <>
         <Head>
