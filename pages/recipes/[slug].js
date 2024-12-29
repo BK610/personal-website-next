@@ -2,13 +2,17 @@ import React, { Component } from "react";
 import MissingContent from "../../components/MissingContent";
 import { micromark } from "micromark";
 import BaseLayout from "../../components/BaseLayout";
+import { getSheetsCSV, parseCSV } from "../../lib/sheetsConnector";
 
 export default class Recipe extends Component {
   static async getInitialProps({ query }) {
     const { slug } = query;
-    const recipe = await import(`../../content/recipes/${slug}.md`).catch(
-      (error) => null
+
+    const recipesCsv = await getSheetsCSV(
+      process.env.NEXT_PUBLIC_RECIPES_DATA_URL
     );
+    const recipesJson = parseCSV(recipesCsv);
+    const recipe = recipesJson.data.find((recipe) => recipe.slug === slug);
 
     return { recipe };
   }
@@ -26,9 +30,9 @@ export default class Recipe extends Component {
       totalTime,
       ingredients,
       content,
-    } = this.props.recipe.attributes;
+    } = this.props.recipe;
 
-    var dateObj = new Date(date);
+    const dateObj = new Date(date);
 
     return (
       <BaseLayout>

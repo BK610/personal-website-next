@@ -4,10 +4,12 @@ import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
 import PageHeading from "../../components/PageHeading";
+import { getSheetsCSV, parseCSV } from "../../lib/sheetsConnector";
 
 export default class Recipes extends Component {
   static async getInitialProps() {
     const recipesList = await importRecipes();
+
     return { recipesList };
   }
 
@@ -23,12 +25,12 @@ export default class Recipes extends Component {
               <RecipesContent />
             </div>
             <SectionList>
-              {recipesList.map((recipe, k) => (
+              {recipesList.data.map((recipe, k) => (
                 <RecipeSectionItem
-                  link={"/recipes/" + recipe.slug.toLowerCase()}
-                  name={recipe.attributes.title}
-                  description={recipe.attributes.description}
-                  icon={recipe.attributes.thumbnail}
+                  link={"/recipes/" + recipe.slug}
+                  name={recipe.title}
+                  description={recipe.description}
+                  icon={recipe.thumbnail}
                   key={k}
                   className={"max-w-md w-full"}
                 />
@@ -42,15 +44,9 @@ export default class Recipes extends Component {
 }
 
 const importRecipes = async () => {
-  // From https://github.com/masives/netlifycms-nextjs/blob/master/pages/blog/index.js
-  const markdownFiles = require
-    .context("../../content/recipes", false, /\.md$/)
-    .keys()
-    .map((relativePath) => relativePath.substring(2));
-  return Promise.all(
-    markdownFiles.map(async (path) => {
-      const markdown = await import(`../../content/recipes/${path}`);
-      return { ...markdown, slug: path.substring(0, path.length - 3) };
-    })
+  const recipesCsv = await getSheetsCSV(
+    process.env.NEXT_PUBLIC_RECIPES_DATA_URL
   );
+  const recipesJson = parseCSV(recipesCsv);
+  return recipesJson;
 };
