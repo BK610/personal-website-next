@@ -3,11 +3,13 @@ import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
 import PageHeading from "../../components/PageHeading";
-import { getSheetsCSV, parseCSV } from "../../lib/sheetsConnector";
+import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 
 export default class Recipes extends Component {
   static async getInitialProps() {
-    const recipesList = await importRecipes();
+    const recipesList = await importCSVDataAsJson(
+      process.env.NEXT_PUBLIC_RECIPES_DATA_URL
+    );
 
     return { recipesList };
   }
@@ -38,11 +40,3 @@ export default class Recipes extends Component {
     );
   }
 }
-
-const importRecipes = async () => {
-  const recipesCsv = await getSheetsCSV(
-    process.env.NEXT_PUBLIC_RECIPES_DATA_URL
-  );
-  const recipesJson = parseCSV(recipesCsv);
-  return recipesJson;
-};

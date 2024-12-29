@@ -2,20 +2,19 @@ import React, { Component } from "react";
 import MissingContent from "../../components/MissingContent";
 import { micromark } from "micromark";
 import BaseLayout from "../../components/BaseLayout";
-import { getSheetsCSV, parseCSV } from "../../lib/sheetsConnector";
+import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 
 export default class Recipe extends Component {
   static async getInitialProps({ query }) {
     const { slug } = query;
 
-    const recipesCsv = await getSheetsCSV(
+    const recipesList = await importCSVDataAsJson(
       process.env.NEXT_PUBLIC_RECIPES_DATA_URL
     );
-    const recipesJson = parseCSV(recipesCsv);
 
     // TODO: Pulling all recipe data just to search for the one that matches the slug is inefficient.
     //   Consider pulling these once, elsewhere, and passing the correct recipe to this component.
-    const recipe = recipesJson.data.find((recipe) => recipe.slug === slug);
+    const recipe = recipesList.data.find((recipe) => recipe.slug === slug);
 
     return { recipe };
   }
