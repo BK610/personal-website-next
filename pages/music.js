@@ -24,7 +24,7 @@ export default class Music extends Component {
           <div className="w-full flex flex-col items-center">
             <div className="w-full max-w-md space-y-4">
               <PageHeading>Music</PageHeading>
-              <div className="text-lg">Music I've been involved with</div>
+              <div className="text-lg">Small moments of making music</div>
               {musicList.data.map((musicItem, k) => (
                 <MusicItem info={musicItem} key={k} />
               ))}
