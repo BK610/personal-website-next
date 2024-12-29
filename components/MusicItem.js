@@ -4,14 +4,14 @@ import SectionItem from "./SectionItem";
 import SectionItemHeading from "./SectionItemHeading";
 
 export default class MusicItem extends Component {
-  getContentBytype(type, embed_url) {
+  getContentBytype(type, embedUrl) {
     let content;
 
     switch (type) {
       case "YouTube":
         content = (
           <iframe
-            src={embed_url}
+            src={embedUrl}
             className="aspect-video h-full w-full"
             allowFullScreen
           />
@@ -40,9 +40,9 @@ export default class MusicItem extends Component {
         divide-y divide-purple-300 dark:divide-purple-300"
       >
         <div className="group font-serif text-lg hover:underline">
-          {this.props.info.link_url ? (
+          {this.props.info.linkUrl ? (
             <a
-              href={this.props.info.link_url}
+              href={this.props.info.linkUrl}
               target="_blank"
               className="h-full w-full"
             >
@@ -85,7 +85,7 @@ export default class MusicItem extends Component {
           >
             {this.getContentBytype(
               this.props.info.type,
-              this.props.info.embed_url
+              this.props.info.embedUrl
             )}
           </div>
         </div>
