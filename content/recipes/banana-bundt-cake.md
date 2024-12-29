@@ -41,5 +41,5 @@ content: >-
 
   9. R﻿emove from pans; cool thoroughly
 
-  10. F﻿rost with [Creamy Butter Frosting](https://www.baileykane.co/recipes/butter-frosting)
+  10. F﻿rost with [Creamy Butter Frosting](/recipes/butter-frosting)
 ---
