@@ -11,8 +11,6 @@ export default class Home extends Component {
       process.env.NEXT_PUBLIC_HOME_DATA_URL
     );
 
-    console.log(sectionsList);
-
     return { sectionsList };
   }
 
