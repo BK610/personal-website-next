@@ -1,5 +1,5 @@
 ---
-title: Angelica Fructuoso’s Breakfast Sardines
+title: Angelica Fructuoso's Breakfast Sardines
 date: 2024-03-11T13:44:31.378Z
 thumbnail: img/sardines.jpg
 description: Sardine and carby goodness
