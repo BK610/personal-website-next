@@ -37,5 +37,6 @@ export async function getStaticProps() {
     props: {
       musicList,
     },
+    revalidate: 60,
   };
 }

@@ -88,7 +88,7 @@ export async function getStaticProps(context) {
   // Followup: This might be irrelevant now that I'm using getStaticProps to fetch the data server-side.
   const recipe = recipesList.data.find((recipe) => recipe.slug === slug);
 
-  return { props: { recipe } };
+  return { props: { recipe }, revalidate: 60 };
 }
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-paths
