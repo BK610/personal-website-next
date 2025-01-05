@@ -1,7 +1,6 @@
 import RecipeSectionItem from "../../components/RecipeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
-import PageHeading from "../../components/PageHeading";
 import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 
 export default function Recipes({ recipesList }) {
@@ -9,7 +8,7 @@ export default function Recipes({ recipesList }) {
     <BaseLayout navbarVisible={true} titleText={"Recipes"}>
       <div className="w-full flex flex-col items-center">
         <div className="w-full max-w-md space-y-4">
-          <PageHeading>Recipes</PageHeading>
+          <h2>Recipes</h2>
           <div className="text-lg">Behold, my lovely recipes.</div>
           <SectionList>
             {recipesList.data.map((recipe, k) => (

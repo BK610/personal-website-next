@@ -1,5 +1,4 @@
 import BaseLayout from "../components/BaseLayout";
-import PageHeading from "../components/PageHeading";
 import BlueskyPost from "../components/BlueskyFeed/BlueskyPost";
 import { agent } from "../lib/bskyApi";
 
@@ -7,7 +6,7 @@ export default function Feed({ feed }) {
   return (
     <BaseLayout titleText={"Feed"}>
       <div>
-        <PageHeading>My Bluesky Feed</PageHeading>
+        <h1>My Bluesky Feed</h1>
         <div className="col-span-2 sm:col-span-1">
           {feed.map((post_data) => (
             <BlueskyPost post_data={post_data} />

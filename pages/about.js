@@ -1,6 +1,5 @@
 import { Component } from "react";
 import BaseLayout from "../components/BaseLayout";
-import PageHeading from "../components/PageHeading";
 import Link from "next/link";
 
 export default class About extends Component {
@@ -11,7 +10,7 @@ export default class About extends Component {
         // className="grid grid-cols-2 gap-y-4"
         >
           <div>
-            <PageHeading>About</PageHeading>
+            <h1>About</h1>
             <div className="col-span-2 sm:col-span-1 prose dark:prose-invert">
               <p>
                 Hello! I think the world's a fun place, and I chase the things I
@@ -29,8 +28,8 @@ export default class About extends Component {
                 <li>Teaching myself to ride a bike at the ripe age of 21.</li>
                 <li>
                   Moving from the US to Singapore on a whim in the Fall of 2019,
-                  building a life there after COVID hit, and realizing that <Link href="/recipes">food
-                  is pretty cool</Link>.
+                  building a life there after COVID hit, and realizing that{" "}
+                  <Link href="/recipes">food is pretty cool</Link>.
                 </li>
                 <li>
                   Hiking a section of the Appalachian Trail on a week's notice,

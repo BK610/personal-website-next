@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Component } from "react";
 import BaseLayout from "../components/BaseLayout";
 import BaseMap from "../components/BaseMap";
-import PageHeading  from "../components/PageHeading";
 
 export default class Places extends Component {
   render() {
@@ -16,7 +15,7 @@ export default class Places extends Component {
         </Head>
         <BaseLayout titleText={"Places"}>
           <div className="space-y-4">
-            <PageHeading>Places</PageHeading>
+            <h2>Places</h2>
             <p className="text-lg">Where I've been...</p>
             <div
               className="w-full h-96 overflow-hidden
