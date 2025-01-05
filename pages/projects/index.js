@@ -1,7 +1,6 @@
 import HomeSectionItem from "../../components/HomeSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
-import PageHeading from "../../components/PageHeading";
 import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 
 export default function Projects({ projectsList }) {
@@ -9,7 +8,7 @@ export default function Projects({ projectsList }) {
     <BaseLayout className="">
       <div className="w-full flex flex-col items-center relative z-10">
         <div className="h-full w-full max-w-md space-y-4">
-          <PageHeading>Projects</PageHeading>
+          <h2>Projects</h2>
           <div className="prose prose-stone dark:prose-invert">
             Things I've worked on.
           </div>
