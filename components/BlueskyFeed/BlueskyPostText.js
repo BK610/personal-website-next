@@ -1,6 +1,6 @@
 import { RichText } from "@atproto/api";
 import { agent } from "../../lib/bskyApi";
-import { marked } from "marked";
+import { micromark } from "micromark";
 
 export default function BlueskyPostText({ text }) {
   const parsedText = parseBlueskyPostText(text);
@@ -20,7 +20,7 @@ function parseBlueskyPostText(text) {
 
   const markdown = renderAsMarkdown(rt);
 
-  const parsedMarkdown = parseMarkdown(markdown);
+  const parsedMarkdown = micromark(markdown);
 
   return parsedMarkdown;
 }
@@ -38,8 +38,4 @@ function renderAsMarkdown(richText) {
   }
 
   return markdown;
-}
-
-function parseMarkdown(markdown) {
-  return marked.parse(markdown);
 }
