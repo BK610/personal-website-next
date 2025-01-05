@@ -14,9 +14,7 @@ export default function ProjectContent({ project }) {
         <div className="text-stone-500 dark:text-stone-400">
           From{" "}
           {dateObj.toLocaleDateString("en-US", {
-            // weekday: "long",
             month: "long",
-            // day: "numeric",
             year: "numeric",
           })}
         </div>
