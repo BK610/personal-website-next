@@ -7,6 +7,11 @@ export default function Feed({ feed }) {
     <BaseLayout titleText={"Feed"}>
       <div>
         <h1>My Bluesky Feed</h1>
+        <p className="underline text-stone-700 dark:text-stone-300 text-sm">
+          <a href="https://bsky.app/profile/baileykane.co" target="_blank">
+            View my profile.
+          </a>
+        </p>
         <div className="col-span-2 sm:col-span-1">
           {feed.map((post_data) => (
             <BlueskyPost post_data={post_data} />
