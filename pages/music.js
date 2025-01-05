@@ -1,7 +1,6 @@
 import BaseLayout from "../components/BaseLayout";
 import Head from "next/head";
 import MusicItem from "../components/MusicItem";
-import PageHeading from "../components/PageHeading";
 import { importCSVDataAsJson } from "../lib/sheetsConnector";
 
 export default function Music({ musicList }) {
@@ -15,7 +14,7 @@ export default function Music({ musicList }) {
       <BaseLayout titleText={"Music"}>
         <div className="w-full flex flex-col items-center">
           <div className="w-full max-w-md space-y-4">
-            <PageHeading>Music</PageHeading>
+            <h2>Music</h2>
             <div className="text-lg">Small moments of making music</div>
             {musicList.data.map((musicItem, k) => (
               <MusicItem info={musicItem} key={k} />

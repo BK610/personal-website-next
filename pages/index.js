@@ -1,7 +1,6 @@
 import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
-import PageHeading from "../components/PageHeading";
 import { importCSVDataAsJson } from "../lib/sheetsConnector";
 
 export default function Home({ sectionsList }) {
@@ -9,7 +8,7 @@ export default function Home({ sectionsList }) {
     <BaseLayout navbarVisible={false} className="">
       <div className="w-full flex flex-col items-center relative z-10">
         <div className="h-full w-full max-w-md space-y-4">
-          <PageHeading>Hello hello, this is Bailey speaking.</PageHeading>
+          <h1>Hello hello, this is Bailey speaking.</h1>
           <div className="prose prose-stone dark:prose-invert">
             Welcome to the home of my many interests, half-baked projects, and
             digital representations of myself.
