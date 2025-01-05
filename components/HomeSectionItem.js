@@ -14,11 +14,8 @@ export default class HomeSectionItem extends Component {
                 {this.props.description}
               </p>
             </div>
-            <div className="justify-self-end self-center">
-              <img
-                className="h-8 dark:invert group-hover:animate-spin"
-                src={this.props.icon}
-              />
+            <div className="text-3xl justify-self-end self-center pr-3 group-hover:animate-spin">
+              {this.props.emoji}
             </div>
           </a>
         </SectionItem>

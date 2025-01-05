@@ -2,7 +2,7 @@ import Link from "next/link";
 import SectionItem from "./SectionItem";
 
 export default function ProjectSectionItem({ project }) {
-  const { title, description, date, icon, slug } = project;
+  const { title, description, date, emoji, slug } = project;
 
   const dateObj = new Date(date);
 
@@ -21,11 +21,8 @@ export default function ProjectSectionItem({ project }) {
             <h3 className="mb-1">{title}</h3>
             <p className="text-stone-700 dark:text-stone-100">{description}</p>
           </div>
-          <div className="justify-self-end self-center">
-            <img
-              className="h-8 dark:invert group-hover:animate-spin"
-              src={icon}
-            />
+          <div className="text-3xl justify-self-end self-center pr-3 group-hover:animate-spin">
+            {emoji}
           </div>
         </a>
       </SectionItem>

@@ -22,7 +22,7 @@ export default function Home({ sectionsList }) {
                 link={section.link ? section.link : section.name.toLowerCase()}
                 name={section.name}
                 description={section.description}
-                icon={section.icon}
+                emoji={section.emoji}
                 key={k}
               />
             ))}
