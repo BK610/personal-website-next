@@ -9,8 +9,8 @@ export default function ProjectSectionItem({ project }) {
   return (
     <Link href={"/projects/" + slug} passHref>
       <SectionItem className="group transition hover:scale-105 p-2 cursor-pointer">
-        <a className="grid grid-cols-2" href={"/projects/" + slug}>
-          <div className="self-center">
+        <a className="grid grid-cols-4" href={"/projects/" + slug}>
+          <div className="self-center col-span-3">
             <p className="mb-1 text-stone-700 dark:text-stone-200 font-light text-sm">
               From{" "}
               {dateObj.toLocaleDateString("en-US", {
