@@ -33,4 +33,11 @@
     @apply text-xl;
     @apply font-serif;
   }
+  code {
+    @apply bg-stone-200;
+    @apply dark:bg-stone-700;
+    @apply rounded-lg;
+    @apply px-1;
+    @apply py-1;
+  }
 }

@@ -11,6 +11,18 @@ module.exports = {
         sans: ["Poppins", ...defaultTheme.fontFamily.sans],
         serif: ["Aleo", ...defaultTheme.fontFamily.serif],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+          },
+        },
+      },
       /*
       Generated on https://palettte.app. Exported JSON at the end of the file.
       */
