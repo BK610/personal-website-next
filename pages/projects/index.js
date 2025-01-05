@@ -1,4 +1,4 @@
-import HomeSectionItem from "../../components/HomeSectionItem";
+import ProjectSectionItem from "../../components/ProjectSectionItem";
 import BaseLayout from "../../components/BaseLayout";
 import SectionList from "../../components/SectionList";
 import { importCSVDataAsJson } from "../../lib/sheetsConnector";
@@ -13,14 +13,8 @@ export default function Projects({ projectsList }) {
             Things I've worked on.
           </div>
           <SectionList>
-            {projectsList.data.map((section, k) => (
-              <HomeSectionItem
-                link={"/projects/" + section.slug}
-                name={section.title}
-                description={section.description}
-                icon={section.icon}
-                key={k}
-              />
+            {projectsList.data.map((project, k) => (
+              <ProjectSectionItem project={project} key={k} />
             ))}
           </SectionList>
         </div>
