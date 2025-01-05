@@ -4,7 +4,7 @@ import BlueskyPostText from "./BlueskyPostText";
 export default function BlueskyPost({ post_data }) {
   const { author, record } = post_data.post;
 
-  console.log(post_data);
+  // console.log(post_data);
 
   return (
     <a
