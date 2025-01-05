@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { micromark } from "micromark";
 import SectionItem from "./SectionItem";
-import SectionItemHeading from "./SectionItemHeading";
 
 export default class MusicItem extends Component {
   getContentBytype(type, embedUrl) {
@@ -47,9 +46,9 @@ export default class MusicItem extends Component {
               className="h-full w-full"
             >
               <div className="p-2 flex flex-row hover:underline group-hover:animate-wiggle">
-                <SectionItemHeading className="basis-11/12 dark:text-stone-100 line-clamp-1">
+                <h3 className="basis-11/12 dark:text-stone-100 line-clamp-1">
                   {this.props.info.title}
-                </SectionItemHeading>
+                </h3>
                 <div className="text-right basis-1/12 dark:text-stone-100">
                   <img
                     src="img/external-link-outline-svgrepo-com.svg"
@@ -60,9 +59,9 @@ export default class MusicItem extends Component {
             </a>
           ) : (
             <div className="p-2">
-              <SectionItemHeading className="dark:text-stone-100 line-clamp-1">
+              <h3 className="dark:text-stone-100 line-clamp-1">
                 {this.props.info.title}
-              </SectionItemHeading>
+              </h3>
             </div>
           )}
         </div>

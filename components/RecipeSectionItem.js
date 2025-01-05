@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Component } from "react";
 import SectionItem from "./SectionItem";
-import SectionItemHeading from "./SectionItemHeading";
 
 export default class RecipeSectionItem extends Component {
   render() {
@@ -17,9 +16,7 @@ export default class RecipeSectionItem extends Component {
             href={this.props.link}
           >
             <div className="p-2 col-span-2 overflow-hidden">
-              <SectionItemHeading className="mb-1">
-                {this.props.name}
-              </SectionItemHeading>
+              <h3 className="mb-1">{this.props.name}</h3>
               <p
                 className="font-light text-stone-700 dark:text-stone-100
               line-clamp-3"
