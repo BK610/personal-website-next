@@ -20,15 +20,19 @@ import { useRouter } from "next/router";
 const NavItem = ({ link, title, icon, animation }) => {
   return (
     <Link href={link}>
-      <div className="w-fit mr-1 inline-block group transition ">
+      <div className="w-fit inline-block group transition ">
         <a
           href={link}
           className="p-1 cursor-pointer
     border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
         >
-          <span className={`inline-block group-hover:animate-${animation}`}>
-            {icon}
-          </span>{" "}
+          {icon && (
+            <span
+              className={`mr-1 inline-block group-hover:animate-${animation}`}
+            >
+              {icon}
+            </span>
+          )}
           {title}
         </a>
       </div>
@@ -36,21 +40,28 @@ const NavItem = ({ link, title, icon, animation }) => {
   );
 };
 
-function NavBar(props) {
-  const router = useRouter();
+export default function NavBar(props) {
+  // const router = useRouter();
+  const { asPath } = useRouter();
+
+  var breadcrumbs = asPath.split("/");
+  breadcrumbs = breadcrumbs.slice(1, breadcrumbs.length - 1);
 
   // Shorthand for going up one URL level: "."
   return (
     <div
       className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
     >
-      <NavItem link="/" title="Home" icon="🏠" animation="wigglelg" />
-      <span className="px-1 mr-1 inline-block">•</span>
-      <NavItem link="." title="Up One Section" icon="↑" animation="bounceup" />
-      <span className="px-1 mr-1 inline-block">•</span>
-      <div className="w-fit mr-1 inline-block group transition">
+      <NavItem link="/" title="home" icon="🏠" animation="wigglelg" />
+      {breadcrumbs.map((breadcrumb) => (
+        <>
+          <span className="px-1 inline-block">/</span>
+          <NavItem link="." title={breadcrumb} />
+        </>
+      ))}
+      {/* <div className="w-fit -1 inline-block group ">
         <button
-          className="font-light text-sm text-stone-800 dark:text-stone-200"
+          className="font-light text-sm text-stone-600 dark:text-stone-400"
           onClick={router.back}
         >
           <a
@@ -60,9 +71,7 @@ function NavBar(props) {
             <span className="inline-block ">←</span> Back
           </a>
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
-
-export default NavBar;
