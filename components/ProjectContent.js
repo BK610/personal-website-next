@@ -3,7 +3,10 @@ import { micromark } from "micromark";
 export default function ProjectContent({ project }) {
   const { title, longDescription, date, markdown, link } = project;
 
-  const dateObj = new Date(date);
+  const formattedDate = new Date(date).toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  });
 
   const longDescriptionHtml = micromark(longDescription);
   const markdownHtml = micromark(markdown);
@@ -11,12 +14,8 @@ export default function ProjectContent({ project }) {
   return (
     <>
       <div className="w-full pb-2 border-b border-b-stone-500">
-        <div className="text-stone-500 dark:text-stone-400">
-          From{" "}
-          {dateObj.toLocaleDateString("en-US", {
-            month: "long",
-            year: "numeric",
-          })}
+        <div className="text-sm text-stone-500 dark:text-stone-400">
+          From {formattedDate}
         </div>
         <h1 className="mt-4">{title}</h1>
         <a href={link} target="_blank">
@@ -29,12 +28,12 @@ export default function ProjectContent({ project }) {
           </button>
         </a>
         <p
-          className="mt-2 prose prose-stone dark:prose-invert"
+          className="mt-2 prose prose-stone dark:prose-invert leading-relaxed"
           dangerouslySetInnerHTML={{ __html: longDescriptionHtml }}
         />
       </div>
       <div
-        className="prose prose-stone dark:prose-invert mt-4"
+        className="mt-4 prose prose-stone dark:prose-invert leading-relaxed"
         dangerouslySetInnerHTML={{ __html: markdownHtml }}
       ></div>
     </>
