@@ -6,16 +6,12 @@ export default class RecipeSectionItem extends Component {
   render() {
     return (
       <Link href={this.props.link} passHref>
-        <SectionItem
-          className="group cursor-pointer transition hover:scale-105
-                   overflow-hidden
-                   h-32 grid grid-rows-1"
-        >
+        <SectionItem className="h-32 grid grid-rows-1 group cursor-pointer transition hover:scale-105">
           <a
             className="h-full w-full grid grid-cols-3 self-center items-center"
             href={this.props.link}
           >
-            <div className="p-2 col-span-2 overflow-hidden">
+            <div className="p-2 col-span-2">
               <h3 className="mb-1">{this.props.name}</h3>
               <p
                 className="font-light text-stone-700 dark:text-stone-100

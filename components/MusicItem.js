@@ -32,12 +32,7 @@ export default class MusicItem extends Component {
 
   render() {
     return (
-      <SectionItem
-        className="overflow-hidden
-        flex flex-col
-        transition
-        divide-y divide-purple-300 dark:divide-purple-300"
-      >
+      <SectionItem className="flex flex-col transition divide-y divide-purple-300">
         <div className="group font-serif text-lg hover:underline">
           {this.props.info.linkUrl ? (
             <a
@@ -66,7 +61,7 @@ export default class MusicItem extends Component {
           )}
         </div>
         <div className="flex flex-row flex-wrap sm:h-40 h-fit divide-x divide-purple-300 dark:divide-purple-300">
-          <div className="w-full sm:w-1/3 p-2 h-full break-words text-ellipsis overflow-auto">
+          <div className="w-full sm:w-1/3 p-2 h-full break-words text-ellipsis">
             <div
               dangerouslySetInnerHTML={{
                 __html: micromark(
