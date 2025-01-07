@@ -35,7 +35,7 @@ export default function ProjectContent({ project }) {
       <div
         className="mt-4 prose prose-stone dark:prose-invert leading-relaxed"
         dangerouslySetInnerHTML={{ __html: markdownHtml }}
-      ></div>
+      />
     </>
   );
 }
