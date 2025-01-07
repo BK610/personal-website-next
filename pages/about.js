@@ -7,10 +7,10 @@ export default function About({}) {
       <div>
         <div>
           <h1>About</h1>
-          <div className="col-span-2 sm:col-span-1 prose dark:prose-invert">
+          <div className="col-span-2 sm:col-span-1 prose prose-stone dark:prose-invert leading-relaxed">
             <p>
-              Hello! I think the world's a fun place, and I chase the things I
-              find interesting.
+              Hello! I am here on this earth to have fun, learn, teach, create,
+              and love.
             </p>
             <p>Highlights from the last few years:</p>
             <ul>
@@ -28,8 +28,9 @@ export default function About({}) {
                 <Link href="/recipes">food is pretty cool</Link>.
               </li>
               <li>
-                Hiking a section of the Appalachian Trail on a week's notice,
-                with the help of one brave, offroad-friendly taxi driver (
+                Hiking a section of the Appalachian Trail on a week's notice and
+                with no training, with the help of one brave, offroad-friendly
+                taxi driver (
                 <a
                   href="https://connect.clickandpledge.com/w/Form/980c7253-487d-45d4-a9d0-fd149fb53720?637680013319366350"
                   target="_blank"
