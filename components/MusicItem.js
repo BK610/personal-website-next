@@ -6,6 +6,8 @@ export default class MusicItem extends Component {
   getContentBytype(type, embedUrl) {
     let content;
 
+    console.log(type);
+
     switch (type) {
       case "YouTube":
         content = (
@@ -15,6 +17,9 @@ export default class MusicItem extends Component {
             allowFullScreen
           />
         );
+        break;
+      case "Google Photos":
+        content = <div>Google Photos</div>;
         break;
       case "File":
         content = <div>File</div>;
@@ -61,7 +66,7 @@ export default class MusicItem extends Component {
           )}
         </div>
         <div className="flex flex-row flex-wrap sm:h-40 h-fit divide-x divide-purple-300 dark:divide-purple-300">
-          <div className="w-full sm:w-1/3 p-2 h-full break-words text-ellipsis">
+          <div className="w-full sm:basis-1/3 p-2 h-full break-words text-ellipsis">
             <div
               dangerouslySetInnerHTML={{
                 __html: micromark(
@@ -73,15 +78,19 @@ export default class MusicItem extends Component {
               "
             />
           </div>
-          <div
-            className="sm:w-2/3 w-full h-full 
+          {this.props.info.type == "YouTube" ? (
+            <div
+              className="sm:basis-2/3 h-full 
           bg-center bg-[url('/img/loading.svg')] dark:bg-[url('/img/loading-dark.svg')]"
-          >
-            {this.getContentBytype(
-              this.props.info.type,
-              this.props.info.embedUrl
-            )}
-          </div>
+            >
+              {this.getContentBytype(
+                this.props.info.type,
+                this.props.info.embedUrl
+              )}
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </SectionItem>
     );
