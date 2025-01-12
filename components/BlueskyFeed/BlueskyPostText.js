@@ -32,6 +32,8 @@ function renderAsMarkdown(richText) {
       markdown += `[${segment.text}](${segment.link?.uri})`;
     } else if (segment.isMention()) {
       markdown += `[${segment.text}](https://bsky.app/profile/${segment.mention?.did})`;
+    } else if (segment.isTag()) {
+      markdown += `[${segment.text}](https://bsky.app/hashtag/${segment.tag?.tag})`;
     } else {
       markdown += segment.text;
     }
