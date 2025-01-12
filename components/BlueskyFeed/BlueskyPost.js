@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function BlueskyPost({ post_data }) {
   const { author, record, uri } = post_data.post;
   const { reason } = post_data;
-  console.log(post_data);
+
   const blueskyUri = getBlueskyUri(author.handle, uri);
   const isRepost =
     typeof reason !== "undefined" &&
