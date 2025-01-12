@@ -1,15 +1,24 @@
 import BlueskyPostHeader from "./BlueskyPostHeader";
 import BlueskyPostText from "./BlueskyPostText";
+import BlueskyFooter from "./BlueskyFooter";
+import Image from "next/image";
 
 export default function BlueskyPost({ post_data }) {
   const { author, record, uri } = post_data.post;
   const { reason } = post_data;
+  console.log(post_data);
   const blueskyUri = getBlueskyUri(author.handle, uri);
   const isRepost =
     typeof reason !== "undefined" &&
     reason.$type === "app.bsky.feed.defs#reasonRepost";
 
   return (
+    /** Things to add:
+     * - "Replied to..."
+     * - Showing threads
+     * - Showing images
+     * - Showing link previews
+     */
     <a href={blueskyUri} target="_blank">
       <div
         className="p-4 my-4 bg-stone-200 dark:bg-stone-800 rounded-lg
@@ -27,10 +36,12 @@ export default function BlueskyPost({ post_data }) {
               src={author.avatar}
               height={"50px"}
               width={"50px"}
+              alt={`Avatar photo of user ${author.displayName}`}
             />
             <div className="w-full">
               <BlueskyPostHeader author={author} record={record} />
               <BlueskyPostText text={record.text} />
+              <BlueskyFooter post={post_data.post} />
             </div>
           </div>
         </div>
