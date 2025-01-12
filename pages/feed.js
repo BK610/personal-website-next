@@ -8,7 +8,11 @@ export default function Feed({ feed }) {
       <div>
         <h1>My Bluesky Feed</h1>
         <p className="underline text-stone-700 dark:text-stone-300 text-sm">
-          <a href="https://bsky.app/profile/baileykane.co" target="_blank">
+          <a
+            className="hover:opacity-70"
+            href="https://bsky.app/profile/baileykane.co"
+            target="_blank"
+          >
             View my profile.
           </a>
         </p>
