@@ -20,6 +20,11 @@ module.exports = {
             "code::after": {
               content: '""',
             },
+            a: {
+              "&:hover": {
+                opacity: ".7",
+              },
+            },
           },
         },
       },
