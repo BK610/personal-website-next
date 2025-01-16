@@ -5,7 +5,7 @@ import { agent } from "../lib/bskyApi";
 export default function Feed({ feed }) {
   return (
     <BaseLayout titleText={"Feed"}>
-      <div>
+      <div className="max-w-2xl mx-auto">
         <h1>My Bluesky Feed</h1>
         <p className="underline text-stone-700 dark:text-stone-300 text-sm">
           <a
