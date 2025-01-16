@@ -21,7 +21,7 @@ export default function BaseLayout({
       </Head>
       <div
         className="flex flex-col items-center
-    h-full min-h-screen w-full
+    min-h-screen w-full
     bg-stone-50
     dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800
     select-none text-stone-900 dark:text-stone-100"
