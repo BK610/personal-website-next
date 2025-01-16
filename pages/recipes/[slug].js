@@ -10,7 +10,9 @@ export default function Recipe({ recipe }) {
 
   return (
     <BaseLayout>
-      <RecipeContent recipe={recipe} />
+      <div className="max-w-3xl mx-auto">
+        <RecipeContent recipe={recipe} />
+      </div>
     </BaseLayout>
   );
 }
