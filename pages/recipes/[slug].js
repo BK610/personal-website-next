@@ -9,7 +9,7 @@ export default function Recipe({ recipe }) {
   }
 
   return (
-    <BaseLayout>
+    <BaseLayout titleText={`Recipes | ${recipe.title}`}>
       <div className="max-w-3xl mx-auto">
         <RecipeContent recipe={recipe} />
       </div>

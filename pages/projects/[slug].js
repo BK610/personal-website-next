@@ -9,7 +9,7 @@ export default function Project({ project }) {
   }
 
   return (
-    <BaseLayout>
+    <BaseLayout titleText={`Projects | ${project.title}`}>
       <div className="max-w-3xl mx-auto">
         <ProjectContent project={project} />
       </div>

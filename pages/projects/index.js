@@ -5,7 +5,7 @@ import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 
 export default function Projects({ projectsList }) {
   return (
-    <BaseLayout className="">
+    <BaseLayout titleText={"Projects"}>
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center relative z-10">
         <div className="h-full w-full space-y-4">
           <h2>Projects</h2>
