@@ -26,7 +26,7 @@ export default function BaseLayout({
     dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800
     select-none text-stone-900 dark:text-stone-100"
       >
-        <div className="max-w-2xl w-full p-2 space-y-4">
+        <div className="max-w-7xl w-full p-2 space-y-4">
           <NavBar className={navbarVisible} />
           <main>{children}</main>
         </div>
