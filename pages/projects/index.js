@@ -6,13 +6,13 @@ import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 export default function Projects({ projectsList }) {
   return (
     <BaseLayout className="">
-      <div className="w-full flex flex-col items-center relative z-10">
-        <div className="h-full w-full max-w-md space-y-4">
+      <div className="w-full max-w-5xl mx-auto flex flex-col items-center relative z-10">
+        <div className="h-full w-full space-y-4">
           <h2>Projects</h2>
           <div className="prose prose-stone dark:prose-invert">
             Things I've worked on.
           </div>
-          <SectionList>
+          <SectionList className="grid grid-cols-1 sm:grid-cols-2">
             {projectsList.data.map((project, k) => (
               <ProjectSectionItem project={project} key={k} />
             ))}
