@@ -15,7 +15,7 @@ export default function RecipeContent({ recipe }) {
 
   const dateObj = new Date(date);
   return (
-    <div className="prose prose-stone dark:prose-invert mt-4">
+    <div className="prose prose-stone dark:prose-invert max-w-none mt-4">
       <h1>{title}</h1>
       <div className="border-b border-b-stone-500">
         <span className="no-underline">{description}</span>
