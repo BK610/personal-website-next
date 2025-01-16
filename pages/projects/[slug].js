@@ -10,7 +10,9 @@ export default function Project({ project }) {
 
   return (
     <BaseLayout>
-      <ProjectContent project={project} />
+      <div className="max-w-3xl mx-auto">
+        <ProjectContent project={project} />
+      </div>
     </BaseLayout>
   );
 }
