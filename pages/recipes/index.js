@@ -18,7 +18,6 @@ export default function Recipes({ recipesList }) {
                 description={recipe.description}
                 icon={recipe.thumbnail}
                 key={k}
-                className={"w-full"}
               />
             ))}
           </SectionList>
