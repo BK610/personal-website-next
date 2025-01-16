@@ -1,16 +1,16 @@
 {
-  "name": "Bailey Kane PWA",
-  "short_name": "BKPWA",
-  "description": "Bailey Kane's personal website, as a PWA.",
+  "name": "Bailey Kane",
+  "short_name": "BK",
+  "description": "Bailey Kane | Builder, engineer, artist",
   "icons": [
     {
-      "src": "android-chrome-192x192.png",
+      "src": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🅱️</text></svg>",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "android-chrome-512x512.png",
+      "src": "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>🅱️</text></svg>",
       "sizes": "512x512",
       "type": "image/png"
     }
