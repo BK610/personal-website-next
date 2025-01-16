@@ -5,7 +5,7 @@ import { importCSVDataAsJson } from "../../lib/sheetsConnector";
 
 export default function Recipes({ recipesList }) {
   return (
-    <BaseLayout navbarVisible={true} titleText={"Recipes"}>
+    <BaseLayout titleText={"Recipes"}>
       <div className="w-full flex flex-col items-center">
         <div className="w-full max-w-lg space-y-4">
           <h2>Recipes</h2>
