@@ -15,7 +15,7 @@ export default function ProjectContent({ project }) {
   return (
     <>
       <div className="w-full pb-2 border-b border-b-stone-500">
-        <div className="text-sm text-stone-500 dark:text-stone-400">
+        <div className="w-full text-sm text-stone-500 dark:text-stone-400">
           From {formattedDate}
         </div>
         <h1 className="mt-4">{title}</h1>
@@ -30,14 +30,16 @@ export default function ProjectContent({ project }) {
           </button>
         </a>
         <p
-          className="mt-6 prose prose-stone dark:prose-invert leading-relaxed"
+          className="mt-6 min-w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed"
           dangerouslySetInnerHTML={{ __html: longDescriptionHtml }}
         />
       </div>
-      <div
-        className="mt-4 prose prose-stone dark:prose-invert leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: markdownHtml }}
-      />
+      <div className="max-w-full">
+        <div
+          className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: markdownHtml }}
+        />
+      </div>
     </>
   );
 }
