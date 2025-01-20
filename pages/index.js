@@ -16,7 +16,7 @@ export default function Home({ sectionsList }) {
             <br />
             Hope you enjoy.
           </div>
-          <SectionList className="space-y-4">
+          <SectionList className="item-list space-y-4">
             {sectionsList.data.map((section, k) => (
               <HomeSectionItem
                 link={section.link ? section.link : section.name.toLowerCase()}

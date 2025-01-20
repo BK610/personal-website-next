@@ -12,7 +12,7 @@ export default function Projects({ projectsList }) {
           <div className="prose prose-stone dark:prose-invert">
             Things I've worked on.
           </div>
-          <SectionList className="grid grid-cols-1 sm:grid-cols-2">
+          <SectionList className="item-list grid grid-cols-1 sm:grid-cols-2">
             {projectsList.data
               .sort((a, b) => {
                 // Sorting by date, newest --> oldest
