@@ -8,9 +8,13 @@ export default function LibraryCards({ libraryCardsList }) {
   const [allCards, setAllCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
 
-  // function setSelected(element) {
-  //   setSelectedCard(element);
-  // }
+  function setSelected(element) {
+    if (selectedCard == element) {
+      setSelectedCard(null);
+    } else {
+      setSelectedCard(element);
+    }
+  }
 
   useEffect(() => {
     // console.log("STARTING");
@@ -86,7 +90,7 @@ export default function LibraryCards({ libraryCardsList }) {
           className={`${
             !selectedCard && "invisible"
           } p-2 rounded-lg border border-black dark:border-white`}
-          onClick={() => setSelectedCard(null)}
+          onClick={() => setSelected(null)}
         >
           Deselect
         </button>
@@ -100,7 +104,7 @@ export default function LibraryCards({ libraryCardsList }) {
               <LibraryCard
                 libraryCard={libraryCard}
                 key={k}
-                onClick={(event) => setSelectedCard(event.currentTarget)}
+                onClick={(event) => setSelected(event.currentTarget)}
               />
             ))}
         </SectionList>
