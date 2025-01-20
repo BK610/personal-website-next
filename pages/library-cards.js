@@ -54,7 +54,7 @@ export default function LibraryCards({ libraryCardsList }) {
         element.style.setProperty("--rotateX", "0deg");
         element.style.setProperty("--rotateY", "0deg");
         element.classList.remove("library-card-selected");
-        // element.removeEventListener("touchmove", rotateElement);
+        element.removeEventListener("touchmove", rotateElement);
       });
     }
 
@@ -62,7 +62,7 @@ export default function LibraryCards({ libraryCardsList }) {
 
     if (selectedCard) {
       document.addEventListener("mousemove", rotateElement);
-      // selectedCard.addEventListener("touchmove", rotateElement);
+      selectedCard.addEventListener("touchmove", rotateElement);
       selectedCard.classList.add("library-card-selected");
     }
 
@@ -73,9 +73,9 @@ export default function LibraryCards({ libraryCardsList }) {
     // Ensures the event listener is removed when the component is unmounted
     return () => {
       document.removeEventListener("mousemove", rotateElement);
-      // if (selectedCard) {
-      //   selectedCard.removeEventListener("touchmove", rotateElement);
-      // }
+      if (selectedCard) {
+        selectedCard.removeEventListener("touchmove", rotateElement);
+      }
     };
   }, [selectedCard, libraryCardsList]);
 
@@ -86,14 +86,13 @@ export default function LibraryCards({ libraryCardsList }) {
         <div className="prose prose-stone dark:prose-invert">
           <p>I collect library cards. Here's the current collection.</p>
         </div>
-        <button
-          className={`${
-            !selectedCard && "invisible"
-          } p-2 rounded-lg border border-black dark:border-white`}
+        {/* <button
+          disabled={!selectedCard}
+          className={`disabled:opacity-60 p-2 rounded-lg border border-black dark:border-white`}
           onClick={() => setSelected(null)}
         >
           Deselect
-        </button>
+        </button> */}
         <SectionList className="grid grid-cols-1 md:grid-cols-2">
           {libraryCardsList.data
             .sort((a, b) => {
