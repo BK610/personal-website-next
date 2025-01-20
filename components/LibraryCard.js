@@ -8,19 +8,20 @@ export default function LibraryCard({ libraryCard, onClick }) {
 
   return (
     <div
-      className="p-4 grid gap-4 h-max-fit rounded-lg
+      className="p-4 grid gap-4 rounded-lg h-fit
     border border-stone-700 dark:border-stone-300 bg-stone-200 dark:bg-stone-800 shadow-md hover:shadow-lg"
     >
       {imagePath && (
         <div
           onClick={onClick}
-          className="library-card rounded-lg cursor-pointer min-h-fit max-h-60 min-w-fit mx-auto
-                border-2 border-purple-200 active:border-purple-300 dark:border-purple-300 active:dark:border-purple-100
-                shadow-md hover:shadow-lg"
+          className="library-card rounded-lg cursor-pointer h-fit mx-auto
+                border-2 border-purple-200 hover:border-purple-300 dark:border-purple-300 hover:dark:border-purple-100
+                shadow-md hover:shadow-xl"
         >
           <img
-            className="object-scale-down rounded-md m-auto"
+            className="object-scale-down h-fit max-h-72 rounded-md m-auto"
             src={imagePath}
+            alt={"Library card from " + name}
           />
         </div>
       )}
