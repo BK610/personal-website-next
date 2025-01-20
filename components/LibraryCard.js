@@ -1,5 +1,5 @@
 export default function LibraryCard({ libraryCard, onClick }) {
-  const { name, system, link, branch, acquiredDate, imagePath } = libraryCard;
+  const { name, link, branch, acquiredDate, imagePath } = libraryCard;
 
   const formattedDate = new Date(acquiredDate).toLocaleDateString("en-US", {
     month: "long",
@@ -7,7 +7,10 @@ export default function LibraryCard({ libraryCard, onClick }) {
   });
 
   return (
-    <div className="p-4 grid gap-4 rounded-lg border border-stone-700 dark:border-stone-300 bg-stone-200 dark:bg-stone-800 shadow-md">
+    <div
+      className="p-4 grid gap-4 h-max-fit rounded-lg
+    border border-stone-700 dark:border-stone-300 bg-stone-200 dark:bg-stone-800 shadow-md hover:shadow-lg"
+    >
       {imagePath && (
         <div
           onClick={onClick}
