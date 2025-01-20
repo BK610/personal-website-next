@@ -77,7 +77,7 @@ export default function LibraryCards({ libraryCardsList }) {
 
   return (
     <BaseLayout titleText={"Library Cards"}>
-      <div className="max-w-xl mx-auto space-y-4">
+      <div className="max-w-4xl mx-auto space-y-4">
         <h1>Library Cards</h1>
         <div className="prose prose-stone dark:prose-invert">
           <p>I collect library cards. Here's the current collection.</p>
@@ -90,7 +90,7 @@ export default function LibraryCards({ libraryCardsList }) {
         >
           Deselect
         </button>
-        <SectionList className="grid">
+        <SectionList className="grid grid-cols-1 md:grid-cols-2">
           {libraryCardsList.data
             .sort((a, b) => {
               // Sorting by date, newest --> oldest
