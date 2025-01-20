@@ -91,13 +91,18 @@ export default function LibraryCards({ libraryCardsList }) {
           Deselect
         </button>
         <SectionList className="grid">
-          {libraryCardsList.data.map((libraryCard, k) => (
-            <LibraryCard
-              libraryCard={libraryCard}
-              key={k}
-              onClick={(event) => setSelectedCard(event.currentTarget)}
-            />
-          ))}
+          {libraryCardsList.data
+            .sort((a, b) => {
+              // Sorting by date, newest --> oldest
+              return Date.parse(b.acquiredDate) - Date.parse(a.acquiredDate);
+            })
+            .map((libraryCard, k) => (
+              <LibraryCard
+                libraryCard={libraryCard}
+                key={k}
+                onClick={(event) => setSelectedCard(event.currentTarget)}
+              />
+            ))}
         </SectionList>
       </div>
     </BaseLayout>
