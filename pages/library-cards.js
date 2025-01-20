@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
+import { importCSVDataAsJson } from "../lib/sheetsConnector";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
+import LibraryCard from "../components/LibraryCard";
 
-export default function LibraryCards() {
+export default function LibraryCards({ libraryCardsList }) {
   const [allCards, setAllCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
 
-  function setSelected(element) {
-    setSelectedCard(element);
-  }
+  // function setSelected(element) {
+  //   setSelectedCard(element);
+  // }
 
   useEffect(() => {
-    // console.log("STARTING");
-    // console.log("selected:", selectedCard);
-    // console.log("all:", allCards);
+    console.log("STARTING");
+    console.log("selected:", selectedCard);
+    console.log("all:", allCards);
+    console.log("librarycardlist:", libraryCardsList);
 
     function rotateElement(event) {
       if (!selectedCard) return;
@@ -41,13 +44,15 @@ export default function LibraryCards() {
 
     setAllCards(document.querySelectorAll(".library-card"));
 
-    allCards.forEach((element) => {
-      console.log("Removing event listener for:", element);
-      element.style.setProperty("--rotateX", "0deg");
-      element.style.setProperty("--rotateY", "0deg");
-      element.classList.remove("library-card-selected");
-      // element.removeEventListener("touchmove", rotateElement);
-    });
+    if (allCards) {
+      allCards.forEach((element) => {
+        console.log("Removing event listener for:", element);
+        element.style.setProperty("--rotateX", "0deg");
+        element.style.setProperty("--rotateY", "0deg");
+        element.classList.remove("library-card-selected");
+        // element.removeEventListener("touchmove", rotateElement);
+      });
+    }
 
     document.removeEventListener("mousemove", rotateElement);
 
@@ -68,11 +73,11 @@ export default function LibraryCards() {
       //   selectedCard.removeEventListener("touchmove", rotateElement);
       // }
     };
-  }, [selectedCard]);
+  }, [selectedCard, libraryCardsList]);
 
   return (
-    <BaseLayout>
-      <div className="max-w-2xl mx-auto space-y-4">
+    <BaseLayout titleText={"Library Cards"}>
+      <div className="max-w-xl mx-auto space-y-4">
         <h1>Library Cards</h1>
         <div className="prose prose-stone dark:prose-invert">
           <p>I collect library cards. Here's the current collection.</p>
@@ -85,28 +90,30 @@ export default function LibraryCards() {
         >
           Deselect
         </button>
-        <SectionList>
-          <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 rounded-lg border border-stone-800 dark:border-stone-200">
-            <div
+        <SectionList className="grid">
+          {libraryCardsList.data.map((libraryCard, k) => (
+            <LibraryCard
+              libraryCard={libraryCard}
+              key={k}
               onClick={(event) => setSelectedCard(event.currentTarget)}
-              className="library-card rounded-lg cursor-pointer
-                border-2 border-purple-200 active:border-purple-300 dark:border-purple-300 active:dark:border-purple-100
-                shadow-md hover:shadow-lg"
-            >
-              <div className="text-center h-40 content-center">
-                LIBRARY CARD IMAGE
-              </div>
-            </div>
-            <div>
-              <ul className="list-disc list-inside">
-                <li>Library system:</li>
-                <li>Library branch:</li>
-                <li>Acquired:</li>
-              </ul>
-            </div>
-          </div>
+            />
+          ))}
         </SectionList>
       </div>
     </BaseLayout>
   );
+}
+
+// Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
+export async function getStaticProps() {
+  const libraryCardsList = await importCSVDataAsJson(
+    process.env.NEXT_PUBLIC_LIBRARY_CARDS_DATA_URL
+  );
+
+  return {
+    props: {
+      libraryCardsList,
+    },
+    revalidate: 60,
+  };
 }
