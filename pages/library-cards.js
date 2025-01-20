@@ -46,14 +46,14 @@ export default function LibraryCards() {
       element.style.setProperty("--rotateX", "0deg");
       element.style.setProperty("--rotateY", "0deg");
       element.classList.remove("library-card-selected");
-      // element.removeEventListener("drag", rotateElement);
+      // element.removeEventListener("touchmove", rotateElement);
     });
 
     document.removeEventListener("mousemove", rotateElement);
 
     if (selectedCard) {
       document.addEventListener("mousemove", rotateElement);
-      // selectedCard.addEventListener("drag", rotateElement);
+      // selectedCard.addEventListener("touchmove", rotateElement);
       selectedCard.classList.add("library-card-selected");
     }
 
@@ -64,6 +64,9 @@ export default function LibraryCards() {
     // Ensures the event listener is removed when the component is unmounted
     return () => {
       document.removeEventListener("mousemove", rotateElement);
+      // if (selectedCard) {
+      //   selectedCard.removeEventListener("touchmove", rotateElement);
+      // }
     };
   }, [selectedCard]);
 
