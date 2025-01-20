@@ -8,13 +8,13 @@ export default function LibraryCards({ libraryCardsList }) {
   const [allCards, setAllCards] = useState([]);
   const [selectedCard, setSelectedCard] = useState(null);
 
-  function setSelected(element) {
+  const setSelected = (element) => {
     if (selectedCard == element) {
       setSelectedCard(null);
     } else {
       setSelectedCard(element);
     }
-  }
+  };
 
   useEffect(() => {
     // console.log("STARTING");
@@ -39,8 +39,8 @@ export default function LibraryCards({ libraryCardsList }) {
       //   return;
       // }
 
-      const offsetX = ((x - middleX) / middleX) * 60;
-      const offsetY = ((y - middleY) / middleY) * 60;
+      const offsetX = ((x - middleX) / middleX) * 45;
+      const offsetY = ((y - middleY) / middleY) * 45;
 
       selectedCard.style.setProperty("--rotateX", -1 * offsetY + "deg");
       selectedCard.style.setProperty("--rotateY", -1 * offsetX + "deg");
@@ -50,7 +50,7 @@ export default function LibraryCards({ libraryCardsList }) {
 
     if (allCards) {
       allCards.forEach((element) => {
-        console.log("Removing event listener for:", element);
+        // console.log("Removing event listener for:", element);
         element.style.setProperty("--rotateX", "0deg");
         element.style.setProperty("--rotateY", "0deg");
         element.classList.remove("library-card-selected");
@@ -81,6 +81,7 @@ export default function LibraryCards({ libraryCardsList }) {
 
   return (
     <BaseLayout titleText={"Library Cards"}>
+      {selectedCard && <div className="fixed inset-0 bg-black/50 z-40" />}
       <div className="max-w-4xl mx-auto space-y-4">
         <h1>Library Cards</h1>
         <div className="prose prose-stone dark:prose-invert">
