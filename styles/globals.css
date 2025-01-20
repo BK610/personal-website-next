@@ -19,10 +19,15 @@
     color: #000;
   }
 
-  .library-card {
+  .library-card-selected {
+    transition-property: rotateX rotateY;
+    transition-timing-function: ease;
+    transition-duration: 150ms;
     transform-style: preserve-3d;
     transform: perspective(5000px) rotateY(var(--rotateY))
       rotateX(var(--rotateX));
+    position: relative;
+    z-index: 50;
   }
 }
 
