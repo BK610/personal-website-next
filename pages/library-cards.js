@@ -13,10 +13,10 @@ export default function LibraryCards({ libraryCardsList }) {
   // }
 
   useEffect(() => {
-    console.log("STARTING");
-    console.log("selected:", selectedCard);
-    console.log("all:", allCards);
-    console.log("librarycardlist:", libraryCardsList);
+    // console.log("STARTING");
+    // console.log("selected:", selectedCard);
+    // console.log("all:", allCards);
+    // console.log("librarycardlist:", libraryCardsList);
 
     function rotateElement(event) {
       if (!selectedCard) return;
