@@ -26,6 +26,7 @@
     transform-style: preserve-3d;
     transform: perspective(5000px) rotateY(var(--rotateY))
       rotateX(var(--rotateX));
+    filter: brightness(1.2);
     position: relative;
     z-index: 50;
   }
