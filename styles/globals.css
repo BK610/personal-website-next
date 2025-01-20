@@ -22,7 +22,7 @@
   .library-card {
     transform-style: preserve-3d;
     transform: perspective(5000px) rotateY(var(--rotateY))
-      rotateX(var(--rotateY));
+      rotateX(var(--rotateX));
   }
 }
 
