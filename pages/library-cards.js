@@ -81,19 +81,17 @@ export default function LibraryCards({ libraryCardsList }) {
 
   return (
     <BaseLayout titleText={"Library Cards"}>
-      {selectedCard && <div className="fixed inset-0 bg-black/50 z-40" />}
+      {selectedCard && (
+        <div className="fixed backdrop-blur-2xl transition inset-0 bg-black/50 z-40" />
+      )}
       <div className="max-w-4xl mx-auto space-y-4">
         <h1>Library Cards</h1>
         <div className="prose prose-stone dark:prose-invert">
-          <p>I collect library cards. Here's the current collection.</p>
+          <p>
+            I collect library cards when I travel! Here's the current
+            collection.
+          </p>
         </div>
-        {/* <button
-          disabled={!selectedCard}
-          className={`disabled:opacity-60 p-2 rounded-lg border border-black dark:border-white`}
-          onClick={() => setSelected(null)}
-        >
-          Deselect
-        </button> */}
         <SectionList className="grid grid-cols-1 md:grid-cols-2">
           {libraryCardsList.data
             .sort((a, b) => {
