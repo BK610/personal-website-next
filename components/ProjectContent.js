@@ -1,4 +1,5 @@
 import { micromark } from "micromark";
+import Button from "./Button";
 
 export default function ProjectContent({ project }) {
   const {
@@ -29,15 +30,7 @@ export default function ProjectContent({ project }) {
         <h1 className="mt-4 font-bold">{title}</h1>
         {image && <img src={image} className="rounded-lg" alt={imageAltText} />}
         <div className="mt-2 space-x-2">
-          <a href={link} target="_blank">
-            <button
-              className="px-4 py-2 font-bold
-              bg-gradient-to-r from-purple-200 to-orange-100 dark:from-purple-500 dark:to-orange-300
-              border border-stone-800 dark:border-stone-200 rounded-full hover:opacity-80 active:opacity-60"
-            >
-              Visit →
-            </button>
-          </a>
+          <Button href={link} />
           {githubLink && (
             <a href={githubLink} target="_blank">
               <button
