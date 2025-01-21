@@ -4,7 +4,6 @@ import Button from "./Button";
 export default function LibraryCard({ libraryCard, onClick }) {
   const [isSelected, setIsSelected] = useState(false);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  // const [originalPosition, setOriginalPosition] = useState(null);
   const [initialTouch, setInitialTouch] = useState(null);
   const elementRef = useRef(null);
 
@@ -14,16 +13,6 @@ export default function LibraryCard({ libraryCard, onClick }) {
     month: "long",
     year: "numeric",
   });
-
-  // useEffect(() => {
-  //   if (isSelected) {
-  //     const rect = elementRef.current.getBoundingClientRect();
-  //     setOriginalPosition({
-  //       top: rect.top + window.scrollY,
-  //       left: rect.left + window.scrollY,
-  //     });
-  //   }
-  // }, [isSelected]);
 
   useEffect(() => {
     const element = elementRef.current;
@@ -60,7 +49,7 @@ export default function LibraryCard({ libraryCard, onClick }) {
       // setRotation({ x: 0, y: 0 });
     };
 
-    // Add event listeners with { passive: false }
+    // Add event listener with { passive: false } to enable preventing default behavior
     element.addEventListener("touchmove", handleTouchMove, { passive: false });
     element.addEventListener("touchstart", handleTouchStart, { passive: true });
     element.addEventListener("touchend", handleTouchEnd, { passive: true });

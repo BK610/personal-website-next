@@ -3,7 +3,6 @@ import { importCSVDataAsJson } from "../lib/sheetsConnector";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
 import LibraryCard from "../components/LibraryCard";
-import InteractiveElement from "../components/InteractiveElement";
 
 export default function LibraryCards({ libraryCardsList }) {
   const [allCards, setAllCards] = useState([]);
