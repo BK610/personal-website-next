@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function LibraryCard({ libraryCard, onClick }) {
   const { name, link, branch, acquiredDate, imagePath } = libraryCard;
 
@@ -15,7 +17,7 @@ export default function LibraryCard({ libraryCard, onClick }) {
         <div
           onClick={onClick}
           className="library-card rounded-lg cursor-pointer h-fit mx-auto
-                border-2 border-purple-200 hover:border-purple-300 dark:border-purple-300 hover:dark:border-purple-100
+                border-2 border-purple-200 hover:border-purple-300 dark:border-purple-400 hover:dark:border-purple-500
                 shadow-md hover:shadow-xl"
         >
           <img
@@ -25,16 +27,18 @@ export default function LibraryCard({ libraryCard, onClick }) {
           />
         </div>
       )}
-      <a href={link} target="_blank">
-        <div className="hover:underline">
-          <h2>{name}</h2>
-          <p className="text-stone-600 dark:text-stone-400">
-            {branch}
-            {" • "}
-            Acquired {formattedDate}
-          </p>
-        </div>
-      </a>
+      <div>
+        <h2>{name}</h2>
+        <p className="text-stone-600 dark:text-stone-400">
+          {branch}
+          {" • "}
+          Acquired {formattedDate}
+        </p>
+      </div>
+      <Button
+        href={link}
+        className={"rounded-lg font-semibold w-full hover:shadow-lg"}
+      />
     </div>
   );
 }
