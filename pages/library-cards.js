@@ -3,6 +3,7 @@ import { importCSVDataAsJson } from "../lib/sheetsConnector";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
 import LibraryCard from "../components/LibraryCard";
+import InteractiveElement from "../components/InteractiveElement";
 
 export default function LibraryCards({ libraryCardsList }) {
   const [allCards, setAllCards] = useState([]);
@@ -22,13 +23,20 @@ export default function LibraryCards({ libraryCardsList }) {
     // console.log("all:", allCards);
     // console.log("librarycardlist:", libraryCardsList);
 
-    function rotateElement(event) {
+    const setRotation = (x, y) => {
+      if (!selectedCard) return;
+
+      selectedCard.style.setProperty("--rotateX", -1 * y + "deg");
+      selectedCard.style.setProperty("--rotateY", -1 * x + "deg");
+    };
+
+    function handleMouseMove(event) {
       if (!selectedCard) return;
 
       const x = event.clientX;
       const y = event.clientY;
 
-      var rect = selectedCard.getBoundingClientRect();
+      const rect = selectedCard.getBoundingClientRect();
       const middleX = (rect.left + rect.right) / 2;
       const middleY = (rect.top + rect.bottom) / 2;
 
@@ -42,8 +50,7 @@ export default function LibraryCards({ libraryCardsList }) {
       const offsetX = ((x - middleX) / middleX) * 45;
       const offsetY = ((y - middleY) / middleY) * 45;
 
-      selectedCard.style.setProperty("--rotateX", -1 * offsetY + "deg");
-      selectedCard.style.setProperty("--rotateY", -1 * offsetX + "deg");
+      setRotation(offsetX, offsetY);
     }
 
     setAllCards(document.querySelectorAll(".library-card"));
@@ -54,15 +61,13 @@ export default function LibraryCards({ libraryCardsList }) {
         element.style.setProperty("--rotateX", "0deg");
         element.style.setProperty("--rotateY", "0deg");
         element.classList.remove("library-card-selected");
-        element.removeEventListener("touchmove", rotateElement);
       });
     }
 
-    document.removeEventListener("mousemove", rotateElement);
+    document.removeEventListener("mousemove", handleMouseMove);
 
     if (selectedCard) {
-      document.addEventListener("mousemove", rotateElement);
-      selectedCard.addEventListener("touchmove", rotateElement);
+      document.addEventListener("mousemove", handleMouseMove);
       selectedCard.classList.add("library-card-selected");
     }
 
@@ -72,10 +77,7 @@ export default function LibraryCards({ libraryCardsList }) {
 
     // Ensures the event listener is removed when the component is unmounted
     return () => {
-      document.removeEventListener("mousemove", rotateElement);
-      if (selectedCard) {
-        selectedCard.removeEventListener("touchmove", rotateElement);
-      }
+      document.removeEventListener("mousemove", handleMouseMove);
     };
   }, [selectedCard, libraryCardsList]);
 
