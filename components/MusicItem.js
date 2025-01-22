@@ -6,7 +6,7 @@ export default class MusicItem extends Component {
   getContentBytype(type, embedUrl) {
     let content;
 
-    console.log(type);
+    // console.log(type);
 
     switch (type) {
       case "YouTube":
