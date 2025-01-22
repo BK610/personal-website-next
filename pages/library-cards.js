@@ -17,67 +17,17 @@ export default function LibraryCards({ libraryCardsList }) {
   };
 
   useEffect(() => {
-    // console.log("STARTING");
-    // console.log("selected:", selectedCard);
-    // console.log("all:", allCards);
-    // console.log("librarycardlist:", libraryCardsList);
-
-    const setRotation = (x, y) => {
-      if (!selectedCard) return;
-
-      selectedCard.style.setProperty("--rotateX", -1 * y + "deg");
-      selectedCard.style.setProperty("--rotateY", -1 * x + "deg");
-    };
-
-    function handleMouseMove(event) {
-      if (!selectedCard) return;
-
-      const x = event.clientX;
-      const y = event.clientY;
-
-      const rect = selectedCard.getBoundingClientRect();
-      const middleX = (rect.left + rect.right) / 2;
-      const middleY = (rect.top + rect.bottom) / 2;
-
-      // Optional: Use this to only move the card if mouse is near the card
-      // if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) {
-      //   selectedCard.style.setProperty("--rotateX", "0deg");
-      //   selectedCard.style.setProperty("--rotateY", "0deg");
-      //   return;
-      // }
-
-      const offsetX = ((x - middleX) / middleX) * 45;
-      const offsetY = ((y - middleY) / middleY) * 45;
-
-      setRotation(offsetX, offsetY);
-    }
-
     setAllCards(document.querySelectorAll(".library-card"));
 
     if (allCards) {
       allCards.forEach((element) => {
-        // console.log("Removing event listener for:", element);
-        element.style.setProperty("--rotateX", "0deg");
-        element.style.setProperty("--rotateY", "0deg");
         element.classList.remove("library-card-selected");
       });
     }
 
-    document.removeEventListener("mousemove", handleMouseMove);
-
     if (selectedCard) {
-      document.addEventListener("mousemove", handleMouseMove);
       selectedCard.classList.add("library-card-selected");
     }
-
-    // console.log("ENDING");
-    // console.log("selected:", selectedCard);
-    // console.log("all:", allCards);
-
-    // Ensures the event listener is removed when the component is unmounted
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
   }, [selectedCard, libraryCardsList]);
 
   return (
