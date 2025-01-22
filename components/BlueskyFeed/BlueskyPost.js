@@ -1,6 +1,7 @@
 import BlueskyPostHeader from "./BlueskyPostHeader";
 import BlueskyPostText from "./BlueskyPostText";
 import BlueskyFooter from "./BlueskyFooter";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function BlueskyPost({ post_data }) {
@@ -19,7 +20,7 @@ export default function BlueskyPost({ post_data }) {
      * - Showing images
      * - Showing link previews
      */
-    <a href={blueskyUri} target="_blank">
+    <Link href={blueskyUri} target="_blank">
       <div
         className="p-4 my-4 bg-stone-200 dark:bg-stone-800 rounded-lg
       border border-stone-300 dark:border-stone-500 border-b-stone-900 dark:border-b-stone-200 hover:border-stone-900 hover:dark:border-stone-200 "
@@ -46,7 +47,7 @@ export default function BlueskyPost({ post_data }) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
