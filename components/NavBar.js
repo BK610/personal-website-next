@@ -53,10 +53,10 @@ export default function NavBar(props) {
       className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
     >
       <NavItem link="/" title="home" icon="🏠" animation="wigglelg" />
-      {breadcrumbs.map((breadcrumb) => (
+      {breadcrumbs.map((breadcrumb, k) => (
         <>
           <span className="px-1 inline-block">/</span>
-          <NavItem link="." title={breadcrumb} />
+          <NavItem link="." title={breadcrumb} key={k} />
         </>
       ))}
     </nav>
