@@ -10,7 +10,7 @@ export default function Recipes({ recipesList }) {
         <div className="w-full max-w-lg space-y-4">
           <h2>Recipes</h2>
           <div className="text-lg">Behold, my lovely recipes.</div>
-          <SectionList className="item-list space-y-4">
+          <SectionList className="item-list flex flex-col">
             {recipesList.data.map((recipe, k) => (
               <RecipeSectionItem
                 link={"/recipes/" + recipe.slug}
