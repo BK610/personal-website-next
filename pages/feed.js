@@ -17,8 +17,8 @@ export default function Feed({ feed }) {
           </a>
         </p>
         <div className="col-span-2 sm:col-span-1">
-          {feed.map((post_data) => (
-            <BlueskyPost post_data={post_data} />
+          {feed.map((post_data, k) => (
+            <BlueskyPost post_data={post_data} key={k} />
           ))}
         </div>
       </div>
