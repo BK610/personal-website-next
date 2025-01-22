@@ -20,28 +20,28 @@ import { useRouter } from "next/router";
 const NavItem = ({ link, title, icon, animation }) => {
   return (
     <Link href={link}>
-      <div className="w-fit inline-block group transition ">
-        <a
-          href={link}
-          className="p-1 cursor-pointer
+      <div
+        className="w-fit inline-block group transition p-1 cursor-pointer
     border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
-        >
-          {icon && (
-            <span
-              className={`mr-1 inline-block group-hover:animate-${animation}`}
-            >
-              {icon}
-            </span>
-          )}
-          {title}
-        </a>
+      >
+        {/* <a
+          className=""
+        > */}
+        {icon && (
+          <span
+            className={`mr-1 inline-block group-hover:animate-${animation}`}
+          >
+            {icon}
+          </span>
+        )}
+        {title}
+        {/* </a> */}
       </div>
     </Link>
   );
 };
 
 export default function NavBar(props) {
-  // const router = useRouter();
   const { asPath } = useRouter();
 
   var breadcrumbs = asPath.split("/");
@@ -59,19 +59,6 @@ export default function NavBar(props) {
           <NavItem link="." title={breadcrumb} />
         </>
       ))}
-      {/* <div className="w-fit -1 inline-block group ">
-        <button
-          className="font-light text-sm text-stone-600 dark:text-stone-400"
-          onClick={router.back}
-        >
-          <a
-            className="p-1 cursor-pointer
-          border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
-          >
-            <span className="inline-block ">←</span> Back
-          </a>
-        </button>
-      </div> */}
     </nav>
   );
 }
