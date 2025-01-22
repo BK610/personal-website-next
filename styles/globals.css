@@ -20,12 +20,12 @@
   }
 
   .library-card-selected {
-    transition-property: rotateX rotateY;
+    /* transition-property: rotateX rotateY;
     transition-timing-function: ease;
     transition-duration: 150ms;
     transform-style: preserve-3d;
-    transform: perspective(5000px) translate(-50%, -50%) rotateY(var(--rotateY))
-      rotateX(var(--rotateX));
+    rotateX(var(--rotateX)); */
+    transform: translate(-50%, -50%);
     filter: brightness(1.2);
     position: fixed;
     top: 50%;
