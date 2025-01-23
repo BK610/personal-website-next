@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import Button from "./Button";
-import DragToRotateElement from "./DragToRotateElement";
+import DragToRotateElement from "./effects/DragToRotateElement";
 
 export default function LibraryCard({ libraryCard, onClick }) {
   const { name, link, branch, acquiredDate, imagePath } = libraryCard;
