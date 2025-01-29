@@ -8,6 +8,11 @@ export default function About({}) {
         <h1>About</h1>
         <div className="col-span-2 sm:col-span-1 max-w-none prose prose-stone dark:prose-invert leading-relaxed">
           <p>
+            Welcome to the home of my many interests, half-baked projects, and
+            digital representations of myself.
+          </p>
+          <p>Hope you enjoy.</p>
+          <p>
             Hello! I am here on this earth to have fun, learn, teach, create,
             and love.
           </p>
