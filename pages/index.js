@@ -1,6 +1,7 @@
 import HomeSectionItem from "../components/HomeSectionItem";
 import BaseLayout from "../components/BaseLayout";
 import SectionList from "../components/SectionList";
+import SocialLink from "../components/SocialLink";
 import { importCSVDataAsJson } from "../lib/sheetsConnector";
 import Link from "next/link";
 
@@ -10,19 +11,23 @@ export default function Home({ sectionsList }) {
       <div className="max-w-5xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <h1 className="mb-2">Hello hello, this is Bailey speaking.</h1>
-          <div className="prose prose-stone dark:prose-invert prose-a:no-underline">
+          <div className="prose prose-stone dark:prose-invert prose-a:no-underline leading-relaxed">
             <p>
               I help small business owners{" "}
               <b>solve problems with technology,</b> so they can{" "}
               <b>reclaim their time</b> and{" "}
               <b>focus on the things that matter</b>. Contact me at{" "}
-              <a href="mailto:bailey.orion.kane@gmail.com" target="_blank">
+              <a
+                className=""
+                href="mailto:bailey.orion.kane@gmail.com"
+                target="_blank"
+              >
                 <code className="underline">bailey.orion.kane@gmail.com</code>
               </a>
               .
             </p>
             <p>Some things I do:</p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc">
               <li>
                 <b>Build websites</b> for marketing, portfolios, or other
                 information
@@ -48,19 +53,19 @@ export default function Home({ sectionsList }) {
             <p>
               I enjoy working with <b>small business owners and individuals</b>.
               Even more fun if they work in{" "}
-              <span className="underline decoration-green-700 dark:decoration-green-400">
+              <span className="underline decoration-green-700 dark:decoration-green-400 underline-offset-2">
                 climate
               </span>
               ,{" "}
-              <span className="underline decoration-purple-700 dark:decoration-purple-400">
+              <span className="underline decoration-purple-700 dark:decoration-purple-400 underline-offset-2">
                 arts
               </span>
               ,{" "}
-              <span className="underline decoration-orange-600 dark:decoration-orange-400">
+              <span className="underline decoration-orange-600 dark:decoration-orange-400 underline-offset-2">
                 music
               </span>
               , or{" "}
-              <span className="underline decoration-blue-700 dark:decoration-blue-400">
+              <span className="underline decoration-blue-700 dark:decoration-blue-400 underline-offset-2">
                 education
               </span>
               .
@@ -71,9 +76,22 @@ export default function Home({ sectionsList }) {
             </p>
             <p>Talk to you soon 👋</p>
           </div>
+          <div className="pt-4 mt-4 border-t border-t-stone-400 dark:border-t-stone-500">
+            <div className="w-fit flex gap-2 items-center">
+              <SocialLink href="https://www.linkedin.com/in/baileykane/">
+                LinkedIn{" "}
+              </SocialLink>
+              <SocialLink
+                href="https://bsky.app/profile/baileykane.co"
+                icon="/img/bluesky_favicon.png"
+              >
+                Bluesky
+              </SocialLink>
+            </div>
+          </div>
         </div>
         <div className="py-6 px-2 sm:px-4 rounded-lg bg-stone-100 dark:bg-stone-800 w-full flex flex-col relative z-10">
-          <h3 className="text-stone-600 dark:text-stone-400 mb-2 border-b border-b-stone-400 dark:border-b-stone-500">
+          <h3 className="text-stone-600 dark:text-stone-300 mb-2 border-b border-b-stone-400 dark:border-b-stone-500">
             Please, take a gander
           </h3>
           <div className="h-full w-full items-center space-y-4">
