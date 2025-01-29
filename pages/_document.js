@@ -58,7 +58,7 @@ class MyDocument extends Document {
           <meta name="twitter:title" content="Bailey Kane" />
           <meta
             name="twitter:description"
-            content="Bailey Kane | Builder, engineer, artist"
+            content="Bailey Kane | Helping small businesses get more done with technology"
           />
           <meta
             name="twitter:image"
@@ -70,7 +70,7 @@ class MyDocument extends Document {
           <meta property="og:title" content="Bailey Kane" />
           <meta
             property="og:description"
-            content="Bailey Kane | Builder, engineer, artist"
+            content="Bailey Kane | Helping small businesses get more done with technology"
           />
           <meta
             property="og:site_name"
