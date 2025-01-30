@@ -16,7 +16,7 @@ export default class RecipeSectionItem extends Component {
           <div className="p-2 h-24 self-center content-center sm:self-start col-span-2">
             <h3 className="mb-1 font-semibold">{this.props.name}</h3>
             <p
-              className="font-light text-stone-800 dark:text-stone-100
+              className="text-stone-800 dark:text-stone-100
               line-clamp-2"
             >
               {this.props.description}
