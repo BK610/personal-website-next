@@ -28,7 +28,7 @@ export default function ProjectSectionItem({ project }) {
                 {description}
               </p>
             </div>
-            <div className="text-3xl justify-self-end self-center pr-3 group-hover:animate-spin">
+            <div className="text-3xl justify-self-end self-center pr-3">
               {emoji}
             </div>
           </div>

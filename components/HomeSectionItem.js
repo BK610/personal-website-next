@@ -17,7 +17,7 @@ export default function HomeSectionItem({
           <h3 className="mb-1 font-bold">{name}</h3>
           <p className="text-stone-700 dark:text-stone-100">{description}</p>
         </div>
-        <div className="text-3xl justify-self-end self-center pr-3 group-hover:animate-spin">
+        <div className="text-3xl justify-self-end self-center pr-3">
           {emoji}
         </div>
       </SectionItem>
