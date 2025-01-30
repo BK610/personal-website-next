@@ -37,10 +37,24 @@ export default function LibraryCards({ libraryCardsList }) {
       )}
       <div className="max-w-4xl mx-auto space-y-4">
         <h1>Library Cards</h1>
-        <div className="prose prose-stone dark:prose-invert">
+        <div className="prose prose-stone dark:prose-invert max-w-none">
           <p>
             I collect library cards when I travel! Here's the current
             collection.
+          </p>
+          <p>
+            <a
+              href="https://everyday-reading.com/where-you-can-get-a-non-resident-library-card/"
+              target="_blank"
+            >
+              Many libraries
+            </a>{" "}
+            offer library cards to non-residents for a fee, and sometimes for
+            free. I visit libraries, sign up for cards if I can, and use them
+            for ebook access when I go back home.
+          </p>
+          <p>
+            <i>PS: You can drag the cards around, just for fun.</i>
           </p>
         </div>
         <SectionList className="grid grid-cols-1 md:grid-cols-2">
