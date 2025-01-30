@@ -9,21 +9,17 @@ export default function ProjectSectionItem({ project }) {
   return (
     <div>
       <Link href={"/projects/" + slug} passHref>
-        <SectionItem className="group transition hover:scale-105 cursor-pointer grid grid-cols-4 divide-y divide-purple-300">
-          {/* <a
-            className=""
-            href={"/projects/" + slug}
-          > */}
+        <SectionItem className="group transition hover:scale-105 cursor-pointer grid grid-cols-4 divide-y divide-stone-800 dark:divide-stone-200">
           <div className="col-span-4 grid grid-cols-4">
             <div className="p-2 self-center col-span-3">
-              <p className="mb-1 text-stone-700 dark:text-stone-200 font-light text-sm">
+              <p className="mb-1 text-stone-700 dark:text-stone-100 font-light text-sm">
                 From{" "}
                 {dateObj.toLocaleDateString("en-US", {
                   month: "long",
                   year: "numeric",
                 })}
               </p>
-              <h3 className="mb-1">{title}</h3>
+              <h3 className="mb-1 font-bold">{title}</h3>
               <p className="text-stone-700 dark:text-stone-100">
                 {description}
               </p>
@@ -40,7 +36,6 @@ export default function ProjectSectionItem({ project }) {
               />
             </div>
           )}
-          {/* </a> */}
         </SectionItem>
       </Link>
     </div>
