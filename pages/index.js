@@ -92,9 +92,9 @@ export default function Home({ sectionsList }) {
         </div>
         <div className="py-6 px-2 sm:px-4 rounded-lg bg-stone-100 dark:bg-stone-800 w-full flex flex-col relative z-10">
           <h3 className="text-stone-600 dark:text-stone-300 mb-2 border-b border-b-stone-400 dark:border-b-stone-500">
-            Please, take a gander
+            All of my projects
           </h3>
-          <div className="h-full w-full items-center space-y-4">
+          <div className="h-full w-full items-center">
             <SectionList className="item-list flex flex-col">
               {sectionsList.data.map((section, k) => (
                 <HomeSectionItem
