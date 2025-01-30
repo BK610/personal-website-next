@@ -9,8 +9,10 @@ export default function Projects({ projectsList }) {
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center relative z-10">
         <div className="h-full w-full space-y-4">
           <h2>Projects</h2>
-          <div className="prose prose-stone dark:prose-invert">
-            Things I've worked on.
+          <div className="prose prose-stone dark:prose-invert max-w-none">
+            I enjoy creating, teaching, and learning. Along the way, I've built
+            a few things related to technology, music, food, gardening, and
+            more. Here's a sample of those things.
           </div>
           <SectionList className="item-list grid grid-cols-1 sm:grid-cols-2">
             {projectsList.data
