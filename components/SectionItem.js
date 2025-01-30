@@ -19,7 +19,7 @@ const SectionItem = React.forwardRef(({ onClick, href, ...props }, ref) => {
     <div
       className={`${props.className} rounded-lg
                bg-gradient-to-r from-purple-200 to-orange-100 dark:from-purple-500 dark:to-orange-300
-               border border-purple-200 active:border-purple-300 dark:border-purple-300 active:dark:border-purple-100
+               border border-stone-800 dark:border-stone-200
                shadow-md hover:shadow-lg
                `}
       ref={ref}
