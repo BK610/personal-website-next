@@ -18,19 +18,19 @@ export default function LibraryCard({ libraryCard, onClick }) {
       {imagePath && (
         <div className="library-card mx-auto w-fit" onClick={onClick}>
           <DragToRotateElement>
-            <FlashlightEffect>
-              <div
-                className="rounded-lg cursor-pointer h-fit
+            {/* <FlashlightEffect> */}
+            <div
+              className="rounded-lg cursor-pointer h-fit
             border-2 border-purple-200 hover:border-purple-300 dark:border-purple-400 hover:dark:border-purple-500
             shadow-md hover:shadow-xl"
-              >
-                <img
-                  className="object-scale-down h-fit max-h-72 rounded-md m-auto"
-                  src={imagePath}
-                  alt={"Library card from " + name}
-                />
-              </div>
-            </FlashlightEffect>
+            >
+              <img
+                className="object-scale-down h-fit max-h-72 rounded-md m-auto"
+                src={imagePath}
+                alt={"Library card from " + name}
+              />
+            </div>
+            {/* </FlashlightEffect> */}
           </DragToRotateElement>
         </div>
       )}
