@@ -1,15 +1,15 @@
 import Link from "next/link";
-import type Project from "@/types/Project";
+import type ProjectType from "@/types/ProjectType";
 
 interface ProjectSectionItemProps {
-  project: Project;
+  project: ProjectType;
 }
 
 export default function ProjectSectionItem({
   project,
 }: ProjectSectionItemProps): React.ReactElement {
   const { title, description, previewImage, date, emoji, slug } =
-    project as Project;
+    project as ProjectType;
 
   const dateObj = new Date(date);
 

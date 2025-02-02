@@ -1,14 +1,12 @@
 import RecipeSectionItem from "@/components/RecipeSectionItem";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
-import { importCSVDataAsJson } from "@/lib/sheetsConnector";
-import type Recipe from "@/types/Recipe";
+import type RecipeType from "@/types/RecipeType";
 import type { Key } from "react";
-import type { GetStaticProps } from "next";
 
 interface RecipesProps {
   recipesList: {
-    data: Array<Recipe>;
+    data: Array<RecipeType>;
   };
 }
 
@@ -22,7 +20,7 @@ export default function Recipes({
           <h2>Recipes</h2>
           <div className="text-lg">Behold, my lovely recipes.</div>
           <SectionList className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {recipesList.data.map((recipe: Recipe, k: Key) => (
+            {recipesList.data.map((recipe: RecipeType, k: Key) => (
               <RecipeSectionItem
                 link={"/recipes/" + recipe.slug}
                 name={recipe.title}
@@ -37,15 +35,3 @@ export default function Recipes({
     </BaseLayout>
   );
 }
-
-// Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export const getStaticProps = (async () => {
-  const recipesList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_RECIPES_DATA_URL
-  );
-
-  return {
-    props: { recipesList },
-    revalidate: 60,
-  };
-}) satisfies GetStaticProps<RecipesProps>;

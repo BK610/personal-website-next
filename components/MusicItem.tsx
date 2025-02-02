@@ -1,6 +1,6 @@
 import { micromark } from "micromark";
-import type Music from "@/types/Music";
-import type { MusicType } from "@/types/Music";
+import type Music from "@/types/MusicItem";
+import type { MusicType } from "@/types/MusicItem";
 
 interface MusicItemProps {
   musicItem: Music;

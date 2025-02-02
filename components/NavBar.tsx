@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import { useRouter } from "next/compat/router";
+import { usePathname } from "next/navigation";
 
 // Unused. Found that I can just use "." as shorthand for going up one URL level... 🤦
 // function getUpURL() {
@@ -58,10 +59,10 @@ interface NavBarProps {
 }
 
 export default function NavBar({ className }: NavBarProps): React.ReactElement {
-  const router = useRouter();
+  const pathname = usePathname();
 
-  if (router) {
-    var breadcrumbs = router.asPath.split("/");
+  if (pathname) {
+    var breadcrumbs = pathname.split("/");
     breadcrumbs = breadcrumbs.slice(1, breadcrumbs.length - 1);
   }
 

@@ -83,27 +83,7 @@ export default function About(): React.ReactElement {
             <a href="mailto:bailey.orion.kane@gmail.com">please reach out</a>.
             I'd love to hear from you.
           </p>
-          {/* <p>
-                In 2023 I joined{" "}
-                <a href="https://utilityapi.com/" target="_blank">
-                  UtilityAPI
-                </a>{" "}
-                to help energy services companies access energy usage data and
-                combat the most important problem of our time, climate change.
-                protecting our climate, educating everyone for a better future,
-                and celebrating arts and music, some of the things that make
-                life worth living. Reach out if you have a project in mind, want
-                to connect over shared interests or history, or just want to say
-                hi!
-              </p> */}
         </div>
-        {/* <div className="col-span-2 sm:col-span-1 place-self-center sm:justify-self-auto">
-            <img
-              className="rounded-lg border border-stone-800 dark:border-stone-200 object-cover h-72 w-72 sm:w-full"
-              src={`/img/Headshot.jpg`}
-            />
-            <p className="mt-1 text-center">Me, he/him.</p>
-          </div> */}
       </div>
     </BaseLayout>
   );

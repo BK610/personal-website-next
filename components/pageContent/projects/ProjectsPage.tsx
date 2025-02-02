@@ -1,14 +1,14 @@
+"use client";
+
 import ProjectSectionItem from "@/components/ProjectSectionItem";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
-import { importCSVDataAsJson } from "@/lib/sheetsConnector";
-import type Project from "@/types/Project";
-import type { GetStaticProps } from "next";
+import type ProjectType from "@/types/ProjectType";
 import { Key } from "react";
 
 interface ProjectsProps {
   projectsList: {
-    data: Array<Project>;
+    data: Array<ProjectType>;
   };
 }
 
@@ -27,11 +27,11 @@ export default function Projects({
           </div>
           <SectionList className="item-list grid grid-cols-1 sm:grid-cols-2">
             {projectsList.data
-              .sort((a: Project, b: Project) => {
+              .sort((a: ProjectType, b: ProjectType) => {
                 // Sorting by date, newest --> oldest
                 return Date.parse(b.date) - Date.parse(a.date);
               })
-              .map((project: Project, k: Key) => (
+              .map((project: ProjectType, k: Key) => (
                 <ProjectSectionItem project={project} key={k} />
               ))}
           </SectionList>
@@ -40,17 +40,3 @@ export default function Projects({
     </BaseLayout>
   );
 }
-
-// Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export const getStaticProps = (async () => {
-  const projectsList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_PROJECTS_DATA_URL
-  );
-
-  return {
-    props: {
-      projectsList,
-    },
-    revalidate: 60,
-  };
-}) satisfies GetStaticProps<ProjectsProps>;

@@ -1,6 +1,6 @@
 import { micromark } from "micromark";
 import Button from "./Button";
-import type Project from "@/types/Project";
+import type ProjectType from "@/types/ProjectType";
 
 export default function ProjectContent({ project }): React.ReactElement {
   const {
@@ -12,7 +12,7 @@ export default function ProjectContent({ project }): React.ReactElement {
     markdown,
     link,
     githubLink,
-  } = project as Project;
+  } = project as ProjectType;
 
   const formattedDate = new Date(date).toLocaleDateString("en-US", {
     month: "long",

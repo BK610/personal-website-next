@@ -1,6 +1,6 @@
 import BaseLayout from "@/components/BaseLayout";
 
-export default function Garden(): React.ReactElement {
+export default function Page(): React.ReactElement {
   return (
     <BaseLayout>
       <div>Coming soon!</div>

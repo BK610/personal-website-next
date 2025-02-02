@@ -1,8 +1,8 @@
 import { micromark } from "micromark";
-import type Recipe from "@/types/Recipe";
+import type RecipeType from "@/types/RecipeType";
 
 interface RecipeContentProps {
-  recipe: Recipe;
+  recipe: RecipeType;
 }
 
 export default function RecipeContent({
@@ -18,7 +18,7 @@ export default function RecipeContent({
     totalTime,
     ingredients,
     content,
-  } = recipe as Recipe;
+  } = recipe as RecipeType;
 
   const dateObj = new Date(date);
   return (

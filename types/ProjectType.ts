@@ -1,4 +1,4 @@
-export default interface Project {
+export default interface ProjectType {
   title: string;
   description?: string;
   longDescription?: string;

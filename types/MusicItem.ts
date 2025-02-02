@@ -1,4 +1,4 @@
-export default interface Music {
+export default interface MusicItem {
   title: string;
   description: string;
   type: MusicType;

@@ -1,9 +1,7 @@
-import type { GetStaticProps } from "next";
 import BaseLayout from "@/components/BaseLayout";
 import Head from "next/head";
 import MusicItem from "@/components/MusicItem";
-import { importCSVDataAsJson } from "@/lib/sheetsConnector";
-import type Music from "@/types/Music";
+import type Music from "@/types/MusicItem";
 import type { Key } from "react";
 
 interface MusicProps {
@@ -34,17 +32,3 @@ export default function Music({ musicList }: MusicProps): React.ReactElement {
     </>
   );
 }
-
-// Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export const getStaticProps = (async () => {
-  const musicList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_MUSIC_DATA_URL
-  );
-
-  return {
-    props: {
-      musicList,
-    },
-    revalidate: 60,
-  };
-}) satisfies GetStaticProps<MusicProps>;

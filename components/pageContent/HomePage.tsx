@@ -4,22 +4,14 @@ import HomeSectionItem from "@/components/HomeSectionItem";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
 import SocialLink from "@/components/SocialLink";
-// import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import Link from "next/link";
-// import type { GetStaticProps } from "next";
 import type { Key } from "react";
+import type HomeSection from "@/types/home/HomeSection";
 
 interface HomeProps {
   sectionsList: {
     data: Array<HomeSection>;
   };
-}
-
-interface HomeSection {
-  name: string;
-  link: string;
-  description: string;
-  emoji: string;
 }
 
 export default function Home({ sectionsList }: HomeProps): React.ReactElement {
@@ -130,17 +122,3 @@ export default function Home({ sectionsList }: HomeProps): React.ReactElement {
     </BaseLayout>
   );
 }
-
-// // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-// export const getStaticProps = (async () => {
-//   const sectionsList = await importCSVDataAsJson(
-//     process.env.NEXT_PUBLIC_HOME_DATA_URL
-//   );
-
-//   return {
-//     props: {
-//       sectionsList,
-//     },
-//     revalidate: 60,
-//   };
-// }) satisfies GetStaticProps<HomeProps>;

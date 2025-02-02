@@ -1,9 +1,9 @@
+"use client";
+
 import { Key, useEffect, useState } from "react";
-import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
 import LibraryCardItem from "@/components/LibraryCardItem";
-import type { GetStaticProps } from "next";
 import type LibraryCard from "@/types/LibraryCard";
 
 interface LibraryCardsProps {
@@ -89,17 +89,3 @@ export default function LibraryCards({
     </BaseLayout>
   );
 }
-
-// Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export const getStaticProps = (async () => {
-  const libraryCardsList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_LIBRARY_CARDS_DATA_URL || "undefined"
-  );
-
-  return {
-    props: {
-      libraryCardsList,
-    },
-    revalidate: 60,
-  };
-}) satisfies GetStaticProps;
