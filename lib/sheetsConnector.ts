@@ -14,7 +14,7 @@ async function getSheetsCSV(url: URL): Promise<string> {
 }
 
 /**Parse the provided CSV data into an array of JSON objects. */
-function parseCSV(csvData: string): ParseResult<string> {
+function parseCSV(csvData: string): ParseResult<any> {
   return Papa.parse(csvData, { header: true });
 }
 
@@ -25,7 +25,7 @@ function parseCSV(csvData: string): ParseResult<string> {
  */
 export async function importCSVDataAsJson(
   url: string
-): Promise<ParseResult<string>> {
+): Promise<ParseResult<any>> {
   const urlObj = new URL(url);
 
   const csv = await getSheetsCSV(urlObj);
