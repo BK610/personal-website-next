@@ -12,7 +12,7 @@ export default async function Page({ params }): Promise<React.ReactElement> {
 }
 
 async function getRecipe(params: Params): Promise<RecipeType> {
-  const { slug } = params;
+  const { slug } = await params;
 
   const recipesList = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_RECIPES_DATA_URL
