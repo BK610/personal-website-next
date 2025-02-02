@@ -1,8 +1,15 @@
-export default function SocialLink({ href, icon, children }) {
+interface Props {
+  href: string;
+  icon?: string;
+  children: React.ReactNode;
+}
+
+export default function SocialLink({
+  href,
+  icon,
+  children,
+}: Props): React.ReactElement {
   const iconURL = icon ? icon : new URL(href).origin + "/favicon.ico";
-  // console.log("Social link for", href);
-  // console.log("icon", icon);
-  // console.log("iconUrl:", iconURL);
 
   return (
     <a

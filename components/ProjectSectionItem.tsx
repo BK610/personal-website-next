@@ -1,7 +1,15 @@
 import Link from "next/link";
+import type Project from "../types/Project";
 
-export default function ProjectSectionItem({ project }) {
-  const { title, description, previewImage, date, emoji, slug } = project;
+interface ProjectSectionItemProps {
+  project: Project;
+}
+
+export default function ProjectSectionItem({
+  project,
+}: ProjectSectionItemProps): React.ReactElement {
+  const { title, description, previewImage, date, emoji, slug } =
+    project as Project;
 
   const dateObj = new Date(date);
 

@@ -1,4 +1,14 @@
-export default function Button({ href, target = "_blank", className }) {
+interface ButtonProps {
+  href: string;
+  target?: string;
+  className?: string;
+}
+
+export default function Button({
+  href,
+  target = "_blank",
+  className,
+}: ButtonProps): React.ReactElement {
   return (
     <a href={href} target={target}>
       <button

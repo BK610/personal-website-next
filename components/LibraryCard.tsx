@@ -1,9 +1,19 @@
+import type LibraryCard from "@/types/LibraryCard";
 import Button from "./Button";
 import DragToRotateElement from "./effects/DragToRotateElement";
 import FlashlightEffect from "./effects/FlashlightEffect";
 
-export default function LibraryCard({ libraryCard, onClick }) {
-  const { name, link, branch, acquiredDate, imagePath } = libraryCard;
+interface LibraryCardProps {
+  libraryCard: LibraryCard;
+  onClick: () => void;
+}
+
+export default function LibraryCard({
+  libraryCard,
+  onClick,
+}: LibraryCardProps): React.ReactElement {
+  const { name, link, branch, acquiredDate, imagePath } =
+    libraryCard as LibraryCard;
 
   const formattedDate = new Date(acquiredDate).toLocaleDateString("en-US", {
     month: "long",

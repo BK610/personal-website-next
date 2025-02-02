@@ -17,7 +17,19 @@ import { useRouter } from "next/router";
 //   return upURL;
 // }
 
-const NavItem = ({ link, title, icon, animation }) => {
+interface NavItemProps {
+  link: string;
+  title: string;
+  icon?: string;
+  animation?: string;
+}
+
+function NavItem({
+  link,
+  title,
+  icon,
+  animation,
+}: NavItemProps): React.ReactElement {
   return (
     <Link href={link}>
       <div
@@ -39,9 +51,13 @@ const NavItem = ({ link, title, icon, animation }) => {
       </div>
     </Link>
   );
-};
+}
 
-export default function NavBar(props) {
+interface NavBarProps {
+  className?: string;
+}
+
+export default function NavBar({ className }: NavBarProps): React.ReactElement {
   const { asPath } = useRouter();
 
   var breadcrumbs = asPath.split("/");
@@ -50,7 +66,7 @@ export default function NavBar(props) {
   // Shorthand for going up one URL level: "."
   return (
     <nav
-      className={`${props.className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
+      className={`${className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
     >
       <NavItem link="/" title="home" icon="🏠" animation="wigglelg" />
       {breadcrumbs.map((breadcrumb, k) => (

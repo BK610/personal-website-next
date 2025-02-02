@@ -1,12 +1,20 @@
 import Link from "next/link";
 
+interface HomeSectionItemProps {
+  link: string;
+  name: string;
+  description: string;
+  emoji: string;
+  className: string;
+}
+
 export default function HomeSectionItem({
   link,
   name,
   description,
   emoji,
   className,
-}) {
+}: HomeSectionItemProps): React.ReactElement {
   return (
     <Link href={link} passHref>
       <div

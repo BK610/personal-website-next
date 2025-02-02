@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 
-const BaseMap = () => {
+export default function BaseMap(): React.ReactElement {
   mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
 
   useEffect(() => {
@@ -55,6 +55,4 @@ const BaseMap = () => {
   });
 
   return <div id="mapContainer" className="w-full h-full" />;
-};
-
-export default BaseMap;
+}

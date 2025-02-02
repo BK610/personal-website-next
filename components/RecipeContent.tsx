@@ -1,6 +1,13 @@
 import { micromark } from "micromark";
+import type Recipe from "@/types/Recipe";
 
-export default function RecipeContent({ recipe }) {
+interface RecipeContentProps {
+  recipe: Recipe;
+}
+
+export default function RecipeContent({
+  recipe,
+}: RecipeContentProps): React.ReactElement {
   const {
     title,
     date,
@@ -11,7 +18,7 @@ export default function RecipeContent({ recipe }) {
     totalTime,
     ingredients,
     content,
-  } = recipe;
+  } = recipe as Recipe;
 
   const dateObj = new Date(date);
   return (
