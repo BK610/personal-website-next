@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Key } from "react";
 
 // Unused. Found that I can just use "." as shorthand for going up one URL level... 🤦
 // function getUpURL() {
@@ -37,9 +38,6 @@ function NavItem({
         className="w-fit inline-block group transition p-1 cursor-pointer
     border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
       >
-        {/* <a
-          className=""
-        > */}
         {icon && (
           <span
             className={`mr-1 inline-block group-hover:animate-${animation}`}
@@ -48,7 +46,6 @@ function NavItem({
           </span>
         )}
         {title}
-        {/* </a> */}
       </div>
     </Link>
   );
@@ -60,16 +57,16 @@ interface NavBarProps {
 
 export default function NavBar({ className }: NavBarProps): React.ReactElement {
   const pathname = usePathname();
+  var breadcrumbs = null;
+  var navItems = null;
 
   if (pathname) {
-    var breadcrumbs = pathname.split("/");
+    breadcrumbs = pathname.split("/");
     breadcrumbs = breadcrumbs.slice(1, breadcrumbs.length - 1);
   }
 
-  var navItems = null;
-
   if (breadcrumbs) {
-    const navItems = breadcrumbs.map((breadcrumb, k) => (
+    navItems = breadcrumbs.map((breadcrumb: string, k: Key) => (
       <>
         <span className="px-1 inline-block">/</span>
         <NavItem link="." title={breadcrumb} key={k} />
@@ -83,7 +80,7 @@ export default function NavBar({ className }: NavBarProps): React.ReactElement {
       className={`${className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
     >
       <NavItem link="/" title="home" icon="🏠" animation="wigglelg" />
-      {navItems || ""}
+      {navItems || null}
     </nav>
   );
 }
