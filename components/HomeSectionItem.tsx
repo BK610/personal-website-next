@@ -5,7 +5,7 @@ interface HomeSectionItemProps {
   name: string;
   description: string;
   emoji: string;
-  className: string;
+  className?: string;
 }
 
 export default function HomeSectionItem({

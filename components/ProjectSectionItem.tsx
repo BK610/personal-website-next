@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type Project from "../types/Project";
+import type Project from "@/types/Project";
 
 interface ProjectSectionItemProps {
   project: Project;

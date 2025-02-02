@@ -1,10 +1,11 @@
 import Head from "next/head";
-import NavBar from "./NavBar";
+import NavBar from "@/components/NavBar";
 
 interface BaseLayoutProps {
   children: React.ReactElement;
   navbarVisible?: boolean;
   titleText?: string;
+  className?: string;
 }
 
 export default function BaseLayout({
