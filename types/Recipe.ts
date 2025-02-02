@@ -8,4 +8,5 @@ export default interface Recipe {
   totalTime: number;
   ingredients: string;
   content: string;
+  slug: string;
 }
