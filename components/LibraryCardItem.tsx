@@ -1,14 +1,14 @@
 import type LibraryCard from "@/types/LibraryCard";
-import Button from "./Button";
-import DragToRotateElement from "./effects/DragToRotateElement";
-import FlashlightEffect from "./effects/FlashlightEffect";
+import Button from "@/components/Button";
+import DragToRotateElement from "@/components/effects/DragToRotateElement";
+import FlashlightEffect from "@/components/effects/FlashlightEffect";
 
 interface LibraryCardProps {
   libraryCard: LibraryCard;
-  onClick: () => void;
+  onClick: (arg: any) => void;
 }
 
-export default function LibraryCard({
+export default function LibraryCardItem({
   libraryCard,
   onClick,
 }: LibraryCardProps): React.ReactElement {
