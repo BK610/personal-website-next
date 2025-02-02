@@ -1,10 +1,21 @@
 import { micromark } from "micromark";
+import type Music from "@/types/Music";
+import type { MusicType } from "@/types/Music";
 
-export default function MusicItem(): React.ReactElement {
-  function getContentBytype(type, embedUrl) {
-    let content;
+interface MusicItemProps {
+  musicItem: Music;
+}
 
-    // console.log(type);
+export default function MusicItem({
+  musicItem,
+}: MusicItemProps): React.ReactElement {
+  const { title, description, type, embedUrl, linkUrl } = musicItem as Music;
+
+  function getContentBytype(
+    type: MusicType,
+    embedUrl: string
+  ): React.ReactElement {
+    let content: React.ReactElement;
 
     switch (type) {
       case "YouTube":
@@ -36,15 +47,11 @@ export default function MusicItem(): React.ReactElement {
   return (
     <div className="section-item flex flex-col transition divide-y divide-purple-300">
       <div className="group font-serif text-lg hover:underline">
-        {this.props.info.linkUrl ? (
-          <a
-            href={this.props.info.linkUrl}
-            target="_blank"
-            className="h-full w-full"
-          >
+        {linkUrl ? (
+          <a href={linkUrl} target="_blank" className="h-full w-full">
             <div className="p-2 flex flex-row hover:underline group-hover:animate-wiggle">
               <h3 className="basis-11/12 dark:text-stone-100 line-clamp-1">
-                {this.props.info.title}
+                {title}
               </h3>
               <div className="text-right basis-1/12 dark:text-stone-100">
                 <img
@@ -56,9 +63,7 @@ export default function MusicItem(): React.ReactElement {
           </a>
         ) : (
           <div className="p-2">
-            <h3 className="dark:text-stone-100 line-clamp-1">
-              {this.props.info.title}
-            </h3>
+            <h3 className="dark:text-stone-100 line-clamp-1">{title}</h3>
           </div>
         )}
       </div>
@@ -66,24 +71,19 @@ export default function MusicItem(): React.ReactElement {
         <div className="w-full sm:basis-1/3 p-2 h-full break-words text-ellipsis">
           <div
             dangerouslySetInnerHTML={{
-              __html: micromark(
-                this.props.info.description ? this.props.info.description : ""
-              ),
+              __html: micromark(description ? description : ""),
             }}
             className="prose prose-stone dark:prose-invert
               prose-sm font-light prose-a:font-light leading-normal dark:text-stone-100
               "
           />
         </div>
-        {this.props.info.type == "YouTube" ? (
+        {type == "YouTube" ? (
           <div
             className="sm:basis-2/3 h-full 
           bg-center bg-[url('/img/loading.svg')] dark:bg-[url('/img/loading-dark.svg')]"
           >
-            {this.getContentBytype(
-              this.props.info.type,
-              this.props.info.embedUrl
-            )}
+            {getContentBytype(type, embedUrl)}
           </div>
         ) : (
           <></>

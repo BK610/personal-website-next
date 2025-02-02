@@ -17,7 +17,7 @@ export default function Music({ musicList }) {
             <h2>Music</h2>
             <div className="text-lg">Small moments of making music</div>
             {musicList.data.map((musicItem, k) => (
-              <MusicItem info={musicItem} key={k} />
+              <MusicItem musicItem={musicItem} key={k} />
             ))}
           </div>
         </div>
