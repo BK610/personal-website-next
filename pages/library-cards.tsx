@@ -19,10 +19,12 @@ export default function LibraryCards({
   const [selectedCard, setSelectedCard] = useState(null);
 
   const setSelected = (element: React.ReactElement) => {
-    if (selectedCard == element) {
-      setSelectedCard(null);
-    } else {
-      setSelectedCard(element);
+    if (selectedCard) {
+      if (selectedCard == element) {
+        setSelectedCard(null);
+      } else {
+        setSelectedCard(element);
+      }
     }
   };
 
@@ -91,7 +93,7 @@ export default function LibraryCards({
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
 export const getStaticProps = (async () => {
   const libraryCardsList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_LIBRARY_CARDS_DATA_URL
+    process.env.NEXT_PUBLIC_LIBRARY_CARDS_DATA_URL || "undefined"
   );
 
   return {

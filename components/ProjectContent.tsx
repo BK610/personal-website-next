@@ -19,8 +19,8 @@ export default function ProjectContent({ project }): React.ReactElement {
     year: "numeric",
   });
 
-  const longDescriptionHtml = micromark(longDescription);
-  const markdownHtml = micromark(markdown);
+  const longDescriptionHtml = micromark(longDescription || "Coming soon");
+  const markdownHtml = micromark(markdown || "Coming soon");
 
   return (
     <div>
@@ -31,7 +31,7 @@ export default function ProjectContent({ project }): React.ReactElement {
         <h1 className="mt-4 font-bold">{title}</h1>
         {image && <img src={image} className="rounded-lg" alt={imageAltText} />}
         <div className="mt-2 space-x-2">
-          <Button href={link} />
+          <Button href={link || ""} />
           {githubLink && (
             <a href={githubLink} target="_blank">
               <button

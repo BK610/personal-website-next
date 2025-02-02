@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { useEffect } from "react";
-import { Router } from "next/router";
+import { useRouter } from "next/compat/router";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
 
@@ -18,7 +18,7 @@ import { PostHogProvider } from "posthog-js/react";
 
 export default function MyApp({ Component, pageProps }): React.ReactElement {
   useEffect(() => {
-    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY || "undefined", {
       api_host:
         process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com",
       // person_profiles: "identified_only", // or 'always' to create profiles for anonymous users as well
@@ -27,12 +27,14 @@ export default function MyApp({ Component, pageProps }): React.ReactElement {
       },
     });
 
+    const router = useRouter();
+
     const handleRouteChange = () => posthog?.capture("$pageview");
 
-    Router.events.on("routeChangeComplete", handleRouteChange);
+    router.events.on("routeChangeComplete", handleRouteChange);
 
     return () => {
-      Router.events.off("routeChangeComplete", handleRouteChange);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, []);
 
