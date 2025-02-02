@@ -9,3 +9,4 @@ public/workbox*
 public/fallback*
 .env.local
 .partykit/
+tsconfig.tsbuildinfo
