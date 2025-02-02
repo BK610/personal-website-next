@@ -1,9 +1,18 @@
-import BaseLayout from "../components/BaseLayout";
+import type { GetStaticProps } from "next";
+import BaseLayout from "@/components/BaseLayout";
 import Head from "next/head";
-import MusicItem from "../components/MusicItem";
-import { importCSVDataAsJson } from "../lib/sheetsConnector";
+import MusicItem from "@/components/MusicItem";
+import { importCSVDataAsJson } from "@/lib/sheetsConnector";
+import type Music from "@/types/Music";
+import type { Key } from "react";
 
-export default function Music({ musicList }) {
+interface MusicProps {
+  musicList: {
+    data: Array<Music>;
+  };
+}
+
+export default function Music({ musicList }: MusicProps): React.ReactElement {
   return (
     <>
       <Head>
@@ -16,7 +25,7 @@ export default function Music({ musicList }) {
           <div className="w-full max-w-md space-y-4">
             <h2>Music</h2>
             <div className="text-lg">Small moments of making music</div>
-            {musicList.data.map((musicItem, k) => (
+            {musicList.data.map((musicItem: Music, k: Key) => (
               <MusicItem musicItem={musicItem} key={k} />
             ))}
           </div>
@@ -27,7 +36,7 @@ export default function Music({ musicList }) {
 }
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const musicList = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_MUSIC_DATA_URL
   );
@@ -38,4 +47,4 @@ export async function getStaticProps() {
     },
     revalidate: 60,
   };
-}
+}) satisfies GetStaticProps<MusicProps>;

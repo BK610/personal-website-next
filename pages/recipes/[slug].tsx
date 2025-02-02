@@ -1,9 +1,15 @@
-import MissingContent from "../../components/MissingContent";
-import BaseLayout from "../../components/BaseLayout";
-import RecipeContent from "../../components/RecipeContent";
-import { importCSVDataAsJson } from "../../lib/sheetsConnector";
+import MissingContent from "@/components/MissingContent";
+import BaseLayout from "@/components/BaseLayout";
+import RecipeContent from "@/components/RecipeContent";
+import { importCSVDataAsJson } from "@/lib/sheetsConnector";
+import type Recipe from "@/types/Recipe";
+import type { GetStaticProps, GetStaticPaths } from "next";
 
-export default function Recipe({ recipe }) {
+interface RecipeProps {
+  recipe: Recipe;
+}
+
+export default function Recipe({ recipe }: RecipeProps): React.ReactElement {
   if (!recipe) {
     return <MissingContent />;
   }
@@ -18,7 +24,7 @@ export default function Recipe({ recipe }) {
 }
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export async function getStaticProps(context) {
+export const getStaticProps = (async (context) => {
   const { slug } = context.params;
 
   const recipesList = await importCSVDataAsJson(
@@ -31,10 +37,10 @@ export async function getStaticProps(context) {
   const recipe = recipesList.data.find((recipe) => recipe.slug === slug);
 
   return { props: { recipe }, revalidate: 60 };
-}
+}) satisfies GetStaticProps<RecipeProps>;
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-paths
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const recipesList = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_RECIPES_DATA_URL
   );
@@ -44,4 +50,4 @@ export async function getStaticPaths() {
   }));
 
   return { paths, fallback: false };
-}
+}) satisfies GetStaticPaths;

@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import { useEffect } from "react";
 import { Router } from "next/router";
 import posthog from "posthog-js";
@@ -16,7 +16,7 @@ import { PostHogProvider } from "posthog-js/react";
 //   });
 // }
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }): React.ReactElement {
   useEffect(() => {
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
       api_host:
@@ -42,5 +42,3 @@ function MyApp({ Component, pageProps }) {
     </PostHogProvider>
   );
 }
-
-export default MyApp;

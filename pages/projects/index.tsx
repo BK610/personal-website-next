@@ -1,9 +1,20 @@
-import ProjectSectionItem from "../../components/ProjectSectionItem";
-import BaseLayout from "../../components/BaseLayout";
-import SectionList from "../../components/SectionList";
-import { importCSVDataAsJson } from "../../lib/sheetsConnector";
+import ProjectSectionItem from "@/components/ProjectSectionItem";
+import BaseLayout from "@/components/BaseLayout";
+import SectionList from "@/components/SectionList";
+import { importCSVDataAsJson } from "@/lib/sheetsConnector";
+import type Project from "@/types/Project";
+import type { GetStaticProps } from "next";
+import { Key } from "react";
 
-export default function Projects({ projectsList }) {
+interface ProjectsProps {
+  projectsList: {
+    data: Array<Project>;
+  };
+}
+
+export default function Projects({
+  projectsList,
+}: ProjectsProps): React.ReactElement {
   return (
     <BaseLayout titleText={"Projects"}>
       <div className="w-full max-w-5xl mx-auto flex flex-col items-center relative z-10">
@@ -16,11 +27,11 @@ export default function Projects({ projectsList }) {
           </div>
           <SectionList className="item-list grid grid-cols-1 sm:grid-cols-2">
             {projectsList.data
-              .sort((a, b) => {
+              .sort((a: Project, b: Project) => {
                 // Sorting by date, newest --> oldest
                 return Date.parse(b.date) - Date.parse(a.date);
               })
-              .map((project, k) => (
+              .map((project: Project, k: Key) => (
                 <ProjectSectionItem project={project} key={k} />
               ))}
           </SectionList>
@@ -31,7 +42,7 @@ export default function Projects({ projectsList }) {
 }
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const projectsList = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_PROJECTS_DATA_URL
   );
@@ -42,4 +53,4 @@ export async function getStaticProps() {
     },
     revalidate: 60,
   };
-}
+}) satisfies GetStaticProps<ProjectsProps>;

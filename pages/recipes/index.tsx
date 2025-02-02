@@ -1,9 +1,20 @@
-import RecipeSectionItem from "../../components/RecipeSectionItem";
-import BaseLayout from "../../components/BaseLayout";
-import SectionList from "../../components/SectionList";
-import { importCSVDataAsJson } from "../../lib/sheetsConnector";
+import RecipeSectionItem from "@/components/RecipeSectionItem";
+import BaseLayout from "@/components/BaseLayout";
+import SectionList from "@/components/SectionList";
+import { importCSVDataAsJson } from "@/lib/sheetsConnector";
+import type Recipe from "@/types/Recipe";
+import type { Key } from "react";
+import type { GetStaticProps } from "next";
 
-export default function Recipes({ recipesList }) {
+interface RecipesProps {
+  recipesList: {
+    data: Array<Recipe>;
+  };
+}
+
+export default function Recipes({
+  recipesList,
+}: RecipesProps): React.ReactElement {
   return (
     <BaseLayout titleText={"Recipes"}>
       <div className="w-full flex flex-col items-center">
@@ -11,7 +22,7 @@ export default function Recipes({ recipesList }) {
           <h2>Recipes</h2>
           <div className="text-lg">Behold, my lovely recipes.</div>
           <SectionList className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-            {recipesList.data.map((recipe, k) => (
+            {recipesList.data.map((recipe: Recipe, k: Key) => (
               <RecipeSectionItem
                 link={"/recipes/" + recipe.slug}
                 name={recipe.title}
@@ -28,7 +39,7 @@ export default function Recipes({ recipesList }) {
 }
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const recipesList = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_RECIPES_DATA_URL
   );
@@ -37,4 +48,4 @@ export async function getStaticProps() {
     props: { recipesList },
     revalidate: 60,
   };
-}
+}) satisfies GetStaticProps<RecipesProps>;

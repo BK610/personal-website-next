@@ -1,7 +1,7 @@
-import BaseLayout from "../components/BaseLayout";
+import BaseLayout from "@/components/BaseLayout";
 import Link from "next/link";
 
-export default function About({}) {
+export default function About(): React.ReactElement {
   return (
     <BaseLayout titleText={"About"}>
       <div className="max-w-2xl mx-auto">
@@ -60,8 +60,8 @@ export default function About({}) {
             problems with fun people. I've jumped industries and roles in nearly
             every job I've had, and have embraced my nature as an enthusiastic
             generalist.
-            <p>I now spend my time:</p>
           </p>
+          <p>I now spend my time:</p>
           <ul>
             <li>
               Supporting small business owners by ugprading their businesses

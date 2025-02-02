@@ -1,8 +1,14 @@
-import BaseLayout from "../components/BaseLayout";
-import BlueskyPost from "../components/BlueskyFeed/BlueskyPost";
-import { agent } from "../lib/bskyApi";
+import type { Key } from "react";
+import BaseLayout from "@/components/BaseLayout";
+import BlueskyPost from "@/components/BlueskyFeed/BlueskyPost";
+import { agent } from "@/lib/bskyApi";
+import type { GetStaticProps } from "next";
 
-export default function Feed({ feed }) {
+interface FeedProps {
+  feed: Array<Object>;
+}
+
+export default function Feed({ feed }: FeedProps): React.ReactElement {
   return (
     <BaseLayout titleText={"Feed"}>
       <div className="max-w-2xl mx-auto">
@@ -17,7 +23,7 @@ export default function Feed({ feed }) {
           </a>
         </p>
         <div className="col-span-2 sm:col-span-1">
-          {feed.map((post_data, k) => (
+          {feed.map((post_data, k: Key) => (
             <BlueskyPost post_data={post_data} key={k} />
           ))}
         </div>
@@ -26,7 +32,7 @@ export default function Feed({ feed }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const did = await fetch(
     "https://bsky.social/xrpc/com.atproto.identity.resolveHandle?handle=baileykane.co"
   )
@@ -43,4 +49,4 @@ export async function getStaticProps() {
     props: { feed: JSON.parse(JSON.stringify(feed)) },
     revalidate: 60,
   };
-}
+}) satisfies GetStaticProps<FeedProps>;

@@ -1,13 +1,28 @@
-import HomeSectionItem from "../components/HomeSectionItem";
-import BaseLayout from "../components/BaseLayout";
-import SectionList from "../components/SectionList";
-import SocialLink from "../components/SocialLink";
-import { importCSVDataAsJson } from "../lib/sheetsConnector";
+import HomeSectionItem from "@/components/HomeSectionItem";
+import BaseLayout from "@/components/BaseLayout";
+import SectionList from "@/components/SectionList";
+import SocialLink from "@/components/SocialLink";
+import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import Link from "next/link";
+import type { GetStaticProps } from "next";
+import type { Key } from "react";
 
-export default function Home({ sectionsList }) {
+interface HomeProps {
+  sectionsList: {
+    data: Array<HomeSection>;
+  };
+}
+
+interface HomeSection {
+  name: string;
+  link: string;
+  description: string;
+  emoji: string;
+}
+
+export default function Home({ sectionsList }: HomeProps): React.ReactElement {
   return (
-    <BaseLayout navbarVisible={false} className="">
+    <BaseLayout navbarVisible={false}>
       <div className="max-w-5xl mx-auto w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <h1 className="mb-2">Hello hello, this is Bailey speaking.</h1>
@@ -29,8 +44,7 @@ export default function Home({ sectionsList }) {
             <p>Some things I do:</p>
             <ul className="list-disc">
               <li>
-                <b>Build websites</b> for marketing, portfolios, or other
-                information
+                <b>Build websites</b> for businesses, portfolios, or for fun
               </li>
               <li>
                 <b>Create bespoke tools</b> and systems to work more efficiently
@@ -96,7 +110,7 @@ export default function Home({ sectionsList }) {
           </h3>
           <div className="h-full w-full items-center">
             <SectionList className="item-list flex flex-col">
-              {sectionsList.data.map((section, k) => (
+              {sectionsList.data.map((section: HomeSection, k: Key) => (
                 <HomeSectionItem
                   link={
                     section.link ? section.link : section.name.toLowerCase()
@@ -116,7 +130,7 @@ export default function Home({ sectionsList }) {
 }
 
 // Reference: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props#using-getstaticprops-to-fetch-data-from-a-cms
-export async function getStaticProps() {
+export const getStaticProps = (async () => {
   const sectionsList = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_HOME_DATA_URL
   );
@@ -127,4 +141,4 @@ export async function getStaticProps() {
     },
     revalidate: 60,
   };
-}
+}) satisfies GetStaticProps<HomeProps>;
