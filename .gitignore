@@ -8,3 +8,4 @@ public/sw.js.map
 public/workbox*
 public/fallback*
 .env.local
+.partykit/
