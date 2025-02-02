@@ -1,8 +1,21 @@
-"use strict";
 // @ts-check
-Object.defineProperty(exports, "__esModule", { value: true });
-var nextConfig = {};
-exports.default = nextConfig;
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//     /* config options here */
+//   }
+
+//   module.exports = nextConfig
+
+// const withPWA = require('next-pwa');
+// const runtimeCaching = require('next-pwa/cache');
+
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {};
+
+export default nextConfig;
+
 // module.exports =
 //   // withPWA(
 //   {
