@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SectionItem from "./SectionItem";
 
 export default function ProjectSectionItem({ project }) {
   const { title, description, previewImage, date, emoji, slug } = project;
@@ -9,7 +8,7 @@ export default function ProjectSectionItem({ project }) {
   return (
     <div>
       <Link href={"/projects/" + slug} passHref>
-        <SectionItem className="group transition hover:scale-105 cursor-pointer grid grid-cols-4 divide-y divide-stone-800 dark:divide-stone-200">
+        <div className="section-item group transition hover:scale-105 cursor-pointer grid grid-cols-4 divide-y divide-stone-800 dark:divide-stone-200">
           <div className="col-span-4 grid grid-cols-4">
             <div className="p-2 self-center col-span-3">
               <p className="mb-1 text-stone-700 dark:text-stone-100 font-light text-sm">
@@ -36,7 +35,7 @@ export default function ProjectSectionItem({ project }) {
               />
             </div>
           )}
-        </SectionItem>
+        </div>
       </Link>
     </div>
   );

@@ -1,6 +1,5 @@
 import { Component } from "react";
 import { micromark } from "micromark";
-import SectionItem from "./SectionItem";
 
 export default class MusicItem extends Component {
   getContentBytype(type, embedUrl) {
@@ -37,7 +36,7 @@ export default class MusicItem extends Component {
 
   render() {
     return (
-      <SectionItem className="flex flex-col transition divide-y divide-purple-300">
+      <div className="section-item flex flex-col transition divide-y divide-purple-300">
         <div className="group font-serif text-lg hover:underline">
           {this.props.info.linkUrl ? (
             <a
@@ -92,7 +91,7 @@ export default class MusicItem extends Component {
             <></>
           )}
         </div>
-      </SectionItem>
+      </div>
     );
   }
 }
