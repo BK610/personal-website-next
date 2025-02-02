@@ -1,8 +1,8 @@
 export default function SocialLink({ href, icon, children }) {
   const iconURL = icon ? icon : new URL(href).origin + "/favicon.ico";
-  console.log("Social link for", href);
-  console.log("icon", icon);
-  console.log("iconUrl:", iconURL);
+  // console.log("Social link for", href);
+  // console.log("icon", icon);
+  // console.log("iconUrl:", iconURL);
 
   return (
     <a
