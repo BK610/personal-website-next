@@ -1,6 +1,6 @@
 import BlogPage from "@/components/pageContent/blog/BlogPage";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
-import type BlogPost from "@/types/BlogPost";
+import type BlogPostType from "@/types/BlogPost";
 
 export default async function Page(): Promise<React.ReactElement> {
   const blogPosts = await getBlogPosts();
@@ -8,7 +8,7 @@ export default async function Page(): Promise<React.ReactElement> {
   return <BlogPage blogPosts={blogPosts} />;
 }
 
-async function getBlogPosts(): Promise<Array<BlogPost>> {
+async function getBlogPosts(): Promise<Array<BlogPostType>> {
   const blogPosts = await importCSVDataAsJson(
     process.env.NEXT_PUBLIC_BLOG_POST_URL || "undefined"
   );
