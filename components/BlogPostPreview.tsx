@@ -12,9 +12,9 @@ export default function BlogPostPreview({
   return (
     <Link href={blogPost.slug}>
       <div
-        className={`section-item border-stone-800 dark:border-stone-200 group transition hover:scale-105 p-2 cursor-pointer`}
+        className={`section-item group transition hover:scale-105 p-2 cursor-pointer`}
       >
-        <div className="">
+        <div>
           <p className="text-sm mb-2 text-stone-700 dark:text-stone-100">
             From {blogPost.publishedDate}
           </p>
