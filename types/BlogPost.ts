@@ -1,4 +1,4 @@
-export default interface BlogPost {
+export default interface BlogPostType {
   title: string;
   slug: string;
   content: string;
