@@ -1,5 +1,5 @@
 import BaseLayout from "@/components/BaseLayout";
-// import BlogPostContent from "@/components/BlogPostContent";
+import BlogPostContent from "@/components/BlogPostContent";
 import type BlogPostType from "@/types/BlogPost";
 
 interface BlogPostProps {
@@ -12,8 +12,7 @@ export default function BlogPost({
   return (
     <BaseLayout titleText={`Blog | ${blogPost.title}`}>
       <div className="max-w-3xl mx-auto">
-        {/* <BlogPostContent blogPost={blogPost} /> */}
-        {blogPost.title}
+        <BlogPostContent blogPost={blogPost} />
       </div>
     </BaseLayout>
   );
