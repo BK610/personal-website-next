@@ -18,7 +18,7 @@ export default function Blog({ blogPosts }: BlogProps): React.ReactElement {
             Collected thoughts, very much a work in progress.
           </p>
         </div>
-        <SectionList>
+        <SectionList className="flex flex-col item-list">
           {blogPosts.map((blogPost, k: Key) => (
             <BlogPostPreview key={k} blogPost={blogPost} />
           ))}
