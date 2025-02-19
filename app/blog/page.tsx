@@ -1,4 +1,4 @@
-import BlogPage from "@/components/pageContent/BlogPage";
+import BlogPage from "@/components/pageContent/blog/BlogPage";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type BlogPost from "@/types/BlogPost";
 
