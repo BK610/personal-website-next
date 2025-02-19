@@ -1,8 +1,9 @@
 import { Key } from "react";
 import BaseLayout from "@/components/BaseLayout";
+import type BlogPost from "@/types/BlogPost";
 
 interface BlogProps {
-  blogPosts: Array<Object>;
+  blogPosts: Array<BlogPost>;
 }
 
 export default function Blog({ blogPosts }: BlogProps): React.ReactElement {
@@ -17,7 +18,7 @@ export default function Blog({ blogPosts }: BlogProps): React.ReactElement {
         </div>
         <div>
           {blogPosts.map((blogPost, k: Key) => (
-            <div key={k}>{blogPost.name}</div>
+            <div key={k}>{blogPost.title}</div>
           ))}
         </div>
       </div>
