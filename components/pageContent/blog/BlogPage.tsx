@@ -2,10 +2,10 @@ import { Key } from "react";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
 import BlogPostPreview from "@/components/BlogPostPreview";
-import type BlogPost from "@/types/BlogPost";
+import type BlogPostType from "@/types/BlogPost";
 
 interface BlogProps {
-  blogPosts: Array<BlogPost>;
+  blogPosts: Array<BlogPostType>;
 }
 
 export default function Blog({ blogPosts }: BlogProps): React.ReactElement {
