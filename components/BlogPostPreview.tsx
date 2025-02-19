@@ -1,9 +1,9 @@
-import BlogPost from "@/types/BlogPost";
+import BlogPostType from "@/types/BlogPost";
 import Link from "next/link";
 import React from "react";
 
 interface BlogPostPreviewProps {
-  blogPost: BlogPost;
+  blogPost: BlogPostType;
 }
 
 export default function BlogPostPreview({
@@ -12,7 +12,7 @@ export default function BlogPostPreview({
   const publishedDateObj = new Date(blogPost.publishedDate);
 
   return (
-    <Link href={blogPost.slug}>
+    <Link href={"/blog/" + blogPost.slug}>
       <div
         className={`section-item group transition hover:scale-105 p-2 cursor-pointer`}
       >
