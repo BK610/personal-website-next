@@ -26,9 +26,15 @@ export default function BlogPostContent({ blogPost }): React.ReactElement {
   const markdownContent = micromark(content || "Coming soon.");
 
   return (
-    <div
-      className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed"
-      dangerouslySetInnerHTML={{ __html: markdownContent }}
-    />
+    <div>
+      <p className="text-sm text-stone-500 dark:text-stone-400">
+        Published on {formattedPublishedDate}
+      </p>
+      <h1 className="mt-4">{blogPost.title}</h1>
+      <div
+        className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: markdownContent }}
+      />
+    </div>
   );
 }
