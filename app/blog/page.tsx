@@ -2,6 +2,8 @@ import BlogPage from "@/components/pageContent/blog/BlogPage";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type BlogPostType from "@/types/BlogPost";
 
+export const revalidate = 60;
+
 export default async function Page(): Promise<React.ReactElement> {
   const blogPosts = await getBlogPosts();
 

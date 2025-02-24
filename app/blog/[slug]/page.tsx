@@ -3,6 +3,8 @@ import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type BlogPostType from "@/types/BlogPost";
 import { Params } from "next/dist/server/request/params";
 
+export const revalidate = 60;
+
 export default async function Page({ params }): Promise<React.ReactElement> {
   const blogPost = await getBlogPost(params);
 
