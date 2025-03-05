@@ -26,8 +26,8 @@ export default function BlogPostPreview({
             })}
           </p>
           <h2 className="mb-1 font-bold">{blogPost.title}</h2>
-          <p className="text-stone-700 dark:text-stone-100 line-clamp-3">
-            {blogPost.content}
+          <p className="text-stone-700 dark:text-stone-100 line-clamp-2">
+            {blogPost.tagline}
           </p>
         </div>
       </div>
