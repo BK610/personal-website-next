@@ -29,7 +29,7 @@ export default function BaseLayout({
     min-h-screen w-full
     bg-stone-50
     dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800
-    select-none text-stone-900 dark:text-stone-100"
+   text-stone-900 dark:text-stone-100"
       >
         <div className="max-w-7xl w-full p-2 space-y-4">
           <NavBar className={navbarVisible ? "" : "invisible"} />
