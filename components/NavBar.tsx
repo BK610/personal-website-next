@@ -77,7 +77,11 @@ export default function NavBar({ className }: NavBarProps): React.ReactElement {
   // Shorthand for going up one URL level: "."
   return (
     <nav
-      className={`${className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`}
+      className={
+        pathname === "/"
+          ? "invisible"
+          : `${className} py-2 select-none font-light text-sm text-stone-800 dark:text-stone-200 border-b border-stone-800 dark:border-stone-200`
+      }
     >
       <NavItem link="/" title="home" icon="🏠" animation="wigglelg" />
       {navItems || null}
