@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { PostHogProvider } from "./providers";
 import type { Metadata } from "next";
+import NavBar from "@/components/NavBar";
 
 export const metadata: Metadata = {
   title: "Bailey Kane",
@@ -36,7 +37,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <PostHogProvider>{children}</PostHogProvider>
+        <PostHogProvider>
+          <div
+            className="flex flex-col items-center
+    min-h-screen w-full
+    bg-stone-50
+    dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800
+   text-stone-900 dark:text-stone-100"
+          >
+            <div className="max-w-7xl w-full p-2 space-y-4">
+              <NavBar />
+              <main>{children}</main>
+            </div>
+          </div>
+        </PostHogProvider>
       </body>
     </html>
   );
