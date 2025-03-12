@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { PostHogProvider } from "./providers";
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Bailey Kane",
@@ -49,6 +50,7 @@ export default function RootLayout({
               <NavBar />
               <main>{children}</main>
             </div>
+            <Footer />
           </div>
         </PostHogProvider>
       </body>
