@@ -1,4 +1,5 @@
 import BaseLayout from "@/components/BaseLayout";
+import SocialLink from "@/components/SocialLink";
 import Link from "next/link";
 
 export default function About(): React.ReactElement {
@@ -8,13 +9,13 @@ export default function About(): React.ReactElement {
         <h1>About</h1>
         <div className="col-span-2 sm:col-span-1 max-w-none prose prose-stone dark:prose-invert leading-relaxed">
           <p>
-            Welcome to the home of my many interests, half-baked projects, and
-            digital representations of myself.
+            Hello, hello! Welcome to the home of my many interests, half-baked
+            projects, and digital representations of myself. I hope you enjoy
+            it.
           </p>
-          <p>Hope you enjoy.</p>
           <p>
-            Hello! I am here on this earth to have fun, learn, teach, create,
-            and love.
+            I am here on this weird, green planet to have fun, learn, teach,
+            create, and love.
           </p>
           <p>Highlights from the last few years:</p>
           <ul>
@@ -64,7 +65,7 @@ export default function About(): React.ReactElement {
           <p>I now spend my time:</p>
           <ul>
             <li>
-              Supporting small business owners by ugprading their businesses
+              Supporting small business owners by upgrading their businesses
               with technology and processes.
             </li>
             <li>
@@ -83,6 +84,24 @@ export default function About(): React.ReactElement {
             <a href="mailto:bailey.orion.kane@gmail.com">please reach out</a>.
             I'd love to hear from you.
           </p>
+        </div>
+        <hr className="mt-4 pt-4 border-stone-400 dark:border-stone-500" />
+        <div className="flex gap-2 items-center">
+          <SocialLink
+            href="mailto:bailey.orion.kane@gmail.com"
+            icon="/img/emailIcon.png"
+          >
+            Email
+          </SocialLink>
+          <SocialLink href="https://www.linkedin.com/in/baileykane/">
+            LinkedIn{" "}
+          </SocialLink>
+          <SocialLink
+            href="https://bsky.app/profile/baileykane.co"
+            icon="/img/bluesky_favicon.png"
+          >
+            Bluesky
+          </SocialLink>
         </div>
       </div>
     </BaseLayout>
