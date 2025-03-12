@@ -1,4 +1,4 @@
-import Music from "@/components/pageContent/MusicPage";
+import Music from "@/components/pageContent/music/MusicPage";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type MusicItem from "@/types/MusicItem";
 

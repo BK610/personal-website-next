@@ -1,6 +1,6 @@
 import BaseLayout from "@/components/BaseLayout";
 import Head from "next/head";
-import MusicItem from "@/components/MusicItem";
+import MusicItem from "@/components/pageContent/music/MusicItem";
 import type Music from "@/types/MusicItem";
 import type { Key } from "react";
 

@@ -1,5 +1,5 @@
 import BaseLayout from "@/components/BaseLayout";
-import RecipeContent from "@/components/RecipeContent";
+import RecipeContent from "@/components/pageContent/recipes/RecipeContent";
 import type RecipeType from "@/types/RecipeType";
 
 interface RecipeProps {

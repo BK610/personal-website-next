@@ -1,5 +1,5 @@
 import { agent } from "@/lib/bskyApi";
-import Feed from "@/components/pageContent/FeedPage";
+import Feed from "@/components/pageContent/feed/FeedPage";
 
 export const revalidate = 60;
 

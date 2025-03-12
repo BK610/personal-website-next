@@ -1,5 +1,5 @@
 import { RichText } from "@atproto/api";
-import { agent } from "../../lib/bskyApi";
+import { agent } from "@/lib/bskyApi";
 import { micromark } from "micromark";
 
 export default function BlueskyPostText({ text }) {

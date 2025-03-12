@@ -1,4 +1,4 @@
-import RecipeSectionItem from "@/components/RecipeSectionItem";
+import RecipeSectionItem from "@/components/pageContent/recipes/RecipeSectionItem";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
 import type RecipeType from "@/types/RecipeType";

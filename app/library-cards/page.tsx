@@ -1,4 +1,4 @@
-import LibraryCards from "@/components/pageContent/LibraryCardsPage";
+import LibraryCards from "@/components/pageContent/library-cards/LibraryCardsPage";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type LibraryCard from "@/types/LibraryCard";
 

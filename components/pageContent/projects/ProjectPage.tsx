@@ -1,5 +1,5 @@
 import BaseLayout from "@/components/BaseLayout";
-import ProjectContent from "@/components/ProjectContent";
+import ProjectContent from "@/components/pageContent/projects/ProjectContent";
 import type ProjectType from "@/types/ProjectType";
 
 interface ProjectPageProps {

@@ -1,5 +1,5 @@
 import { micromark } from "micromark";
-import Button from "./Button";
+import Button from "../../Button";
 import type ProjectType from "@/types/ProjectType";
 
 export default function ProjectContent({ project }): React.ReactElement {

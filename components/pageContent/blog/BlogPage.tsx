@@ -1,7 +1,7 @@
 import { Key } from "react";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
-import BlogPostPreview from "@/components/BlogPostPreview";
+import BlogPostPreview from "@/components/pageContent/blog/BlogPostPreview";
 import type BlogPostType from "@/types/BlogPost";
 
 interface BlogProps {

@@ -1,5 +1,5 @@
 import BaseLayout from "@/components/BaseLayout";
-import BlogPostContent from "@/components/BlogPostContent";
+import BlogPostContent from "@/components/pageContent/blog/BlogPostContent";
 import type BlogPostType from "@/types/BlogPost";
 
 interface BlogPostProps {

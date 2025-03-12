@@ -1,6 +1,6 @@
 "use client";
 
-import HomeSectionItem from "@/components/HomeSectionItem";
+import HomeSectionItem from "@/components/pageContent/home/HomeSectionItem";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
 import SocialLink from "@/components/SocialLink";

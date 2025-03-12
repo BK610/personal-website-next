@@ -1,4 +1,4 @@
-import Home from "@/components/pageContent/HomePage";
+import Home from "@/components/pageContent/home/HomePage";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type HomeSection from "@/types/home/HomeSection";
 

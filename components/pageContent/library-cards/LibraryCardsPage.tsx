@@ -3,7 +3,7 @@
 import { Key, useEffect, useState } from "react";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
-import LibraryCardItem from "@/components/LibraryCardItem";
+import LibraryCardItem from "@/components/pageContent/library-cards/LibraryCardItem";
 import type LibraryCard from "@/types/LibraryCard";
 
 interface LibraryCardsProps {

@@ -1,6 +1,6 @@
 "use client";
 
-import ProjectSectionItem from "@/components/ProjectSectionItem";
+import ProjectSectionItem from "@/components/pageContent/projects/ProjectSectionItem";
 import BaseLayout from "@/components/BaseLayout";
 import SectionList from "@/components/SectionList";
 import type ProjectType from "@/types/ProjectType";

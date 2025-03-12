@@ -2,7 +2,7 @@
 
 import type { Key } from "react";
 import BaseLayout from "@/components/BaseLayout";
-import BlueskyPost from "@/components/BlueskyFeed/BlueskyPost";
+import BlueskyPost from "@/components/pageContent/feed/BlueskyFeed/BlueskyPost";
 
 interface FeedProps {
   feed: Array<Object>;
