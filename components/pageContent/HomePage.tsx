@@ -86,6 +86,12 @@ export default function Home({ sectionsList }: HomeProps): React.ReactElement {
           </div>
           <div className="pt-4 mt-4 border-t border-t-stone-400 dark:border-t-stone-500">
             <div className="w-fit flex gap-2 items-center">
+              <SocialLink
+                href="mailto:bailey.orion.kane@gmail.com"
+                icon="/img/emailIcon.png"
+              >
+                Email
+              </SocialLink>
               <SocialLink href="https://www.linkedin.com/in/baileykane/">
                 LinkedIn{" "}
               </SocialLink>
@@ -100,7 +106,7 @@ export default function Home({ sectionsList }: HomeProps): React.ReactElement {
         </div>
         <div className="py-6 px-2 sm:px-4 rounded-lg bg-stone-100 dark:bg-stone-800 w-full flex flex-col relative z-10">
           <h3 className="text-stone-600 dark:text-stone-300 mb-2 border-b border-b-stone-400 dark:border-b-stone-500">
-            All of my projects
+            All my stuff
           </h3>
           <div className="h-full w-full items-center">
             <SectionList className="item-list flex flex-col">
