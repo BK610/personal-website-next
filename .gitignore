@@ -10,3 +10,4 @@ public/fallback*
 .env.local
 .partykit/
 tsconfig.tsbuildinfo
+.vscode
