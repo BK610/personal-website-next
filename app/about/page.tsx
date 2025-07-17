@@ -1,4 +1,3 @@
-import About from "@/components/pageContent/AboutPage";
 import BaseLayout from "@/components/BaseLayout";
 import SocialLink from "@/components/SocialLink";
 import Link from "next/link";
