@@ -1,5 +1,4 @@
 import Head from "next/head";
-import NavBar from "@/components/NavBar";
 
 interface BaseLayoutProps {
   children: React.ReactElement;
