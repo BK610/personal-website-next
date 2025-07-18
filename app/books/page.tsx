@@ -3,6 +3,7 @@ import BookCard from "@/components/pageContent/books/BookCard";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type Book from "@/types/Book";
 import Link from "next/link";
+import { Key } from "react";
 
 export const revalidate = 60;
 
@@ -76,8 +77,8 @@ export default async function Page(): Promise<React.ReactElement> {
             .
           </p>
           <div className="py-5 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
-            {books.map((book: Book) => {
-              return <BookCard book={book} />;
+            {books.map((book: Book, k: Key) => {
+              return <BookCard book={book} key={k} />;
             })}
           </div>
         </section>
