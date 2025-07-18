@@ -23,7 +23,7 @@ export default function LibraryCardItem({
   return (
     <div
       className="p-4 grid gap-4 rounded-lg h-fit
-    border border-stone-700 dark:border-stone-300 bg-stone-200 dark:bg-stone-800 shadow-md hover:shadow-lg"
+    border border-stone-500 hover:border-stone-700 dark:border-stone-400 dark:hover:border-stone-300 bg-stone-50 dark:bg-stone-800 shadow-md hover:shadow-lg transition-all"
     >
       {imagePath && (
         <div className="library-card mx-auto w-fit" onClick={onClick}>
