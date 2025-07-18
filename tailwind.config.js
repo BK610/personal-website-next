@@ -115,6 +115,9 @@ module.exports = {
         bounceleft: "bounceleft 1s infinite",
         bounceup: "bounceup 1s infinite",
       },
+      aspectRatio: {
+        book: "16 / 25",
+      },
     },
   },
   variants: {
