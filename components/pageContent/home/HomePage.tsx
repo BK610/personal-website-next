@@ -104,7 +104,7 @@ export default function Home({ sectionsList }: HomeProps): React.ReactElement {
             </div>
           </div>
         </div>
-        <div className="py-6 px-2 sm:px-4 rounded-lg bg-stone-100 dark:bg-stone-800 w-full flex flex-col relative z-10">
+        <div className="py-6 px-2 sm:px-4 rounded-lg border border-stone-300 dark:border-stone-700 bg-stone-50 dark:bg-stone-800 w-full flex flex-col relative z-10">
           <h3 className="text-stone-600 dark:text-stone-300 mb-2 border-b border-b-stone-400 dark:border-b-stone-500">
             All my stuff
           </h3>
