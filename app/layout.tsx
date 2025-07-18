@@ -46,7 +46,7 @@ export default function RootLayout({
     dark:bg-gradient-to-br dark:from-stone-900 dark:to-stone-800
    text-stone-900 dark:text-stone-100"
           >
-            <div className="max-w-7xl w-full p-2 space-y-4">
+            <div className="max-w-7xl w-full p-2 space-y-10">
               <NavBar />
               <main>{children}</main>
             </div>
