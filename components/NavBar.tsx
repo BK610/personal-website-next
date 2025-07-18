@@ -36,7 +36,7 @@ function NavItem({
     <Link href={link}>
       <div
         className="w-fit inline-block group transition p-1 cursor-pointer
-    border border-solid border-transparent rounded-lg hover:border-stone-800 hover:dark:border-stone-200"
+    border border-solid border-transparent rounded-lg hover:border-stone-800 dark:hover:border-stone-200"
       >
         {icon && (
           <span

@@ -21,19 +21,19 @@ export default function BookCard({ book }: { book: Book }): React.ReactElement {
       className="rounded-md w-72 mx-auto sm:w-auto sm:mx-0"
     >
       <div className="p-2 rounded-md border-2 bg-stone-50 dark:bg-stone-800 border-stone-400 hover:border-stone-500 dark:border-stone-600 shadow-md hover:shadow-xl transition-all">
-        <div className="shadow-md rounded-sm w-full aspect-book outline outline-1 dark:outline-stone-400">
+        <div className="shadow-md rounded-xs w-full aspect-book outline-solid outline-1 dark:outline-stone-400">
           <img
             // OpenLibrary Covers API:https://openlibrary.org/dev/docs/api/covers
             src={`https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg?default=false`}
             alt={`The cover of ${book.title}, by ${book.author}.`}
             loading="lazy"
             onError={() => setImageError(true)}
-            className={`w-full rounded-sm aspect-book ${
+            className={`w-full rounded-xs aspect-book ${
               imageError && "hidden"
             }`}
           />
           {imageError && (
-            <div className="rounded-sm h-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center">
+            <div className="rounded-xs h-full bg-stone-200 dark:bg-stone-700 flex items-center justify-center">
               <p className="text-sm">Book image not found.</p>
             </div>
           )}

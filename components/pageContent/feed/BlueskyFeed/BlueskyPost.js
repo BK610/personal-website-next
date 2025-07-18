@@ -23,7 +23,7 @@ export default function BlueskyPost({ post_data }) {
     <Link href={blueskyUri} target="_blank">
       <div
         className="p-4 my-4 bg-stone-200 dark:bg-stone-800 rounded-lg
-      border border-stone-300 dark:border-stone-500 border-b-stone-900 dark:border-b-stone-200 hover:border-stone-900 hover:dark:border-stone-200 "
+      border border-stone-300 dark:border-stone-500 border-b-stone-900 dark:border-b-stone-200 hover:border-stone-900 dark:hover:border-stone-200 "
       >
         <div className="flex flex-col w-full">
           {isRepost && (

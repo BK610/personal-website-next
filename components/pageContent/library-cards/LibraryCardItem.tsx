@@ -31,7 +31,7 @@ export default function LibraryCardItem({
             {/* <FlashlightEffect> */}
             <div
               className="rounded-lg cursor-pointer h-fit
-            border-2 border-purple-200 hover:border-purple-300 dark:border-purple-400 hover:dark:border-purple-500
+            border-2 border-purple-200 hover:border-purple-300 dark:border-purple-400 dark:hover:border-purple-500
             shadow-md hover:shadow-xl"
             >
               <img

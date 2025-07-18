@@ -36,7 +36,7 @@ export default function ProjectContent({ project }): React.ReactElement {
             <a href={githubLink} target="_blank">
               <button
                 className="px-4 py-2
-          bg-gradient-to-r from-stone-100 to-stone-200 dark:from-stone-900 dark:to-stone-800
+          bg-linear-to-r from-stone-100 to-stone-200 dark:from-stone-900 dark:to-stone-800
           border border-stone-800 dark:border-stone-200 rounded-full hover:opacity-70"
               >
                 View the code

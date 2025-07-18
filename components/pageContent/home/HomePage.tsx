@@ -51,7 +51,7 @@ export default function Home({ sectionsList }: HomeProps): React.ReactElement {
               <Link href={"/projects"} className="rounded-lg">
                 <p
                   className="w-full text-center px-4 py-2 font-semibold text-stone-900 dark:text-white
-          bg-gradient-to-r from-purple-200 to-orange-100 dark:from-purple-500 dark:to-orange-300
+          bg-linear-to-r from-purple-200 to-orange-100 dark:from-purple-500 dark:to-orange-300
           border border-stone-800 dark:border-stone-200 rounded-lg group transition hover:scale-105"
                 >
                   Example projects →
