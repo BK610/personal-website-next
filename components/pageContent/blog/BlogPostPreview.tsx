@@ -14,7 +14,11 @@ export default function BlogPostPreview({
 }: BlogPostPreviewProps): React.ReactElement {
   const publishedDateObj = new Date(publishedDate);
 
-  const slug = "";
+  const slug = title
+    .replaceAll(" ", "-")
+    .replaceAll("'", "")
+    .replaceAll(".", "")
+    .toLowerCase();
 
   return (
     <Link href={"/blog/" + slug}>
