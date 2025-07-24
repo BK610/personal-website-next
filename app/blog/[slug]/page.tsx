@@ -7,12 +7,20 @@ import { Params } from "next/dist/server/request/params";
 export const revalidate = 60;
 
 export default async function Page({ params }): Promise<React.ReactElement> {
-  const blogPost = await getBlogPost(params);
+  // const blogPost = await getBlogPost(params);
+
+  const title = "Test";
+  const description = "My blog post";
+  const publishedDate = "2025-01-01T00:00:00-05:00";
 
   return (
-    <BaseLayout titleText={`Blog | ${blogPost.title}`}>
+    <BaseLayout titleText={`Blog | ${title}`}>
       <div className="max-w-3xl mx-auto">
-        <BlogPostContent blogPost={blogPost} />
+        <BlogPostContent
+          title={title}
+          description={description}
+          publishedDate={publishedDate}
+        />
       </div>
     </BaseLayout>
   );
