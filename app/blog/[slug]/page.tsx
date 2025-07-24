@@ -1,4 +1,5 @@
-import BlogPost from "@/components/pageContent/blog/BlogPostPage";
+import BaseLayout from "@/components/BaseLayout";
+import BlogPostContent from "@/components/pageContent/blog/BlogPostContent";
 import { importCSVDataAsJson } from "@/lib/sheetsConnector";
 import type BlogPostType from "@/types/BlogPost";
 import { Params } from "next/dist/server/request/params";
@@ -8,7 +9,13 @@ export const revalidate = 60;
 export default async function Page({ params }): Promise<React.ReactElement> {
   const blogPost = await getBlogPost(params);
 
-  return <BlogPost blogPost={blogPost} />;
+  return (
+    <BaseLayout titleText={`Blog | ${blogPost.title}`}>
+      <div className="max-w-3xl mx-auto">
+        <BlogPostContent blogPost={blogPost} />
+      </div>
+    </BaseLayout>
+  );
 }
 
 async function getBlogPost(params: Params): Promise<BlogPostType> {
