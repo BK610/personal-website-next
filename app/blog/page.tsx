@@ -9,7 +9,7 @@ import { Key } from "react";
 export const revalidate = 60;
 
 export default async function Page(): Promise<React.ReactElement> {
-  const blogPosts = await getBlogPosts();
+  // const blogPosts = await getBlogPosts();
   const leafletPosts: Array<LeafletRecord> = await getLeafletPosts();
   return (
     <BaseLayout titleText="Blog">
@@ -39,15 +39,15 @@ export default async function Page(): Promise<React.ReactElement> {
   );
 }
 
-async function getBlogPosts(): Promise<Array<BlogPostType>> {
-  const blogPosts = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_BLOG_POST_URL || "undefined"
-  );
+// async function getBlogPosts(): Promise<Array<BlogPostType>> {
+//   const blogPosts = await importCSVDataAsJson(
+//     process.env.NEXT_PUBLIC_BLOG_POST_URL || "undefined"
+//   );
 
-  return blogPosts.data;
-}
+//   return blogPosts.data;
+// }
 
-async function getLeafletPosts(): Promise<Array<LeafletRecord>> {
+export async function getLeafletPosts(): Promise<Array<LeafletRecord>> {
   const leafletPosts = await fetch(
     "https://bsky.social/xrpc/com.atproto.repo.listRecords?repo=did:plc:4zwo7e6xbmv3clz7bj5wsxxu&collection=pub.leaflet.document"
   ).then((res) => res.json());
