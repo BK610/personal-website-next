@@ -40,6 +40,9 @@ export default function BlogPostContent({
         Published on {formattedPublishedDate}
       </p>
       <h1 className="mt-4">{title}</h1>
+      <p className="mt-2 italic text-sm text-stone-600 dark:text-stone-300">
+        {description}
+      </p>
       <div
         className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed"
         dangerouslySetInnerHTML={{ __html: markdownContent }}
