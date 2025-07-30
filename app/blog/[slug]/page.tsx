@@ -1,54 +1,55 @@
 import BaseLayout from "@/components/BaseLayout";
 import BlogPostContent from "@/components/pageContent/blog/BlogPostContent";
-import { importCSVDataAsJson } from "@/lib/sheetsConnector";
-import type BlogPostType from "@/types/BlogPost";
+import { getLeafletPosts } from "@/app/blog/page";
 import { Params } from "next/dist/server/request/params";
+import LeafletRecord from "@/types/LeafletRecord";
 
 export const revalidate = 60;
 
 export default async function Page({ params }): Promise<React.ReactElement> {
-  // const blogPost = await getBlogPost(params);
-
-  const title = "Test";
-  const description = "My blog post";
-  const publishedDate = "2025-01-01T00:00:00-05:00";
+  const blogPost = await getBlogPost(params);
 
   return (
-    <BaseLayout titleText={`Blog | ${title}`}>
+    <BaseLayout titleText={`Blog | ${blogPost.value.title}`}>
       <div className="max-w-3xl mx-auto">
         <BlogPostContent
-          title={title}
-          description={description}
-          publishedDate={publishedDate}
+          title={blogPost.value.title}
+          description={blogPost.value.description}
+          publishedDate={blogPost.value.publishedAt}
         />
       </div>
     </BaseLayout>
   );
 }
 
-async function getBlogPost(params: Params): Promise<BlogPostType> {
+async function getBlogPost(params: Params): Promise<LeafletRecord> {
   const { slug } = await params;
 
-  const blogPostsList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_BLOG_POST_URL
-  );
+  const blogPosts: Array<LeafletRecord> = await getLeafletPosts();
 
   // TODO: Pulling all data just to search for the one that matches the slug is inefficient.
   //   Consider pulling these once, elsewhere, and passing the correct item to this component.
   // Followup: This might be irrelevant now that it's fetched server-side.
-  const blogPost = blogPostsList.data.find(
-    (blogPost) => blogPost.slug === slug
+  const blogPost = blogPosts.find(
+    (blogPost) =>
+      blogPost.value.title
+        .replaceAll(" ", "-")
+        .replaceAll("'", "")
+        .replaceAll(".", "")
+        .toLowerCase() === slug
   );
 
   return blogPost;
 }
 
 export async function generateStaticParams(): Promise<Array<any>> {
-  const blogPostsList = await importCSVDataAsJson(
-    process.env.NEXT_PUBLIC_BLOG_POST_URL
-  );
+  const blogPosts: Array<LeafletRecord> = await getLeafletPosts();
 
-  return blogPostsList.data.map((blogPost) => ({
-    slug: blogPost.slug,
+  return blogPosts.map((blogPost) => ({
+    slug: blogPost.value.title
+      .replaceAll(" ", "-")
+      .replaceAll("'", "")
+      .replaceAll(".", "")
+      .toLowerCase(),
   }));
 }
