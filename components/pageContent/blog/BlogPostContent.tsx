@@ -1,20 +1,26 @@
-import { micromark } from "micromark";
-import BlogPostType from "@/types/BlogPost";
+import type {
+  LeafletDocumentBlockCode,
+  LeafletDocumentBlockHeader,
+  LeafletDocumentBlockImage,
+  LeafletDocumentBlockText,
+} from "@/types/leaflet/LeafletDocumentBlock";
+import LeafletDocumentPage from "@/types/leaflet/LeafletDocumentPage";
+import Image from "next/image";
 
 interface BlogPostContentProps {
   title: string;
   description: string;
-  publishedDate: string;
-  content?: string;
+  publishedAt: string;
+  pages?: Array<LeafletDocumentPage>;
 }
 
-export default function BlogPostContent({
+export default async function BlogPostContent({
   title,
   description,
-  content,
-  publishedDate,
-}: BlogPostContentProps): React.ReactElement {
-  const formattedPublishedDate = new Date(publishedDate).toLocaleDateString(
+  pages,
+  publishedAt,
+}: BlogPostContentProps): Promise<React.ReactElement> {
+  const formattedPublishedDate = new Date(publishedAt).toLocaleDateString(
     "en-US",
     {
       month: "long",
@@ -32,7 +38,7 @@ export default function BlogPostContent({
   //   }
   // );
 
-  const markdownContent = micromark(content || "Coming soon.");
+  const renderedLeafletContent = await renderLeafletPage(pages[0]);
 
   return (
     <div>
@@ -43,10 +49,84 @@ export default function BlogPostContent({
       <p className="mt-2 italic text-sm text-stone-600 dark:text-stone-300">
         {description}
       </p>
-      <div
-        className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: markdownContent }}
-      />
+      <div className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed">
+        {renderedLeafletContent}
+      </div>
     </div>
   );
+}
+
+async function renderLeafletPage(
+  page: LeafletDocumentPage
+): Promise<React.ReactElement> {
+  const renderedBlocks: Array<React.ReactElement> = await Promise.all(
+    page.blocks.map(async (block) => {
+      switch (block.block.$type) {
+        case "pub.leaflet.blocks.text":
+          return renderLeafletBlockText(
+            block.block as LeafletDocumentBlockText
+          );
+        case "pub.leaflet.blocks.header":
+          return renderLeafletBlockHeader(
+            block.block as LeafletDocumentBlockHeader
+          );
+        case "pub.leaflet.blocks.image":
+          return await renderLeafletBlockImage(
+            block.block as LeafletDocumentBlockImage
+          );
+        case "pub.leaflet.blocks.code":
+          return renderLeafetBlockCode(block.block as LeafletDocumentBlockCode);
+        default:
+          console.log(block);
+          return (
+            <div className="py-2">
+              Woops, we don't know how to support this content type yet.
+            </div>
+          );
+      }
+    })
+  );
+
+  return <div>{renderedBlocks}</div>;
+}
+
+function renderLeafletBlockText(
+  block: LeafletDocumentBlockText
+): React.ReactElement {
+  return <p>{block.plaintext}</p>;
+}
+
+function renderLeafletBlockHeader(
+  block: LeafletDocumentBlockHeader
+): React.ReactElement {
+  switch (block.level) {
+    case 1:
+      return <h1>{block.plaintext}</h1>;
+    case 2:
+      return <h2>{block.plaintext}</h2>;
+    case 3:
+      return <h3>{block.plaintext}</h3>;
+    default:
+      return <h3>{block.plaintext}</h3>;
+  }
+}
+
+async function renderLeafletBlockImage(
+  block: LeafletDocumentBlockImage
+): Promise<React.ReactElement> {
+  return (
+    <Image
+      src={`https://bsky.social/xrpc/com.atproto.sync.getBlob?did=did:plc:4zwo7e6xbmv3clz7bj5wsxxu&cid=${block.image.ref.$link}`}
+      alt={"Alt text placeholder."}
+      loading="lazy"
+      width={block.aspectRatio.width}
+      height={block.aspectRatio.height}
+    />
+  );
+}
+
+async function renderLeafetBlockCode(
+  block: LeafletDocumentBlockCode
+): Promise<React.ReactElement> {
+  return <pre>{block.plaintext}</pre>;
 }
