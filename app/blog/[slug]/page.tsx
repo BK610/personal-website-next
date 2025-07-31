@@ -14,6 +14,24 @@ export default async function Page({ params }): Promise<React.ReactElement> {
   return (
     <BaseLayout titleText={`Blog | ${blogPost.value.title}`}>
       <div className="max-w-3xl mx-auto">
+        <div className="w-full max-w-none prose prose-stone dark:prose-invert text-sm text-center px-2 py-1 mb-4 bg-stone-200 dark:bg-stone-800 border-2 border-stone-300 dark:border-stone-700 rounded-md">
+          Written and hosted on{" "}
+          <a href="https://about.leaflet.pub/" target="_blank">
+            Leaflet
+          </a>
+          , an{" "}
+          <a href="https://atproto.com/" target="_blank">
+            AT Protocol
+          </a>
+          -based blogging platform (
+          <span>
+            <a href={`https://baileykane.leaflet.pub/${id}`} target="_blank">
+              view the original
+            </a>
+            )
+          </span>
+          .
+        </div>
         <BlogPostContent
           id={id}
           title={blogPost.value.title}
