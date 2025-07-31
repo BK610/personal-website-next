@@ -21,7 +21,8 @@
       "@/pages/*": ["pages/*"],
       "@/app/*": ["app/*"],
       "@/styles/*": ["styles/*"],
-      "@/public/*": ["public/*"]
+      "@/public/*": ["public/*"],
+      "@/utils/*": ["utils/*"]
     },
     "plugins": [
       {
