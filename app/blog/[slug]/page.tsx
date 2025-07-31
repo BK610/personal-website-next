@@ -9,10 +9,13 @@ export const revalidate = 60;
 export default async function Page({ params }): Promise<React.ReactElement> {
   const blogPost = await getBlogPost(params);
 
+  const id = blogPost.uri.slice(blogPost.uri.lastIndexOf("/") + 1);
+
   return (
     <BaseLayout titleText={`Blog | ${blogPost.value.title}`}>
       <div className="max-w-3xl mx-auto">
         <BlogPostContent
+          id={id}
           title={blogPost.value.title}
           pages={blogPost.value.pages}
           description={blogPost.value.description}
