@@ -6,6 +6,7 @@ import type {
 } from "@/types/leaflet/LeafletDocumentBlock";
 import LeafletDocumentPage from "@/types/leaflet/LeafletDocumentPage";
 import Image from "next/image";
+import { renderCode } from "@/utils/renderCode";
 
 interface BlogPostContentProps {
   title: string;
@@ -128,5 +129,6 @@ async function renderLeafletBlockImage(
 async function renderLeafetBlockCode(
   block: LeafletDocumentBlockCode
 ): Promise<React.ReactElement> {
-  return <pre>{block.plaintext}</pre>;
+  const renderedHtml = await renderCode(block.plaintext, block.language);
+  return <div dangerouslySetInnerHTML={{ __html: renderedHtml }} />;
 }
