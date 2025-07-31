@@ -2,7 +2,7 @@ import BaseLayout from "@/components/BaseLayout";
 import BlogPostContent from "@/components/pageContent/blog/BlogPostContent";
 import { getLeafletPosts } from "@/app/blog/page";
 import { Params } from "next/dist/server/request/params";
-import LeafletRecord from "@/types/LeafletRecord";
+import type LeafletRecord from "@/types/leaflet/LeafletRecord";
 
 export const revalidate = 60;
 
@@ -14,8 +14,9 @@ export default async function Page({ params }): Promise<React.ReactElement> {
       <div className="max-w-3xl mx-auto">
         <BlogPostContent
           title={blogPost.value.title}
+          pages={blogPost.value.pages}
           description={blogPost.value.description}
-          publishedDate={blogPost.value.publishedAt}
+          publishedAt={blogPost.value.publishedAt}
         />
       </div>
     </BaseLayout>
