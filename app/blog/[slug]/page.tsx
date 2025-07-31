@@ -1,6 +1,6 @@
 import BaseLayout from "@/components/BaseLayout";
 import BlogPostContent from "@/components/pageContent/blog/BlogPostContent";
-import { getLeafletPosts } from "@/app/blog/page";
+import { getLeafletPosts } from "@/utils/leaflet";
 import { Params } from "next/dist/server/request/params";
 import type LeafletRecord from "@/types/leaflet/LeafletRecord";
 
