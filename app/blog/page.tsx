@@ -1,15 +1,12 @@
 import BaseLayout from "@/components/BaseLayout";
 import BlogPostPreview from "@/components/pageContent/blog/BlogPostPreview";
 import SectionList from "@/components/SectionList";
-import { importCSVDataAsJson } from "@/lib/sheetsConnector";
-import type BlogPostType from "@/types/BlogPost";
-import type LeafletRecord from "@/types/LeafletRecord";
+import type LeafletRecord from "@/types/leaflet/LeafletRecord";
 import { Key } from "react";
 
 export const revalidate = 60;
 
 export default async function Page(): Promise<React.ReactElement> {
-  // const blogPosts = await getBlogPosts();
   const leafletPosts: Array<LeafletRecord> = await getLeafletPosts();
   return (
     <BaseLayout titleText="Blog">
@@ -29,23 +26,11 @@ export default async function Page(): Promise<React.ReactElement> {
               publishedDate={leafletPost.value.publishedAt}
             />
           ))}
-
-          {/* {blogPosts.map((blogPost, k: Key) => (
-            <BlogPostPreview key={k} blogPost={blogPost} />
-          ))} */}
         </SectionList>
       </div>
     </BaseLayout>
   );
 }
-
-// async function getBlogPosts(): Promise<Array<BlogPostType>> {
-//   const blogPosts = await importCSVDataAsJson(
-//     process.env.NEXT_PUBLIC_BLOG_POST_URL || "undefined"
-//   );
-
-//   return blogPosts.data;
-// }
 
 export async function getLeafletPosts(): Promise<Array<LeafletRecord>> {
   const leafletPosts = await fetch(
