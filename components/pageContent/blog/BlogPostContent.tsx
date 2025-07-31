@@ -9,13 +9,15 @@ import Image from "next/image";
 import { renderCode } from "@/utils/renderCode";
 
 interface BlogPostContentProps {
+  id: string;
   title: string;
   description: string;
   publishedAt: string;
-  pages?: Array<LeafletDocumentPage>;
+  pages: Array<LeafletDocumentPage>;
 }
 
 export default async function BlogPostContent({
+  id,
   title,
   description,
   pages,
@@ -51,6 +53,23 @@ export default async function BlogPostContent({
         {description}
       </p>
       <div className="mt-4 w-full max-w-none prose prose-stone dark:prose-invert leading-relaxed">
+        <div className="text-sm px-2 py-1 mb-4 bg-stone-200 dark:bg-stone-800 border-2 border-stone-300 dark:border-stone-700 rounded-md">
+          I use{" "}
+          <span>
+            <a href="https://about.leaflet.pub/" target="_blank">
+              Leaflet
+            </a>
+          </span>
+          , an AT Protocol-based blogging platform, to write my blog. If
+          something's not rendering correctly or you want to see the original,{" "}
+          <span>
+            <a href={`https://baileykane.leaflet.pub/${id}`} target="_blank">
+              check it out on Leaflet
+            </a>
+          </span>
+          .
+        </div>
+
         {renderedLeafletContent}
       </div>
     </div>
